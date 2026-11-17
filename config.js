@@ -8,5 +8,5 @@ window.ASTROMINE_CONFIG = {
   miningContract: "0xdbA9e95D86EC56e24510722b8688cCCb5C6b52bD", // AstromineMining, BSC mainnet
   agentIdRegistry: "0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F", // SPACE ID Agent ID, BSC mainnet
   maxSupply: 10000,
-  baseUrl: "https://yinzzhou99-web.github.io/astromine"
+  baseUrl: "https://astromine-miners.netlify.app"
 };
