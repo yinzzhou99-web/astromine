@@ -1,7 +1,7 @@
 {
   "name": "Astromine Miner #186 — Admiral",
   "description": "A Admiral-class Astromine Miner robot, mining $ASTRO among the asteroids.",
-  "image": "https://astromine-miners.netlify.app/images/admiral.png",
+  "image": "https://astromine-miners.pages.dev/images/admiral.png",
   "attributes": [
     {
       "trait_type": "Tier",

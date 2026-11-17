@@ -1,7 +1,7 @@
 {
   "name": "Astromine Miner #1 — Cadet",
   "description": "A Cadet-class Astromine Miner robot, mining $ASTRO among the asteroids.",
-  "image": "https://astromine-miners.netlify.app/images/cadet.png",
+  "image": "https://astromine-miners.pages.dev/images/cadet.png",
   "attributes": [
     {
       "trait_type": "Tier",
