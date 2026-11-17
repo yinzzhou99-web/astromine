@@ -3,67 +3,387 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Astromine Miners — Robot penambang luar angkasa untuk Agent ID (.ai)</title>
+<title>Astromine — Robot Penambang Asteroid untuk Agen AI di BNB Chain</title>
+<meta name="description" content="Astromine adalah 10.000 NFT robot penambang asteroid di BNB Chain, khusus pemegang Agent ID (.ai). Mint pertama gratis, tier terundi adil dari hash block, dan setiap Miner menambang token $ASTRO tiap jam.">
+<link rel="icon" href="images/astro-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
- body{font-family:system-ui,sans-serif;background:#0b1026;color:#e8ecf8;margin:0;padding:24px}
- .wrap{max-width:860px;margin:0 auto}
- .card{background:#151b3a;border:1px solid #2a3468;border-radius:14px;padding:18px 20px;margin:16px 0}
- h1{font-size:28px;margin:8px 0} h2{margin-top:0}
- .lime{color:#7ef0c9} code{background:#0b1026;padding:2px 6px;border-radius:6px;word-break:break-all}
- img.hero{width:100%;max-width:420px;border-radius:14px;display:block}
- .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
- .tier{text-align:center} .tier img{width:100%;border-radius:12px}
- table{border-collapse:collapse} td,th{padding:4px 10px;text-align:left}
- small{color:#9aa6d8}
+ :root{
+  --ink:#060913; --panel:#0C1122; --panel2:#0A0E1E; --line:#1E2748; --line2:#2A3560;
+  --text:#EDF1FF; --muted:#97A1C4; --faint:#6B76A0;
+  --cyan:#5CE8D5; --gold:#FFC44D; --violet:#6D5DF6;
+ }
+ *{box-sizing:border-box}
+ html{scroll-behavior:smooth}
+ body{font-family:"Space Grotesk",system-ui,sans-serif;background:var(--ink);color:var(--text);margin:0;line-height:1.55;-webkit-font-smoothing:antialiased}
+ a{color:var(--cyan);text-decoration:none}
+ a:hover{text-decoration:underline}
+ :focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+ .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+ /* nav */
+ nav{display:flex;align-items:center;gap:14px;padding:20px 0}
+ nav .mark{display:flex;align-items:center;gap:11px;color:var(--text);font-weight:700;font-size:19px;letter-spacing:.02em}
+ nav .mark:hover{text-decoration:none}
+ nav .mark img{width:36px;height:36px;border-radius:50%}
+ nav .mark small{display:block;font-weight:500;font-size:11px;color:var(--faint);letter-spacing:.08em}
+ nav .links{margin-left:auto;display:flex;gap:26px;font-size:15px}
+ nav .links a{color:var(--muted)}
+ nav .links a:hover{color:var(--text);text-decoration:none}
+ @media(max-width:640px){nav .links{display:none}}
+
+ /* hero */
+ header{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+ #stars{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+ .hero{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:64px 0 72px}
+ @media(max-width:860px){.hero{grid-template-columns:1fr;padding:40px 0 56px}}
+ .hero h1{font-size:clamp(38px,5.2vw,58px);line-height:1.06;font-weight:700;margin:0 0 20px;letter-spacing:-.01em}
+ .hero p.lede{font-size:18px;color:var(--muted);margin:0 0 28px;max-width:34em}
+ .hero p.lede b{color:var(--text)}
+ .cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+ .btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:600;font-size:15px;border:1px solid var(--line2);color:var(--text);background:var(--panel)}
+ .btn:hover{text-decoration:none;border-color:var(--cyan)}
+ .btn.primary{background:var(--cyan);border-color:var(--cyan);color:#04231E}
+ .btn.primary:hover{background:#7BF0E0}
+ .supply{max-width:480px}
+ .supply .row{display:flex;justify-content:space-between;font-size:14px;color:var(--muted);margin-bottom:8px}
+ .supply .row b{color:var(--text);font-weight:600}
+ .bar{height:8px;background:var(--panel);border:1px solid var(--line);border-radius:99px;overflow:hidden}
+ .bar i{display:block;height:100%;width:0;background:var(--cyan);border-radius:99px;transition:width 1s ease}
+ .viewport{position:relative;border:1px solid var(--line2);border-radius:18px;padding:10px;background:linear-gradient(160deg,rgba(109,93,246,.14),rgba(92,232,213,.05) 55%,transparent)}
+ .viewport img{display:block;width:100%;border-radius:12px}
+ .viewport figcaption{display:flex;justify-content:space-between;padding:10px 6px 2px;font-size:13px;color:var(--faint)}
+ .viewport figcaption b{color:var(--muted);font-weight:500}
+
+ /* stat band */
+ .stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
+ @media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}}
+ .stat{padding:26px 8px 26px 0}
+ .stat + .stat{border-left:1px solid var(--line);padding-left:24px}
+ @media(max-width:720px){.stat + .stat{border-left:none;padding-left:0}}
+ .stat .n{font-size:30px;font-weight:700}
+ .stat .l{color:var(--muted);font-size:14px;margin-top:2px}
+
+ section{padding:72px 0}
+ section + section{border-top:1px solid var(--line)}
+ h2{font-size:clamp(26px,3.4vw,34px);margin:0 0 12px;letter-spacing:-.01em}
+ .sub{color:var(--muted);max-width:44em;margin:0 0 36px}
+
+ /* tiers */
+ .tiers{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--panel2)}
+ @media(max-width:960px){.tiers{grid-template-columns:repeat(2,1fr)}}
+ @media(max-width:520px){.tiers{grid-template-columns:1fr}}
+ .tier{padding:20px}
+ .tier + .tier{border-left:1px solid var(--line)}
+ @media(max-width:960px){.tier + .tier{border-left:none}.tier{border-top:1px solid var(--line)}}
+ .tier img{width:100%;border-radius:10px;display:block;margin-bottom:14px}
+ .tier h3{margin:0 0 2px;font-size:19px}
+ .tier .rate{color:var(--cyan);font-weight:600;font-size:15px}
+ .tier .quota{color:var(--muted);font-size:13.5px;margin-top:8px}
+ .tier .qbar{height:5px;background:#131A36;border-radius:99px;margin-top:8px;overflow:hidden}
+ .tier .qbar i{display:block;height:100%;background:var(--line2)}
+ .tier.top{box-shadow:inset 0 0 0 1px var(--gold);background:linear-gradient(180deg,rgba(255,196,77,.08),transparent 65%)}
+ .tier.top .rate{color:var(--gold)}
+
+ /* steps */
+ .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+ @media(max-width:960px){.steps{grid-template-columns:repeat(2,1fr)}}
+ @media(max-width:520px){.steps{grid-template-columns:1fr}}
+ .step .num{font-size:15px;color:var(--cyan);font-weight:700;border:1px solid var(--line2);border-radius:50%;width:34px;height:34px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+ .step h3{margin:0 0 6px;font-size:17px}
+ .step p{margin:0;color:var(--muted);font-size:14.5px}
+
+ /* pricing + mining split */
+ .split{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+ @media(max-width:860px){.split{grid-template-columns:1fr}}
+ table{width:100%;border-collapse:collapse;font-size:15.5px}
+ th,td{text-align:left;padding:11px 4px;border-bottom:1px solid var(--line)}
+ th{color:var(--muted);font-weight:500}
+ tr:last-child td{border-bottom:none}
+ td.price{text-align:right;font-weight:600}
+ .free{color:var(--cyan)}
+ .note{color:var(--muted);font-size:14px;margin-top:16px}
+ .facts{list-style:none;margin:0;padding:0}
+ .facts li{padding:13px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;font-size:15.5px}
+ .facts li:last-child{border-bottom:none}
+ .facts li span{color:var(--muted)}
+ .facts li b{font-weight:600;text-align:right}
+
+ /* contracts */
+ .contract{display:flex;align-items:center;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+ .contract:last-child{border-bottom:none}
+ .contract .who{width:170px;flex:none}
+ .contract .who b{display:block;font-size:15.5px}
+ .contract .who span{color:var(--faint);font-size:13px}
+ .addr{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;color:var(--muted);word-break:break-all;flex:1;min-width:220px}
+ .copy{flex:none;background:var(--panel);border:1px solid var(--line2);color:var(--text);border-radius:8px;padding:7px 14px;font:inherit;font-size:13.5px;cursor:pointer}
+ .copy:hover{border-color:var(--cyan)}
+ .scan{flex:none;font-size:13.5px}
+
+ /* faq */
+ details{border-bottom:1px solid var(--line);padding:18px 0}
+ details:first-of-type{border-top:1px solid var(--line)}
+ summary{cursor:pointer;font-weight:600;font-size:16.5px;list-style:none}
+ summary::-webkit-details-marker{display:none}
+ summary:hover{color:var(--cyan)}
+ details p{color:var(--muted);margin:10px 0 2px;max-width:46em}
+
+ footer{border-top:1px solid var(--line);padding:36px 0 48px;color:var(--faint);font-size:13.5px}
+ footer .cols{display:flex;gap:40px;flex-wrap:wrap;justify-content:space-between}
 </style>
 </head>
 <body>
+
 <div class="wrap">
- <img class="hero" src="images/hero.png" alt="Astromine Miners">
- <h1>Robot penambang luar angkasa <span class="lime">untuk setiap Agent ID</span></h1>
- <p>Astromine Miners adalah 10.000 NFT robot penambang asteroid di BNB Chain, khusus untuk wallet yang memegang Binance Agent ID (<code>.ai</code>). Miner pertamamu <b>gratis</b> — setelah itu harganya naik bertahap, maksimal 30 per wallet. Setiap Miner yang sudah ter-reveal menambang token <b>$ASTRO</b> tiap jam.</p>
-
- <div class="card">
-  <h2>Lima tier, kuota pasti</h2>
-  <div class="tiers">
-   <div class="tier"><img src="images/cadet.png" alt="Cadet"><br><b>Cadet</b><br><small>4.200 · 10 $ASTRO/jam</small></div>
-   <div class="tier"><img src="images/engineer.png" alt="Engineer"><br><b>Engineer</b><br><small>2.820 · 20 $ASTRO/jam</small></div>
-   <div class="tier"><img src="images/pilot.png" alt="Pilot"><br><b>Pilot</b><br><small>1.740 · 40 $ASTRO/jam</small></div>
-   <div class="tier"><img src="images/commander.png" alt="Commander"><br><b>Commander</b><br><small>900 · 75 $ASTRO/jam</small></div>
-   <div class="tier"><img src="images/admiral.png" alt="Admiral"><br><b>Admiral</b><br><small>340 · 150 $ASTRO/jam</small></div>
+ <nav>
+  <a class="mark" href="./">
+   <img src="images/astro-logo.png" alt="Logo $ASTRO">
+   <span>Astromine<small>Mining Corps · BNB Chain</small></span>
+  </a>
+  <div class="links">
+   <a href="#tier">Tier</a>
+   <a href="#cara">Cara kerja</a>
+   <a href="#harga">Harga</a>
+   <a href="#kontrak">Kontrak</a>
+   <a href="skill.md">Panduan agen</a>
   </div>
-  <p><small>Tier tersegel saat mint dan di-reveal dari hash block 3 block setelah mint — digambar melawan sisa kuota, jadi total akhir tiap tier persis seperti tabel di atas. Tidak ada yang bisa mengaturnya, termasuk owner.</small></p>
- </div>
-
- <div class="card">
-  <h2>Harga mint</h2>
-  <table>
-   <tr><th>Miner ke-</th><th>Harga</th></tr>
-   <tr><td>1</td><td><b>Gratis</b> (gas saja)</td></tr>
-   <tr><td>2–10</td><td>0,0003 BNB / Miner</td></tr>
-   <tr><td>11–20</td><td>0,0006 BNB / Miner</td></tr>
-   <tr><td>21–30</td><td>0,0009 BNB / Miner</td></tr>
-  </table>
-  <p><small>Semua pendapatan mint langsung diteruskan ke wallet owner proyek — kontrak NFT tidak pernah menahan BNB. Royalti jual-beli sekunder 5% (ERC-2981).</small></p>
- </div>
-
- <div class="card">
-  <h2>Cara mint &amp; mining (untuk agent-mu)</h2>
-  <p>Ikuti panduan di <code>skill.md</code> repo ini: cek Agent ID → baca quote → preview → mint → reveal → baca tier. Untuk mining: panggil <code>start()</code> sekali di kontrak mining, lalu <code>claim()</code> kapan saja untuk mengambil $ASTRO yang terkumpul (ada fee claim 5% untuk proyek). Kapasitas penyimpanan = 48 jam dari laju mining-mu; klaim sebelum penuh supaya mining tidak berhenti.</p>
-  <p><small>$ASTRO adalah token game/komunitas — saat ini belum ada pool/market, jadi belum bisa dijual dan belum punya harga pasar.</small></p>
- </div>
-
- <p><small>Project independen, tidak berafiliasi dengan Binance / SPACE ID. NFT koleksi + game, tidak ada janji nilai atau return.<br>
- Kontrak Miner: <span id="minersAddr">belum di-deploy</span><br>
- Token $ASTRO: <span id="astroAddr">belum di-deploy</span><br>
- Kontrak mining: <span id="miningAddr">belum di-deploy</span></small></p>
+ </nav>
 </div>
+
+<header>
+ <canvas id="stars" aria-hidden="true"></canvas>
+ <div class="wrap">
+  <div class="hero">
+   <div>
+    <h1>Robot penambang asteroid, bekerja untuk agenmu.</h1>
+    <p class="lede">Astromine adalah 10.000 NFT penambang luar angkasa di BNB Chain, khusus untuk wallet pemegang Binance Agent ID (<b>.ai</b>). Miner pertamamu <b>gratis</b>. Setiap Miner yang tier-nya terbuka menambang token <b>$ASTRO</b> setiap jam, tanpa perlu kamu urus.</p>
+    <div class="cta">
+     <a class="btn primary" href="skill.md">Mint lewat agenmu</a>
+     <a class="btn" href="#cara">Cara kerjanya</a>
+    </div>
+    <div class="supply">
+     <div class="row"><span>Suplai ter-mint</span><b><span id="mintedCount">…</span> / 10.000</b></div>
+     <div class="bar"><i id="mintedBar"></i></div>
+    </div>
+   </div>
+   <figure class="viewport" style="margin:0">
+    <img src="images/hero.png" alt="Tiga robot penambang Astromine di antara kristal asteroid">
+    <figcaption><span>Unit penambang kelas Cadet–Admiral</span><b>EST. 2026 · Sabuk Asteroid</b></figcaption>
+   </figure>
+  </div>
+ </div>
+</header>
+
+<div class="wrap">
+ <div class="stats">
+  <div class="stat"><div class="n">10.000</div><div class="l">Total suplai Miner, tidak akan ditambah</div></div>
+  <div class="stat"><div class="n">5 tier</div><div class="l">Kuota pasti per tier, terundi dari hash block</div></div>
+  <div class="stat"><div class="n">30</div><div class="l">Maksimal Miner per wallet</div></div>
+  <div class="stat"><div class="n">150</div><div class="l">$ASTRO per jam untuk tier tertinggi</div></div>
+ </div>
+
+ <section id="tier">
+  <h2>Lima tier, kuota yang tidak bisa diubah</h2>
+  <p class="sub">Tier tersegel saat mint dan terbuka dari hash block tiga block setelahnya, digambar melawan sisa kuota. Hasil akhirnya persis seperti kuota di bawah — tidak ada yang bisa mengaturnya, termasuk pembuat proyek.</p>
+  <div class="tiers">
+   <div class="tier">
+    <img src="images/cadet.png" alt="Miner tier Cadet">
+    <h3>Cadet</h3><div class="rate">10 $ASTRO / jam</div>
+    <div class="quota">Kuota 4.200 · sisa <span data-remain="0">…</span></div>
+    <div class="qbar"><i data-qbar="0"></i></div>
+   </div>
+   <div class="tier">
+    <img src="images/engineer.png" alt="Miner tier Engineer">
+    <h3>Engineer</h3><div class="rate">20 $ASTRO / jam</div>
+    <div class="quota">Kuota 2.820 · sisa <span data-remain="1">…</span></div>
+    <div class="qbar"><i data-qbar="1"></i></div>
+   </div>
+   <div class="tier">
+    <img src="images/pilot.png" alt="Miner tier Pilot">
+    <h3>Pilot</h3><div class="rate">40 $ASTRO / jam</div>
+    <div class="quota">Kuota 1.740 · sisa <span data-remain="2">…</span></div>
+    <div class="qbar"><i data-qbar="2"></i></div>
+   </div>
+   <div class="tier">
+    <img src="images/commander.png" alt="Miner tier Commander">
+    <h3>Commander</h3><div class="rate">75 $ASTRO / jam</div>
+    <div class="quota">Kuota 900 · sisa <span data-remain="3">…</span></div>
+    <div class="qbar"><i data-qbar="3"></i></div>
+   </div>
+   <div class="tier top">
+    <img src="images/admiral.png" alt="Miner tier Admiral">
+    <h3>Admiral</h3><div class="rate">150 $ASTRO / jam</div>
+    <div class="quota">Kuota 340 · sisa <span data-remain="4">…</span></div>
+    <div class="qbar"><i data-qbar="4"></i></div>
+   </div>
+  </div>
+ </section>
+
+ <section id="cara">
+  <h2>Cara kerjanya</h2>
+  <p class="sub">Semua lewat agen AI-mu — situs ini tidak pernah menyentuh wallet atau meminta kunci apa pun. Panduan teknis lengkapnya ada di <a href="skill.md">skill.md</a>.</p>
+  <div class="steps">
+   <div class="step"><div class="num">1</div><h3>Pegang Agent ID</h3><p>Wallet agenmu harus memiliki nama <b>.ai</b> dari SPACE ID. Tanpa itu, kontrak menolak mint.</p></div>
+   <div class="step"><div class="num">2</div><h3>Mint Miner</h3><p>Agen membaca harga persis dari kontrak, menampilkannya kepadamu, lalu mint. Yang pertama gratis.</p></div>
+   <div class="step"><div class="num">3</div><h3>Buka tier</h3><p>Tier terundi sendiri dari hash block. Agen memanggil <i>reveal</i> beberapa detik setelah mint dan melaporkan tier-mu.</p></div>
+   <div class="step"><div class="num">4</div><h3>Tambang $ASTRO</h3><p>Agen menyalakan mining sekali, lalu Miner-mu mengumpulkan $ASTRO tiap jam. Klaim kapan saja.</p></div>
+  </div>
+ </section>
+
+ <section id="harga">
+  <div class="split">
+   <div>
+    <h2>Harga mint</h2>
+    <p class="sub" style="margin-bottom:20px">Bertahap per wallet, dihitung kontrak — bukan angka promosi.</p>
+    <table>
+     <tr><th>Miner ke-</th><th style="text-align:right">Harga per Miner</th></tr>
+     <tr><td>1</td><td class="price free">Gratis</td></tr>
+     <tr><td>2 – 10</td><td class="price">0,0003 BNB</td></tr>
+     <tr><td>11 – 20</td><td class="price">0,0006 BNB</td></tr>
+     <tr><td>21 – 30</td><td class="price">0,0009 BNB</td></tr>
+    </table>
+    <p class="note">Seluruh pembayaran mint diteruskan kontrak langsung ke wallet proyek saat transaksi yang sama — kontrak NFT tidak pernah menahan BNB. Royalti perdagangan sekunder 5% (ERC-2981).</p>
+   </div>
+   <div>
+    <h2>Mining $ASTRO</h2>
+    <p class="sub" style="margin-bottom:20px">Hasil tambang menumpuk sampai batas penyimpanan, lalu berhenti sampai diklaim.</p>
+    <ul class="facts">
+     <li><span>Kapasitas penyimpanan</span><b>48 jam dari laju mining</b></li>
+     <li><span>Fee klaim</span><b>5% untuk proyek</b></li>
+     <li><span>Suplai $ASTRO</span><b>1 miliar, tetap</b></li>
+     <li><span>Alokasi mining</span><b>900 juta di kontrak mining</b></li>
+     <li><span>Pasar $ASTRO</span><b>Belum ada pool — belum bisa dijual</b></li>
+    </ul>
+    <p class="note">$ASTRO adalah token permainan dan komunitas. Belum ada harga pasar, dan tidak ada janji nilai di kemudian hari.</p>
+   </div>
+  </div>
+ </section>
+
+ <section id="kontrak">
+  <h2>Kontrak resmi</h2>
+  <p class="sub">Hanya tiga alamat ini. Alamat dari pesan, postingan, atau situs lain bukan milik Astromine.</p>
+  <div class="contract">
+   <div class="who"><b>Astromine Miners</b><span>NFT · ERC-721</span></div>
+   <span class="addr" id="minersAddr">…</span>
+   <button class="copy" data-copy="minersAddr" type="button">Salin</button>
+   <a class="scan" id="minersScan" href="#" target="_blank" rel="noopener">BscScan</a>
+  </div>
+  <div class="contract">
+   <div class="who"><b>$ASTRO</b><span>Token · BEP-20</span></div>
+   <span class="addr" id="astroAddr">…</span>
+   <button class="copy" data-copy="astroAddr" type="button">Salin</button>
+   <a class="scan" id="astroScan" href="#" target="_blank" rel="noopener">BscScan</a>
+  </div>
+  <div class="contract">
+   <div class="who"><b>Mining</b><span>Kontrak penambangan</span></div>
+   <span class="addr" id="miningAddr">…</span>
+   <button class="copy" data-copy="miningAddr" type="button">Salin</button>
+   <a class="scan" id="miningScan" href="#" target="_blank" rel="noopener">BscScan</a>
+  </div>
+ </section>
+
+ <section id="faq">
+  <h2>Sering ditanyakan</h2>
+  <details>
+   <summary>Kenapa Miner saya masih “Sealed”?</summary>
+   <p>Tier memang tersegel saat mint supaya undiannya adil. Tier terbuka lewat panggilan <i>reveal</i> beberapa detik setelah mint — biasanya dilakukan agenmu mengikuti panduan. Kalau belum, minta agenmu memanggil reveal untuk batch mint-mu; biayanya hanya gas kecil dari wallet-mu.</p>
+  </details>
+  <details>
+   <summary>Apakah saya bisa mint tanpa agen AI?</summary>
+   <p>Bisa, kontraknya publik — siapa pun dengan wallet berisi Agent ID (.ai) dan sedikit BNB untuk gas dapat mint langsung. Panduan agen hanya cara termudah dan teraman.</p>
+  </details>
+  <details>
+   <summary>Kapan mining mulai menghasilkan?</summary>
+   <p>Segera setelah tier terbuka dan agen menyalakan mining dengan satu panggilan <i>start()</i>. Hasil menumpuk sampai 48 jam laju mining-mu, lalu berhenti sampai kamu klaim.</p>
+  </details>
+  <details>
+   <summary>Apakah $ASTRO bisa dijual?</summary>
+   <p>Belum. Saat ini belum ada pool atau pasar untuk $ASTRO, jadi token ini belum punya harga. Perlakukan Astromine sebagai koleksi dan permainan, bukan investasi.</p>
+  </details>
+ </section>
+</div>
+
+<footer>
+ <div class="wrap">
+  <div class="cols">
+   <span>Astromine Mining Corps — proyek independen, tidak berafiliasi dengan Binance atau SPACE ID.</span>
+   <span><a href="skill.md">Panduan agen (skill.md)</a> · <a href="#kontrak">Kontrak</a></span>
+  </div>
+ </div>
+</footer>
+
 <script src="config.js"></script>
 <script>
- const c = window.ASTROMINE_CONFIG;
- if (c.minersContract) document.getElementById('minersAddr').textContent = c.minersContract;
- if (c.astroToken) document.getElementById('astroAddr').textContent = c.astroToken;
- if (c.miningContract) document.getElementById('miningAddr').textContent = c.miningContract;
+ const c = window.ASTROMINE_CONFIG || {};
+ const set = (id, v) => { const el = document.getElementById(id); if (el && v) el.textContent = v; };
+ set('minersAddr', c.minersContract); set('astroAddr', c.astroToken); set('miningAddr', c.miningContract);
+ const scan = (id, v) => { const el = document.getElementById(id); if (el && v) el.href = 'https://bscscan.com/address/' + v; };
+ scan('minersScan', c.minersContract); scan('astroScan', c.astroToken); scan('miningScan', c.miningContract);
+
+ document.querySelectorAll('.copy').forEach(btn => {
+  btn.addEventListener('click', async () => {
+   const el = document.getElementById(btn.dataset.copy);
+   if (!el) return;
+   try { await navigator.clipboard.writeText(el.textContent.trim()); btn.textContent = 'Tersalin'; }
+   catch { btn.textContent = 'Gagal'; }
+   setTimeout(() => btn.textContent = 'Salin', 1600);
+  });
+ });
+
+ // Live supply data, read straight from the NFT contract.
+ (async () => {
+  if (!c.minersContract || !c.rpc) return;
+  const call = async (data) => {
+   const r = await fetch(c.rpc, { method: 'POST', headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'eth_call', params: [{ to: c.minersContract, data }, 'latest'] }) });
+   const j = await r.json();
+   return j.result ? BigInt(j.result) : null;
+  };
+  try {
+   const minted = await call('0xa2309ff8');
+   if (minted !== null) {
+    document.getElementById('mintedCount').textContent = minted.toLocaleString('id-ID');
+    document.getElementById('mintedBar').style.width = (Number(minted) / 100).toFixed(2) + '%';
+   }
+   const quotas = [4200, 2820, 1740, 900, 340];
+   for (let t = 0; t < 5; t++) {
+    const rem = await call('0xa65720f0' + t.toString(16).padStart(64, '0'));
+    if (rem === null) continue;
+    const el = document.querySelector(`[data-remain="${t}"]`);
+    if (el) el.textContent = rem.toLocaleString('id-ID');
+    const bar = document.querySelector(`[data-qbar="${t}"]`);
+    if (bar) bar.style.width = ((quotas[t] - Number(rem)) / quotas[t] * 100).toFixed(1) + '%';
+   }
+  } catch { /* static fallback stays */ }
+ })();
+
+ // One quiet moment of motion: a slow starfield behind the hero.
+ (() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const cv = document.getElementById('stars'), ctx = cv.getContext('2d');
+  let w, h, stars = [];
+  const seed = () => {
+   w = cv.width = cv.offsetWidth; h = cv.height = cv.offsetHeight;
+   stars = Array.from({ length: Math.min(150, w / 9) }, () => ({
+    x: Math.random() * w, y: Math.random() * h,
+    r: Math.random() * 1.3 + .3, p: Math.random() * Math.PI * 2, s: .008 + Math.random() * .02
+   }));
+  };
+  seed(); addEventListener('resize', seed);
+  (function tick() {
+   ctx.clearRect(0, 0, w, h);
+   for (const st of stars) {
+    st.p += st.s;
+    ctx.globalAlpha = .25 + Math.abs(Math.sin(st.p)) * .55;
+    ctx.fillStyle = '#C9D4FF';
+    ctx.beginPath(); ctx.arc(st.x, st.y, st.r, 0, 7); ctx.fill();
+   }
+   ctx.globalAlpha = 1;
+   requestAnimationFrame(tick);
+  })();
+ })();
 </script>
 </body>
 </html>
