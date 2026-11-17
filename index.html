@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Astromine Miners — Robot penambang luar angkasa untuk Agent ID (.ai)</title>
+<style>
+ body{font-family:system-ui,sans-serif;background:#0b1026;color:#e8ecf8;margin:0;padding:24px}
+ .wrap{max-width:860px;margin:0 auto}
+ .card{background:#151b3a;border:1px solid #2a3468;border-radius:14px;padding:18px 20px;margin:16px 0}
+ h1{font-size:28px;margin:8px 0} h2{margin-top:0}
+ .lime{color:#7ef0c9} code{background:#0b1026;padding:2px 6px;border-radius:6px;word-break:break-all}
+ img.hero{width:100%;max-width:420px;border-radius:14px;display:block}
+ .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+ .tier{text-align:center} .tier img{width:100%;border-radius:12px}
+ table{border-collapse:collapse} td,th{padding:4px 10px;text-align:left}
+ small{color:#9aa6d8}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <img class="hero" src="images/hero.png" alt="Astromine Miners">
+ <h1>Robot penambang luar angkasa <span class="lime">untuk setiap Agent ID</span></h1>
+ <p>Astromine Miners adalah 10.000 NFT robot penambang asteroid di BNB Chain, khusus untuk wallet yang memegang Binance Agent ID (<code>.ai</code>). Miner pertamamu <b>gratis</b> — setelah itu harganya naik bertahap, maksimal 30 per wallet. Setiap Miner yang sudah ter-reveal menambang token <b>$ASTRO</b> tiap jam.</p>
+
+ <div class="card">
+  <h2>Lima tier, kuota pasti</h2>
+  <div class="tiers">
+   <div class="tier"><img src="images/cadet.png" alt="Cadet"><br><b>Cadet</b><br><small>4.200 · 10 $ASTRO/jam</small></div>
+   <div class="tier"><img src="images/engineer.png" alt="Engineer"><br><b>Engineer</b><br><small>2.820 · 20 $ASTRO/jam</small></div>
+   <div class="tier"><img src="images/pilot.png" alt="Pilot"><br><b>Pilot</b><br><small>1.740 · 40 $ASTRO/jam</small></div>
+   <div class="tier"><img src="images/commander.png" alt="Commander"><br><b>Commander</b><br><small>900 · 75 $ASTRO/jam</small></div>
+   <div class="tier"><img src="images/admiral.png" alt="Admiral"><br><b>Admiral</b><br><small>340 · 150 $ASTRO/jam</small></div>
+  </div>
+  <p><small>Tier tersegel saat mint dan di-reveal dari hash block 3 block setelah mint — digambar melawan sisa kuota, jadi total akhir tiap tier persis seperti tabel di atas. Tidak ada yang bisa mengaturnya, termasuk owner.</small></p>
+ </div>
+
+ <div class="card">
+  <h2>Harga mint</h2>
+  <table>
+   <tr><th>Miner ke-</th><th>Harga</th></tr>
+   <tr><td>1</td><td><b>Gratis</b> (gas saja)</td></tr>
+   <tr><td>2–10</td><td>0,0003 BNB / Miner</td></tr>
+   <tr><td>11–20</td><td>0,0006 BNB / Miner</td></tr>
+   <tr><td>21–30</td><td>0,0009 BNB / Miner</td></tr>
+  </table>
+  <p><small>Semua pendapatan mint langsung diteruskan ke wallet owner proyek — kontrak NFT tidak pernah menahan BNB. Royalti jual-beli sekunder 5% (ERC-2981).</small></p>
+ </div>
+
+ <div class="card">
+  <h2>Cara mint &amp; mining (untuk agent-mu)</h2>
+  <p>Ikuti panduan di <code>skill.md</code> repo ini: cek Agent ID → baca quote → preview → mint → reveal → baca tier. Untuk mining: panggil <code>start()</code> sekali di kontrak mining, lalu <code>claim()</code> kapan saja untuk mengambil $ASTRO yang terkumpul. Kapasitas penyimpanan = 48 jam dari laju mining-mu; klaim sebelum penuh supaya mining tidak berhenti.</p>
+  <p><small>$ASTRO adalah token game/komunitas — saat ini belum ada pool/market, jadi belum bisa dijual dan belum punya harga pasar.</small></p>
+ </div>
+
+ <p><small>Project independen, tidak berafiliasi dengan Binance / SPACE ID. NFT koleksi + game, tidak ada janji nilai atau return.<br>
+ Kontrak Miner: <span id="minersAddr">belum di-deploy</span><br>
+ Token $ASTRO: <span id="astroAddr">belum di-deploy</span><br>
+ Kontrak mining: <span id="miningAddr">belum di-deploy</span></small></p>
+</div>
+<script src="config.js"></script>
+<script>
+ const c = window.ASTROMINE_CONFIG;
+ if (c.minersContract) document.getElementById('minersAddr').textContent = c.minersContract;
+ if (c.astroToken) document.getElementById('astroAddr').textContent = c.astroToken;
+ if (c.miningContract) document.getElementById('miningAddr').textContent = c.miningContract;
+</script>
+</body>
+</html>
