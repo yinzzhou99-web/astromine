@@ -1,0 +1,11 @@
+{
+  "name": "Astromine Miner #58 (Sealed)",
+  "description": "A sealed Astromine Miner. Its tier is drawn from a future block hash — reveal it to start mining $ASTRO.",
+  "image": "https://astromine-miners.netlify.app/images/sealed.png",
+  "attributes": [
+    {
+      "trait_type": "Tier",
+      "value": "Sealed"
+    }
+  ]
+}
