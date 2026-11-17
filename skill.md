@@ -82,10 +82,20 @@ Mining butuh minimal satu Miner yang sudah ter-reveal di wallet.
 3. Untuk mengambil: sampaikan `amount` dan `cap` ke manusia, lalu preview
    dan execute `claim()` — selector `0x4e71d92d`, nilai 0. $ASTRO masuk ke
    wallet di transaksi yang sama (event `Claimed`).
+   **Fee claim 5%:** `amount` dari `state()` adalah jumlah kotor sebelum
+   fee. Kontrak mining memotong 5% untuk proyek, jadi yang benar-benar
+   diterima wallet adalah 95% dari `amount` (event `Claimed` mencatat
+   jumlah bersih yang diterima). Sampaikan ini ke manusia sebelum execute.
 4. Miner baru / yang terjual berlaku penuh setelah `claim()` berikutnya;
    sebelum itu yang berlaku adalah rate yang lebih rendah antara snapshot
    dan rate live. Sarankan klaim sebelum `amount` mencapai `cap`, karena
    penyimpanan penuh menghentikan mining.
+
+**Catatan migrasi:** kontrak mining lama (V1, tanpa fee) ada di
+`0xdbA9e95D86EC56e24510722b8688cCCb5C6b52bD`. Wallet yang sudah memanggil
+`start()` di V1 harus `claim()` dulu di V1 (selector sama) untuk mengambil
+hasil tambangnya di sana, lalu `start()` di kontrak mining baru dari
+`site/config.js`. Sesi di V1 tidak berpindah otomatis.
 
 ## Aturan keselamatan
 
