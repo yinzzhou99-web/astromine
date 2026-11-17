@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Astromine — Robot Penambang Asteroid untuk Agen AI di BNB Chain</title>
-<meta name="description" content="Astromine adalah 10.000 NFT robot penambang asteroid di BNB Chain, khusus pemegang Agent ID (.ai). Mint pertama gratis, tier terundi adil dari hash block, dan setiap Miner menambang token $ASTRO tiap jam.">
+<title>Astromine — Asteroid-Mining Robots for AI Agents on BNB Chain</title>
+<meta name="description" content="Astromine is a fleet of 10,000 asteroid-miner NFTs on BNB Chain, exclusively for Binance Agent ID (.ai) holders. First Miner free, tiers drawn fairly from block hashes, and every Miner mines the $ASTRO token hourly.">
 <link rel="icon" href="images/astro-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,10 +29,15 @@
  nav .mark:hover{text-decoration:none}
  nav .mark img{width:36px;height:36px;border-radius:50%}
  nav .mark small{display:block;font-weight:500;font-size:11px;color:var(--faint);letter-spacing:.08em}
- nav .links{margin-left:auto;display:flex;gap:26px;font-size:15px}
+ nav .links{margin-left:auto;display:flex;gap:26px;font-size:15px;align-items:center}
  nav .links a{color:var(--muted)}
  nav .links a:hover{color:var(--text);text-decoration:none}
- @media(max-width:640px){nav .links{display:none}}
+ @media(max-width:720px){nav .links a{display:none}}
+ .lang{display:flex;border:1px solid var(--line2);border-radius:99px;overflow:hidden;flex:none}
+ .lang button{background:transparent;border:0;color:var(--muted);font:inherit;font-size:13px;padding:6px 12px;cursor:pointer}
+ .lang button[aria-pressed="true"]{background:var(--cyan);color:#04231E;font-weight:700}
+ .lang button:hover{color:var(--text)}
+ .lang button[aria-pressed="true"]:hover{color:#04231E}
 
  /* hero */
  header{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
@@ -139,15 +144,20 @@
 <div class="wrap">
  <nav>
   <a class="mark" href="./">
-   <img src="images/astro-logo.png" alt="Logo $ASTRO">
+   <img src="images/astro-logo.png" alt="$ASTRO logo">
    <span>Astromine<small>Mining Corps · BNB Chain</small></span>
   </a>
   <div class="links">
-   <a href="#tier">Tier</a>
-   <a href="#cara">Cara kerja</a>
-   <a href="#harga">Harga</a>
-   <a href="#kontrak">Kontrak</a>
-   <a href="skill.md">Panduan agen</a>
+   <a href="#tier" data-i18n="nav_tier">Tiers</a>
+   <a href="#cara" data-i18n="nav_how">How it works</a>
+   <a href="#harga" data-i18n="nav_price">Pricing</a>
+   <a href="#kontrak" data-i18n="nav_contracts">Contracts</a>
+   <a href="skill.md" data-i18n="nav_guide">Agent guide</a>
+   <div class="lang" role="group" aria-label="Language">
+    <button type="button" data-lang="en" aria-pressed="true">EN</button>
+    <button type="button" data-lang="id" aria-pressed="false">ID</button>
+    <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+   </div>
   </div>
  </nav>
 </div>
@@ -157,20 +167,20 @@
  <div class="wrap">
   <div class="hero">
    <div>
-    <h1>Robot penambang asteroid, bekerja untuk agenmu.</h1>
-    <p class="lede">Astromine adalah 10.000 NFT penambang luar angkasa di BNB Chain, khusus untuk wallet pemegang Binance Agent ID (<b>.ai</b>). Miner pertamamu <b>gratis</b>. Setiap Miner yang tier-nya terbuka menambang token <b>$ASTRO</b> setiap jam, tanpa perlu kamu urus.</p>
+    <h1 data-i18n="hero_h1">Asteroid-mining robots, working for your agent.</h1>
+    <p class="lede" data-i18n="hero_lede">Astromine is a fleet of 10,000 asteroid-miner NFTs on BNB Chain, exclusively for wallets holding a Binance Agent ID (<b>.ai</b>). Your first Miner is <b>free</b>. Every Miner with a revealed tier mines the <b>$ASTRO</b> token every hour, hands-off.</p>
     <div class="cta">
-     <a class="btn primary" href="skill.md">Mint lewat agenmu</a>
-     <a class="btn" href="#cara">Cara kerjanya</a>
+     <a class="btn primary" href="skill.md" data-i18n="cta_mint">Mint through your agent</a>
+     <a class="btn" href="#cara" data-i18n="cta_how">How it works</a>
     </div>
     <div class="supply">
-     <div class="row"><span>Suplai ter-mint</span><b><span id="mintedCount">…</span> / 10.000</b></div>
+     <div class="row"><span data-i18n="supply_label">Minted supply</span><b><span id="mintedCount">…</span> / 10,000</b></div>
      <div class="bar"><i id="mintedBar"></i></div>
     </div>
    </div>
    <figure class="viewport" style="margin:0">
-    <img src="images/hero.png" alt="Tiga robot penambang Astromine di antara kristal asteroid">
-    <figcaption><span>Unit penambang kelas Cadet–Admiral</span><b>EST. 2026 · Sabuk Asteroid</b></figcaption>
+    <img src="images/hero.png" alt="Three Astromine mining robots among asteroid crystals">
+    <figcaption><span data-i18n="hero_caption">Mining units, Cadet to Admiral class</span><b>EST. 2026 · <span data-i18n="hero_belt">The Asteroid Belt</span></b></figcaption>
    </figure>
   </div>
  </div>
@@ -178,129 +188,129 @@
 
 <div class="wrap">
  <div class="stats">
-  <div class="stat"><div class="n">10.000</div><div class="l">Total suplai Miner, tidak akan ditambah</div></div>
-  <div class="stat"><div class="n">5 tier</div><div class="l">Kuota pasti per tier, terundi dari hash block</div></div>
-  <div class="stat"><div class="n">30</div><div class="l">Maksimal Miner per wallet</div></div>
-  <div class="stat"><div class="n">150</div><div class="l">$ASTRO per jam untuk tier tertinggi</div></div>
+  <div class="stat"><div class="n">10,000</div><div class="l" data-i18n="stat1">Total Miner supply — never to be increased</div></div>
+  <div class="stat"><div class="n" data-i18n="stat2n">5 tiers</div><div class="l" data-i18n="stat2">Fixed quota per tier, drawn from block hashes</div></div>
+  <div class="stat"><div class="n">30</div><div class="l" data-i18n="stat3">Maximum Miners per wallet</div></div>
+  <div class="stat"><div class="n">150</div><div class="l" data-i18n="stat4">$ASTRO per hour at the top tier</div></div>
  </div>
 
  <section id="tier">
-  <h2>Lima tier, kuota yang tidak bisa diubah</h2>
-  <p class="sub">Tier tersegel saat mint dan terbuka dari hash block tiga block setelahnya, digambar melawan sisa kuota. Hasil akhirnya persis seperti kuota di bawah — tidak ada yang bisa mengaturnya, termasuk pembuat proyek.</p>
+  <h2 data-i18n="tier_h">Five tiers, quotas set in stone</h2>
+  <p class="sub" data-i18n="tier_sub">A tier stays sealed at mint and opens from the hash of the block three blocks later, drawn against the remaining quota. The final counts land exactly on the quotas below — nobody can rig them, including the project's creator.</p>
   <div class="tiers">
    <div class="tier">
-    <img src="images/cadet.png" alt="Miner tier Cadet">
-    <h3>Cadet</h3><div class="rate">10 $ASTRO / jam</div>
-    <div class="quota">Kuota 4.200 · sisa <span data-remain="0">…</span></div>
+    <img src="images/cadet.png" alt="Cadet tier Miner">
+    <h3>Cadet</h3><div class="rate">10 $ASTRO / <span data-i18n="per_hour">hour</span></div>
+    <div class="quota"><span data-i18n="quota_word">Quota</span> 4,200 · <span data-i18n="remain_word">remaining</span> <span data-remain="0">…</span></div>
     <div class="qbar"><i data-qbar="0"></i></div>
    </div>
    <div class="tier">
-    <img src="images/engineer.png" alt="Miner tier Engineer">
-    <h3>Engineer</h3><div class="rate">20 $ASTRO / jam</div>
-    <div class="quota">Kuota 2.820 · sisa <span data-remain="1">…</span></div>
+    <img src="images/engineer.png" alt="Engineer tier Miner">
+    <h3>Engineer</h3><div class="rate">20 $ASTRO / <span data-i18n="per_hour">hour</span></div>
+    <div class="quota"><span data-i18n="quota_word">Quota</span> 2,820 · <span data-i18n="remain_word">remaining</span> <span data-remain="1">…</span></div>
     <div class="qbar"><i data-qbar="1"></i></div>
    </div>
    <div class="tier">
-    <img src="images/pilot.png" alt="Miner tier Pilot">
-    <h3>Pilot</h3><div class="rate">40 $ASTRO / jam</div>
-    <div class="quota">Kuota 1.740 · sisa <span data-remain="2">…</span></div>
+    <img src="images/pilot.png" alt="Pilot tier Miner">
+    <h3>Pilot</h3><div class="rate">40 $ASTRO / <span data-i18n="per_hour">hour</span></div>
+    <div class="quota"><span data-i18n="quota_word">Quota</span> 1,740 · <span data-i18n="remain_word">remaining</span> <span data-remain="2">…</span></div>
     <div class="qbar"><i data-qbar="2"></i></div>
    </div>
    <div class="tier">
-    <img src="images/commander.png" alt="Miner tier Commander">
-    <h3>Commander</h3><div class="rate">75 $ASTRO / jam</div>
-    <div class="quota">Kuota 900 · sisa <span data-remain="3">…</span></div>
+    <img src="images/commander.png" alt="Commander tier Miner">
+    <h3>Commander</h3><div class="rate">75 $ASTRO / <span data-i18n="per_hour">hour</span></div>
+    <div class="quota"><span data-i18n="quota_word">Quota</span> 900 · <span data-i18n="remain_word">remaining</span> <span data-remain="3">…</span></div>
     <div class="qbar"><i data-qbar="3"></i></div>
    </div>
    <div class="tier top">
-    <img src="images/admiral.png" alt="Miner tier Admiral">
-    <h3>Admiral</h3><div class="rate">150 $ASTRO / jam</div>
-    <div class="quota">Kuota 340 · sisa <span data-remain="4">…</span></div>
+    <img src="images/admiral.png" alt="Admiral tier Miner">
+    <h3>Admiral</h3><div class="rate">150 $ASTRO / <span data-i18n="per_hour">hour</span></div>
+    <div class="quota"><span data-i18n="quota_word">Quota</span> 340 · <span data-i18n="remain_word">remaining</span> <span data-remain="4">…</span></div>
     <div class="qbar"><i data-qbar="4"></i></div>
    </div>
   </div>
  </section>
 
  <section id="cara">
-  <h2>Cara kerjanya</h2>
-  <p class="sub">Semua lewat agen AI-mu — situs ini tidak pernah menyentuh wallet atau meminta kunci apa pun. Panduan teknis lengkapnya ada di <a href="skill.md">skill.md</a>.</p>
+  <h2 data-i18n="how_h">How it works</h2>
+  <p class="sub"><span data-i18n="how_sub">Everything runs through your AI agent — this site never touches your wallet or asks for any keys. The full technical guide lives in</span> <a href="skill.md">skill.md</a>.</p>
   <div class="steps">
-   <div class="step"><div class="num">1</div><h3>Pegang Agent ID</h3><p>Wallet agenmu harus memiliki nama <b>.ai</b> dari SPACE ID. Tanpa itu, kontrak menolak mint.</p></div>
-   <div class="step"><div class="num">2</div><h3>Mint Miner</h3><p>Agen membaca harga persis dari kontrak, menampilkannya kepadamu, lalu mint. Yang pertama gratis.</p></div>
-   <div class="step"><div class="num">3</div><h3>Buka tier</h3><p>Tier terundi sendiri dari hash block. Agen memanggil <i>reveal</i> beberapa detik setelah mint dan melaporkan tier-mu.</p></div>
-   <div class="step"><div class="num">4</div><h3>Tambang $ASTRO</h3><p>Agen menyalakan mining sekali, lalu Miner-mu mengumpulkan $ASTRO tiap jam. Klaim kapan saja.</p></div>
+   <div class="step"><div class="num">1</div><h3 data-i18n="s1h">Hold an Agent ID</h3><p data-i18n="s1p">Your agent's wallet needs a <b>.ai</b> name from SPACE ID. Without one, the contract refuses the mint.</p></div>
+   <div class="step"><div class="num">2</div><h3 data-i18n="s2h">Mint a Miner</h3><p data-i18n="s2p">Your agent reads the exact price from the contract, shows it to you, then mints. The first one is free.</p></div>
+   <div class="step"><div class="num">3</div><h3 data-i18n="s3h">Reveal the tier</h3><p data-i18n="s3p">The tier is drawn from a block hash by itself. Your agent calls <i>reveal</i> a few seconds after minting and reports your tier.</p></div>
+   <div class="step"><div class="num">4</div><h3 data-i18n="s4h">Mine $ASTRO</h3><p data-i18n="s4p">One <i>start()</i> call switches mining on, then your Miner gathers $ASTRO every hour. Claim whenever you like.</p></div>
   </div>
  </section>
 
  <section id="harga">
   <div class="split">
    <div>
-    <h2>Harga mint</h2>
-    <p class="sub" style="margin-bottom:20px">Bertahap per wallet, dihitung kontrak — bukan angka promosi.</p>
+    <h2 data-i18n="price_h">Mint pricing</h2>
+    <p class="sub" style="margin-bottom:20px" data-i18n="price_sub">Steps up per wallet, computed by the contract — not a promotional number.</p>
     <table>
-     <tr><th>Miner ke-</th><th style="text-align:right">Harga per Miner</th></tr>
-     <tr><td>1</td><td class="price free">Gratis</td></tr>
-     <tr><td>2 – 10</td><td class="price">0,0003 BNB</td></tr>
-     <tr><td>11 – 20</td><td class="price">0,0006 BNB</td></tr>
-     <tr><td>21 – 30</td><td class="price">0,0009 BNB</td></tr>
+     <tr><th data-i18n="price_th1">Miner #</th><th style="text-align:right" data-i18n="price_th2">Price per Miner</th></tr>
+     <tr><td>1</td><td class="price free" data-i18n="price_free">Free</td></tr>
+     <tr><td>2 – 10</td><td class="price">0.0003 BNB</td></tr>
+     <tr><td>11 – 20</td><td class="price">0.0006 BNB</td></tr>
+     <tr><td>21 – 30</td><td class="price">0.0009 BNB</td></tr>
     </table>
-    <p class="note">Seluruh pembayaran mint diteruskan kontrak langsung ke wallet proyek saat transaksi yang sama — kontrak NFT tidak pernah menahan BNB. Royalti perdagangan sekunder 5% (ERC-2981).</p>
+    <p class="note" data-i18n="price_note">Every mint payment is forwarded by the contract straight to the project wallet in the same transaction — the NFT contract never holds BNB. Secondary-sale royalty is 5% (ERC-2981).</p>
    </div>
    <div>
-    <h2>Mining $ASTRO</h2>
-    <p class="sub" style="margin-bottom:20px">Hasil tambang menumpuk sampai batas penyimpanan, lalu berhenti sampai diklaim.</p>
+    <h2 data-i18n="mine_h">Mining $ASTRO</h2>
+    <p class="sub" style="margin-bottom:20px" data-i18n="mine_sub">Mined tokens pile up until storage fills, then pause until you claim.</p>
     <ul class="facts">
-     <li><span>Kapasitas penyimpanan</span><b>48 jam dari laju mining</b></li>
-     <li><span>Fee klaim</span><b>5% untuk proyek</b></li>
-     <li><span>Suplai $ASTRO</span><b>1 miliar, tetap</b></li>
-     <li><span>Alokasi mining</span><b>900 juta di kontrak mining</b></li>
-     <li><span>Pasar $ASTRO</span><b>Belum ada pool — belum bisa dijual</b></li>
+     <li><span data-i18n="f1l">Storage capacity</span><b data-i18n="f1v">48 hours of your mining rate</b></li>
+     <li><span data-i18n="f2l">Claim fee</span><b data-i18n="f2v">5% to the project</b></li>
+     <li><span data-i18n="f3l">$ASTRO supply</span><b data-i18n="f3v">1 billion, fixed</b></li>
+     <li><span data-i18n="f4l">Mining allocation</span><b data-i18n="f4v">900 million in the mining contracts</b></li>
+     <li><span data-i18n="f5l">$ASTRO market</span><b data-i18n="f5v">No pool yet — not sellable</b></li>
     </ul>
-    <p class="note">$ASTRO adalah token permainan dan komunitas. Belum ada harga pasar, dan tidak ada janji nilai di kemudian hari.</p>
+    <p class="note" data-i18n="mine_note">$ASTRO is a game and community token. It has no market price today, and there is no promise of future value.</p>
    </div>
   </div>
  </section>
 
  <section id="kontrak">
-  <h2>Kontrak resmi</h2>
-  <p class="sub">Hanya tiga alamat ini. Alamat dari pesan, postingan, atau situs lain bukan milik Astromine.</p>
+  <h2 data-i18n="contracts_h">Official contracts</h2>
+  <p class="sub" data-i18n="contracts_sub">Only these three addresses. An address from a message, a post, or any other site is not Astromine.</p>
   <div class="contract">
    <div class="who"><b>Astromine Miners</b><span>NFT · ERC-721</span></div>
    <span class="addr" id="minersAddr">…</span>
-   <button class="copy" data-copy="minersAddr" type="button">Salin</button>
+   <button class="copy" data-copy="minersAddr" type="button" data-i18n="copy">Copy</button>
    <a class="scan" id="minersScan" href="#" target="_blank" rel="noopener">BscScan</a>
   </div>
   <div class="contract">
    <div class="who"><b>$ASTRO</b><span>Token · BEP-20</span></div>
    <span class="addr" id="astroAddr">…</span>
-   <button class="copy" data-copy="astroAddr" type="button">Salin</button>
+   <button class="copy" data-copy="astroAddr" type="button" data-i18n="copy">Copy</button>
    <a class="scan" id="astroScan" href="#" target="_blank" rel="noopener">BscScan</a>
   </div>
   <div class="contract">
-   <div class="who"><b>Mining</b><span>Kontrak penambangan</span></div>
+   <div class="who"><b data-i18n="mining_name">Mining</b><span data-i18n="mining_sub">Mining contract</span></div>
    <span class="addr" id="miningAddr">…</span>
-   <button class="copy" data-copy="miningAddr" type="button">Salin</button>
+   <button class="copy" data-copy="miningAddr" type="button" data-i18n="copy">Copy</button>
    <a class="scan" id="miningScan" href="#" target="_blank" rel="noopener">BscScan</a>
   </div>
  </section>
 
  <section id="faq">
-  <h2>Sering ditanyakan</h2>
+  <h2 data-i18n="faq_h">Frequently asked</h2>
   <details>
-   <summary>Kenapa Miner saya masih “Sealed”?</summary>
-   <p>Tier memang tersegel saat mint supaya undiannya adil. Tier terbuka lewat panggilan <i>reveal</i> beberapa detik setelah mint — biasanya dilakukan agenmu mengikuti panduan. Kalau belum, minta agenmu memanggil reveal untuk batch mint-mu; biayanya hanya gas kecil dari wallet-mu.</p>
+   <summary data-i18n="q1">Why is my Miner still “Sealed”?</summary>
+   <p data-i18n="a1">Tiers are sealed at mint so the draw stays fair. A tier opens through a <i>reveal</i> call a few seconds after minting — your agent normally does this by following the guide. If it hasn't, ask your agent to call reveal for your mint batch; it costs only a little gas from your own wallet.</p>
   </details>
   <details>
-   <summary>Apakah saya bisa mint tanpa agen AI?</summary>
-   <p>Bisa, kontraknya publik — siapa pun dengan wallet berisi Agent ID (.ai) dan sedikit BNB untuk gas dapat mint langsung. Panduan agen hanya cara termudah dan teraman.</p>
+   <summary data-i18n="q2">Can I mint without an AI agent?</summary>
+   <p data-i18n="a2">Yes — the contract is public. Any wallet holding an Agent ID (.ai) and a little BNB for gas can mint directly. The agent guide is simply the easiest and safest route.</p>
   </details>
   <details>
-   <summary>Kapan mining mulai menghasilkan?</summary>
-   <p>Segera setelah tier terbuka dan agen menyalakan mining dengan satu panggilan <i>start()</i>. Hasil menumpuk sampai 48 jam laju mining-mu, lalu berhenti sampai kamu klaim.</p>
+   <summary data-i18n="q3">When does mining start earning?</summary>
+   <p data-i18n="a3">Right after the tier is revealed and your agent switches mining on with one <i>start()</i> call. Earnings accumulate up to 48 hours of your rate, then pause until you claim.</p>
   </details>
   <details>
-   <summary>Apakah $ASTRO bisa dijual?</summary>
-   <p>Belum. Saat ini belum ada pool atau pasar untuk $ASTRO, jadi token ini belum punya harga. Perlakukan Astromine sebagai koleksi dan permainan, bukan investasi.</p>
+   <summary data-i18n="q4">Can $ASTRO be sold?</summary>
+   <p data-i18n="a4">Not yet. There is no pool or market for $ASTRO today, so the token has no price. Treat Astromine as a collectible and a game, not an investment.</p>
   </details>
  </section>
 </div>
@@ -308,8 +318,8 @@
 <footer>
  <div class="wrap">
   <div class="cols">
-   <span>Astromine Mining Corps — proyek independen, tidak berafiliasi dengan Binance atau SPACE ID.</span>
-   <span><a href="skill.md">Panduan agen (skill.md)</a> · <a href="#kontrak">Kontrak</a></span>
+   <span data-i18n="footer_note">Astromine Mining Corps — an independent project, not affiliated with Binance or SPACE ID.</span>
+   <span><a href="skill.md" data-i18n="nav_guide">Agent guide</a> · <a href="#kontrak" data-i18n="nav_contracts">Contracts</a></span>
   </div>
  </div>
 </footer>
@@ -322,13 +332,115 @@
  const scan = (id, v) => { const el = document.getElementById(id); if (el && v) el.href = 'https://bscscan.com/address/' + v; };
  scan('minersScan', c.minersContract); scan('astroScan', c.astroToken); scan('miningScan', c.miningContract);
 
+ /* ---------- i18n: English is the default; ID and ZH switch in place ---------- */
+ const T = {
+  en: null, // the page ships in English; keys below cover id + zh
+  id: {
+   title: 'Astromine — Robot Penambang Asteroid untuk Agen AI di BNB Chain',
+   nav_tier: 'Tier', nav_how: 'Cara kerja', nav_price: 'Harga', nav_contracts: 'Kontrak', nav_guide: 'Panduan agen',
+   hero_h1: 'Robot penambang asteroid, bekerja untuk agenmu.',
+   hero_lede: 'Astromine adalah 10.000 NFT penambang luar angkasa di BNB Chain, khusus untuk wallet pemegang Binance Agent ID (<b>.ai</b>). Miner pertamamu <b>gratis</b>. Setiap Miner yang tier-nya terbuka menambang token <b>$ASTRO</b> tiap jam, tanpa perlu kamu urus.',
+   cta_mint: 'Mint lewat agenmu', cta_how: 'Cara kerjanya', supply_label: 'Suplai ter-mint',
+   hero_caption: 'Unit penambang kelas Cadet–Admiral', hero_belt: 'Sabuk Asteroid',
+   stat1: 'Total suplai Miner, tidak akan ditambah', stat2n: '5 tier', stat2: 'Kuota pasti per tier, terundi dari hash block',
+   stat3: 'Maksimal Miner per wallet', stat4: '$ASTRO per jam untuk tier tertinggi',
+   tier_h: 'Lima tier, kuota yang tidak bisa diubah',
+   tier_sub: 'Tier tersegel saat mint dan terbuka dari hash block tiga block setelahnya, digambar melawan sisa kuota. Hasil akhirnya persis seperti kuota di bawah — tidak ada yang bisa mengaturnya, termasuk pembuat proyek.',
+   per_hour: 'jam', quota_word: 'Kuota', remain_word: 'sisa',
+   how_h: 'Cara kerjanya', how_sub: 'Semua lewat agen AI-mu — situs ini tidak pernah menyentuh wallet atau meminta kunci apa pun. Panduan teknis lengkapnya ada di',
+   s1h: 'Pegang Agent ID', s1p: 'Wallet agenmu harus memiliki nama <b>.ai</b> dari SPACE ID. Tanpa itu, kontrak menolak mint.',
+   s2h: 'Mint Miner', s2p: 'Agen membaca harga persis dari kontrak, menampilkannya kepadamu, lalu mint. Yang pertama gratis.',
+   s3h: 'Buka tier', s3p: 'Tier terundi sendiri dari hash block. Agen memanggil <i>reveal</i> beberapa detik setelah mint dan melaporkan tier-mu.',
+   s4h: 'Tambang $ASTRO', s4p: 'Satu panggilan <i>start()</i> menyalakan mining, lalu Miner-mu mengumpulkan $ASTRO tiap jam. Klaim kapan saja.',
+   price_h: 'Harga mint', price_sub: 'Bertahap per wallet, dihitung kontrak — bukan angka promosi.',
+   price_th1: 'Miner ke-', price_th2: 'Harga per Miner', price_free: 'Gratis',
+   price_note: 'Seluruh pembayaran mint diteruskan kontrak langsung ke wallet proyek di transaksi yang sama — kontrak NFT tidak pernah menahan BNB. Royalti perdagangan sekunder 5% (ERC-2981).',
+   mine_h: 'Mining $ASTRO', mine_sub: 'Hasil tambang menumpuk sampai penyimpanan penuh, lalu berhenti sampai diklaim.',
+   f1l: 'Kapasitas penyimpanan', f1v: '48 jam dari laju mining-mu', f2l: 'Fee klaim', f2v: '5% untuk proyek',
+   f3l: 'Suplai $ASTRO', f3v: '1 miliar, tetap', f4l: 'Alokasi mining', f4v: '900 juta di kontrak mining',
+   f5l: 'Pasar $ASTRO', f5v: 'Belum ada pool — belum bisa dijual',
+   mine_note: '$ASTRO adalah token permainan dan komunitas. Belum ada harga pasar, dan tidak ada janji nilai di kemudian hari.',
+   contracts_h: 'Kontrak resmi', contracts_sub: 'Hanya tiga alamat ini. Alamat dari pesan, postingan, atau situs lain bukan milik Astromine.',
+   mining_name: 'Mining', mining_sub: 'Kontrak penambangan', copy: 'Salin', copied: 'Tersalin',
+   faq_h: 'Sering ditanyakan',
+   q1: 'Kenapa Miner saya masih “Sealed”?',
+   a1: 'Tier memang tersegel saat mint supaya undiannya adil. Tier terbuka lewat panggilan <i>reveal</i> beberapa detik setelah mint — biasanya dilakukan agenmu mengikuti panduan. Kalau belum, minta agenmu memanggil reveal untuk batch mint-mu; biayanya hanya gas kecil dari wallet-mu.',
+   q2: 'Apakah saya bisa mint tanpa agen AI?',
+   a2: 'Bisa — kontraknya publik. Siapa pun dengan wallet berisi Agent ID (.ai) dan sedikit BNB untuk gas dapat mint langsung. Panduan agen hanya cara termudah dan teraman.',
+   q3: 'Kapan mining mulai menghasilkan?',
+   a3: 'Segera setelah tier terbuka dan agen menyalakan mining dengan satu panggilan <i>start()</i>. Hasil menumpuk sampai 48 jam laju mining-mu, lalu berhenti sampai kamu klaim.',
+   q4: 'Apakah $ASTRO bisa dijual?',
+   a4: 'Belum. Saat ini belum ada pool atau pasar untuk $ASTRO, jadi token ini belum punya harga. Perlakukan Astromine sebagai koleksi dan permainan, bukan investasi.',
+   footer_note: 'Astromine Mining Corps — proyek independen, tidak berafiliasi dengan Binance atau SPACE ID.'
+  },
+  zh: {
+   title: 'Astromine — BNB Chain 上为 AI 代理工作的小行星采矿机器人',
+   nav_tier: '等级', nav_how: '运作方式', nav_price: '价格', nav_contracts: '合约', nav_guide: '代理指南',
+   hero_h1: '小行星采矿机器人，为你的代理打工。',
+   hero_lede: 'Astromine 是 BNB Chain 上的 10,000 个小行星采矿 NFT，专为持有 Binance Agent ID（<b>.ai</b>）的钱包而设。你的第一个 Miner <b>免费</b>。每个已揭示等级的 Miner 每小时自动开采 <b>$ASTRO</b> 代币，无需你操心。',
+   cta_mint: '通过你的代理铸造', cta_how: '运作方式', supply_label: '已铸造数量',
+   hero_caption: '采矿单位，学员至上将级别', hero_belt: '小行星带',
+   stat1: 'Miner 总供应量，永不增发', stat2n: '5 个等级', stat2: '每个等级配额固定，由区块哈希抽取',
+   stat3: '每个钱包最多持有的 Miner', stat4: '最高等级每小时 $ASTRO 产量',
+   tier_h: '五个等级，配额不可更改',
+   tier_sub: '等级在铸造时密封，三个区块后由该区块的哈希揭示，并按剩余配额抽取。最终数量将与下表配额完全一致——任何人都无法操纵，包括项目创建者。',
+   per_hour: '小时', quota_word: '配额', remain_word: '剩余',
+   how_h: '运作方式', how_sub: '一切都通过你的 AI 代理完成——本站从不接触你的钱包，也不会索要任何密钥。完整技术指南见',
+   s1h: '持有 Agent ID', s1p: '你的代理钱包需要一个来自 SPACE ID 的 <b>.ai</b> 名称。没有它，合约会拒绝铸造。',
+   s2h: '铸造 Miner', s2p: '代理从合约读取确切价格，向你展示，然后铸造。第一个免费。',
+   s3h: '揭示等级', s3p: '等级由区块哈希自动抽取。代理在铸造几秒后调用 <i>reveal</i> 并向你报告等级。',
+   s4h: '开采 $ASTRO', s4p: '一次 <i>start()</i> 调用开启采矿，之后你的 Miner 每小时收集 $ASTRO。随时可以领取。',
+   price_h: '铸造价格', price_sub: '按钱包阶梯递增，由合约计算——不是促销数字。',
+   price_th1: '第几个 Miner', price_th2: '每个 Miner 价格', price_free: '免费',
+   price_note: '每笔铸造付款都由合约在同一笔交易中直接转发到项目钱包——NFT 合约从不持有 BNB。二级销售版税为 5%（ERC-2981）。',
+   mine_h: '开采 $ASTRO', mine_sub: '开采所得不断累积，直到储存装满，然后暂停，直到你领取。',
+   f1l: '储存容量', f1v: '你采矿速率的 48 小时', f2l: '领取费用', f2v: '5% 归项目方',
+   f3l: '$ASTRO 供应量', f3v: '10 亿，固定', f4l: '采矿分配', f4v: '采矿合约中 9 亿',
+   f5l: '$ASTRO 市场', f5v: '暂无流动池——尚不可出售',
+   mine_note: '$ASTRO 是游戏和社区代币。目前没有市场价格，也不承诺未来价值。',
+   contracts_h: '官方合约', contracts_sub: '只有这三个地址。来自消息、帖子或任何其他网站的地址都不属于 Astromine。',
+   mining_name: '采矿', mining_sub: '采矿合约', copy: '复制', copied: '已复制',
+   faq_h: '常见问题',
+   q1: '为什么我的 Miner 还是“Sealed”？',
+   a1: '等级在铸造时密封是为了保证抽取公平。等级在铸造几秒后通过一次 <i>reveal</i> 调用开启——通常由你的代理按指南完成。如果还没有，请让你的代理为你的铸造批次调用 reveal；只需从你自己的钱包支付少量 gas。',
+   q2: '没有 AI 代理可以铸造吗？',
+   a2: '可以——合约是公开的。任何持有 Agent ID（.ai）且有少量 BNB 支付 gas 的钱包都可以直接铸造。代理指南只是最简单、最安全的途径。',
+   q3: '采矿什么时候开始产生收益？',
+   a3: '等级揭示后，代理用一次 <i>start()</i> 调用开启采矿即可。收益累积至你速率的 48 小时，然后暂停，直到你领取。',
+   q4: '$ASTRO 可以出售吗？',
+   a4: '暂时不可以。目前 $ASTRO 没有流动池或市场，因此没有价格。请把 Astromine 当作收藏品和游戏，而不是投资。',
+   footer_note: 'Astromine Mining Corps——独立项目，与 Binance 或 SPACE ID 无关。'
+  }
+ };
+ const EN = {}; // captured from the shipped English DOM on first switch
+ let lang = 'en';
+ const fmt = (n) => n.toLocaleString(lang === 'id' ? 'id-ID' : lang === 'zh' ? 'zh-CN' : 'en-US');
+ function applyLang(l) {
+  lang = l;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+   const k = el.dataset.i18n;
+   if (!(k in EN)) EN[k] = el.innerHTML;
+   const dict = T[l];
+   el.innerHTML = dict && dict[k] ? dict[k] : EN[k];
+  });
+  document.title = T[l] && T[l].title ? T[l].title : 'Astromine — Asteroid-Mining Robots for AI Agents on BNB Chain';
+  document.documentElement.lang = l === 'zh' ? 'zh-CN' : l;
+  document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === l ? 'true' : 'false'));
+  document.querySelectorAll('.copy').forEach(b => b.textContent = T[l] && T[l].copy ? T[l].copy : 'Copy');
+  try { localStorage.setItem('astromine-lang', l); } catch {}
+  if (window.__minted !== undefined) document.getElementById('mintedCount').textContent = fmt(window.__minted);
+ }
+ document.querySelectorAll('.lang button').forEach(b => b.addEventListener('click', () => applyLang(b.dataset.lang)));
+ try { const saved = localStorage.getItem('astromine-lang'); if (saved && saved !== 'en') applyLang(saved); } catch {}
+
  document.querySelectorAll('.copy').forEach(btn => {
   btn.addEventListener('click', async () => {
    const el = document.getElementById(btn.dataset.copy);
    if (!el) return;
-   try { await navigator.clipboard.writeText(el.textContent.trim()); btn.textContent = 'Tersalin'; }
-   catch { btn.textContent = 'Gagal'; }
-   setTimeout(() => btn.textContent = 'Salin', 1600);
+   const ok = T[lang] && T[lang].copied ? T[lang].copied : 'Copied';
+   try { await navigator.clipboard.writeText(el.textContent.trim()); btn.textContent = ok; }
+   catch { btn.textContent = '✕'; }
+   setTimeout(() => btn.textContent = T[lang] && T[lang].copy ? T[lang].copy : 'Copy', 1600);
   });
  });
 
@@ -344,7 +456,8 @@
   try {
    const minted = await call('0xa2309ff8');
    if (minted !== null) {
-    document.getElementById('mintedCount').textContent = minted.toLocaleString('id-ID');
+    window.__minted = Number(minted);
+    document.getElementById('mintedCount').textContent = fmt(window.__minted);
     document.getElementById('mintedBar').style.width = (Number(minted) / 100).toFixed(2) + '%';
    }
    const quotas = [4200, 2820, 1740, 900, 340];
@@ -352,7 +465,7 @@
     const rem = await call('0xa65720f0' + t.toString(16).padStart(64, '0'));
     if (rem === null) continue;
     const el = document.querySelector(`[data-remain="${t}"]`);
-    if (el) el.textContent = rem.toLocaleString('id-ID');
+    if (el) el.textContent = fmt(Number(rem));
     const bar = document.querySelector(`[data-qbar="${t}"]`);
     if (bar) bar.style.width = ((quotas[t] - Number(rem)) / quotas[t] * 100).toFixed(1) + '%';
    }
