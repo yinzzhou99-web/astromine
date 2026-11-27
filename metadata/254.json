@@ -1,0 +1,15 @@
+{
+  "name": "Astromine Miner #254 — Admiral",
+  "description": "A Admiral-class Astromine Miner robot, mining $ASTRO among the asteroids.",
+  "image": "https://astromine-miners.pages.dev/images/admiral.png",
+  "attributes": [
+    {
+      "trait_type": "Tier",
+      "value": "Admiral"
+    },
+    {
+      "trait_type": "Mining rate",
+      "value": "150 ASTRO/hour"
+    }
+  ]
+}
