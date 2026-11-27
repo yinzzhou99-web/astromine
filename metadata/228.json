@@ -1,0 +1,15 @@
+{
+  "name": "Astromine Miner #228 — Cadet",
+  "description": "A Cadet-class Astromine Miner robot, mining $ASTRO among the asteroids.",
+  "image": "https://astromine-miners.pages.dev/images/cadet.png",
+  "attributes": [
+    {
+      "trait_type": "Tier",
+      "value": "Cadet"
+    },
+    {
+      "trait_type": "Mining rate",
+      "value": "10 ASTRO/hour"
+    }
+  ]
+}
