@@ -141,9 +141,28 @@
  /* scroll story (Theatre.js) — elements start hidden only when
     JS is on; the class is removed by scroll-anim.js or a timer */
  .anim-pre [data-anim]{opacity:0}
- .viewport img{animation:floaty 7s ease-in-out infinite}
- @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
- @media (prefers-reduced-motion: reduce){.viewport img{animation:none}}
+
+ /* hero cards — three tier cards fanned over the starfield */
+ .herocards{position:relative;height:480px}
+ @media(max-width:860px){.herocards{height:400px;max-width:520px}}
+ .hcardw{position:absolute;width:56%;will-change:transform,opacity}
+ .hcardw.c1{left:0;top:52px;z-index:1}
+ .hcardw.c2{left:22%;top:0;z-index:2;width:58%}
+ .hcardw.c3{right:0;top:52px;z-index:1}
+ .hcard{border:1px solid var(--line2);border-radius:16px;padding:8px;background:linear-gradient(165deg,rgba(109,93,246,.16),rgba(92,232,213,.05) 60%,transparent);animation:floaty 7s ease-in-out infinite}
+ .hcardw.c1 .hcard{--rot:-7deg;animation-delay:-2s}
+ .hcardw.c2 .hcard{--rot:0deg;animation-duration:8s}
+ .hcardw.c3 .hcard{--rot:7deg;animation-delay:-4s}
+ .hcard.gold{border-color:rgba(255,196,77,.55);box-shadow:0 18px 50px rgba(255,196,77,.12)}
+ .hcard img{display:block;width:100%;border-radius:10px}
+ .hcard .tag{display:flex;justify-content:space-between;align-items:baseline;padding:9px 6px 3px;font-size:13.5px}
+ .hcard .tag b{font-size:15px}
+ .hcard .tag span{color:var(--cyan);font-weight:600;font-size:13px}
+ .hcard.gold .tag span{color:var(--gold)}
+ .herocap{display:flex;justify-content:space-between;margin-top:14px;font-size:13px;color:var(--faint)}
+ .herocap b{color:var(--muted);font-weight:500}
+ @keyframes floaty{0%,100%{transform:rotate(var(--rot,0deg)) translateY(0)}50%{transform:rotate(var(--rot,0deg)) translateY(-9px)}}
+ @media (prefers-reduced-motion: reduce){.hcard{animation:none}}
 </style>
 <script>
  document.documentElement.classList.add('anim-pre');
@@ -189,10 +208,29 @@
      <div class="bar"><i id="mintedBar"></i></div>
     </div>
    </div>
-   <figure class="viewport" style="margin:0" data-anim="art" data-sheet="Hero">
-    <img src="images/hero.png" alt="Three Astromine mining robots among asteroid crystals">
-    <figcaption><span data-i18n="hero_caption">Mining units, Cadet to Admiral class</span><b>EST. 2026 · <span data-i18n="hero_belt">The Asteroid Belt</span></b></figcaption>
-   </figure>
+   <div>
+    <div class="herocards">
+     <div class="hcardw c1" data-anim="card1" data-sheet="Hero">
+      <div class="hcard">
+       <img src="images/engineer.png" alt="Engineer tier Miner">
+       <div class="tag"><b>Engineer</b><span>20 $ASTRO / <span data-i18n="per_hour">hour</span></span></div>
+      </div>
+     </div>
+     <div class="hcardw c2" data-anim="card2" data-sheet="Hero">
+      <div class="hcard gold">
+       <img src="images/admiral.png" alt="Admiral tier Miner">
+       <div class="tag"><b>Admiral</b><span>150 $ASTRO / <span data-i18n="per_hour">hour</span></span></div>
+      </div>
+     </div>
+     <div class="hcardw c3" data-anim="card3" data-sheet="Hero">
+      <div class="hcard">
+       <img src="images/pilot.png" alt="Pilot tier Miner">
+       <div class="tag"><b>Pilot</b><span>40 $ASTRO / <span data-i18n="per_hour">hour</span></span></div>
+      </div>
+     </div>
+    </div>
+    <div class="herocap"><span data-i18n="hero_caption">Mining units, Cadet to Admiral class</span><b>EST. 2026 · <span data-i18n="hero_belt">The Asteroid Belt</span></b></div>
+   </div>
   </div>
  </div>
 </header>

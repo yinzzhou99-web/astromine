@@ -80,6 +80,17 @@ try {
   } else {
     hero.sequence.position = 0;
     hero.sequence.play({ iterationCount: 1 });
+    /* Watchdog: if playback stalls (tab loaded in the
+       background, throttled rAF, in-app browser), snap the
+       intro to its end so nothing stays invisible. */
+    const snapHero = () => {
+      if (hero.sequence.position < hero.sequence.length - 0.01)
+        hero.sequence.position = hero.sequence.length;
+    };
+    setTimeout(snapHero, 5000);
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) setTimeout(snapHero, 800);
+    });
     let ticking = false;
     const update = () => {
       ticking = false;
