@@ -3,554 +3,1810 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Astromine — Asteroid-Mining Robots for AI Agents on BNB Chain</title>
-<meta name="description" content="Astromine is a fleet of 10,000 asteroid-miner NFTs on BNB Chain, exclusively for Binance Agent ID (.ai) holders. First Miner free, tiers drawn fairly from block hashes, and every Miner mines the $ASTRO token hourly.">
+<title>Astromine — Miner untuk agenmu · BNB Chain</title>
+<meta name="description" content="10.000 Miner NFT penambang asteroid di BNB Chain, khusus pemegang Binance Agent ID (.ai). Miner pertama gratis, tier diundi dari hash blok, tiap Miner menambang $ASTRO setiap jam.">
+<meta name="theme-color" content="#05070F">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Astromine Mining Corps — Miner untuk agenmu">
+<meta property="og:description" content="10.000 Miner NFT di BNB Chain. Miner #1 gratis. Tier diundi dari hash blok, kuota tidak bisa diubah siapa pun.">
+<meta property="og:image" content="https://astromine-miners.pages.dev/images/astro-logo.png">
 <link rel="icon" href="images/astro-logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
- :root{
-  --ink:#060913; --panel:#0C1122; --panel2:#0A0E1E; --line:#1E2748; --line2:#2A3560;
-  --text:#EDF1FF; --muted:#97A1C4; --faint:#6B76A0;
-  --cyan:#5CE8D5; --gold:#FFC44D; --violet:#6D5DF6;
- }
- *{box-sizing:border-box}
- html{scroll-behavior:smooth}
- body{font-family:"Space Grotesk",system-ui,sans-serif;background:var(--ink);color:var(--text);margin:0;line-height:1.55;-webkit-font-smoothing:antialiased}
- a{color:var(--cyan);text-decoration:none}
- a:hover{text-decoration:underline}
- :focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
- .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+/* ============================================================
+   ASTROMINE — tokens
+   ============================================================ */
+:root{
+  --void:#05070F;
+  --space:#0A0E20;
+  --space-2:#0F1530;
+  --ink:#080C1C;
+  --cream:#FFF4DE;
+  --cream-2:#F5E4C2;
+  --gold:#FFC247;
+  --gold-lite:#FFE3A1;
+  --gold-deep:#D98F1E;
+  --crimson:#F2534E;
+  --teal:#39D8C8;
 
- /* nav */
- nav{display:flex;align-items:center;gap:14px;padding:20px 0}
- nav .mark{display:flex;align-items:center;gap:11px;color:var(--text);font-weight:700;font-size:19px;letter-spacing:.02em}
- nav .mark:hover{text-decoration:none}
- nav .mark img{width:36px;height:36px;border-radius:50%}
- nav .mark small{display:block;font-weight:500;font-size:11px;color:var(--faint);letter-spacing:.08em}
- nav .links{margin-left:auto;display:flex;gap:26px;font-size:15px;align-items:center}
- nav .links a{color:var(--muted)}
- nav .links a:hover{color:var(--text);text-decoration:none}
- @media(max-width:720px){nav .links a{display:none}}
- .lang{display:flex;border:1px solid var(--line2);border-radius:99px;overflow:hidden;flex:none}
- .lang button{background:transparent;border:0;color:var(--muted);font:inherit;font-size:13px;padding:6px 12px;cursor:pointer}
- .lang button[aria-pressed="true"]{background:var(--cyan);color:#04231E;font-weight:700}
- .lang button:hover{color:var(--text)}
- .lang button[aria-pressed="true"]:hover{color:#04231E}
+  --t1:#39D8C8;
+  --t2:#F59A3C;
+  --t3:#4D8DF2;
+  --t4:#A277FF;
+  --t5:#FFC247;
 
- /* hero */
- header{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
- #stars{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
- .hero{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:64px 0 72px}
- @media(max-width:860px){.hero{grid-template-columns:1fr;padding:40px 0 56px}}
- .hero h1{font-size:clamp(38px,5.2vw,58px);line-height:1.06;font-weight:700;margin:0 0 20px;letter-spacing:-.01em}
- .hero p.lede{font-size:18px;color:var(--muted);margin:0 0 28px;max-width:34em}
- .hero p.lede b{color:var(--text)}
- .cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
- .btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:600;font-size:15px;border:1px solid var(--line2);color:var(--text);background:var(--panel)}
- .btn:hover{text-decoration:none;border-color:var(--cyan)}
- .btn.primary{background:var(--cyan);border-color:var(--cyan);color:#04231E}
- .btn.primary:hover{background:#7BF0E0}
- .supply{max-width:480px}
- .supply .row{display:flex;justify-content:space-between;font-size:14px;color:var(--muted);margin-bottom:8px}
- .supply .row b{color:var(--text);font-weight:600}
- .bar{height:8px;background:var(--panel);border:1px solid var(--line);border-radius:99px;overflow:hidden}
- .bar i{display:block;height:100%;width:0;background:var(--cyan);border-radius:99px;transition:width 1s ease}
- .viewport{position:relative;border:1px solid var(--line2);border-radius:18px;padding:10px;background:linear-gradient(160deg,rgba(109,93,246,.14),rgba(92,232,213,.05) 55%,transparent)}
- .viewport img{display:block;width:100%;border-radius:12px}
- .viewport figcaption{display:flex;justify-content:space-between;padding:10px 6px 2px;font-size:13px;color:var(--faint)}
- .viewport figcaption b{color:var(--muted);font-weight:500}
+  --text:#F3EFE2;
+  --muted:#9AA3C6;
+  --faint:#8A93B8;
+  --line:rgba(243,239,226,.13);
+  --line-2:rgba(243,239,226,.24);
 
- /* stat band */
- .stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
- @media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}}
- .stat{padding:26px 8px 26px 0}
- .stat + .stat{border-left:1px solid var(--line);padding-left:24px}
- @media(max-width:720px){.stat + .stat{border-left:none;padding-left:0}}
- .stat .n{font-size:30px;font-weight:700}
- .stat .l{color:var(--muted);font-size:14px;margin-top:2px}
+  --font-display:"Arial Black","Arial Bold","Helvetica Neue",Arial,"Noto Sans SC","Microsoft YaHei",sans-serif;
+  --font-body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans SC","Microsoft YaHei",sans-serif;
+  --font-mono:ui-monospace,"SF Mono","Cascadia Mono","Segoe UI Mono",Consolas,"Liberation Mono",monospace;
 
- section{padding:72px 0}
- section + section{border-top:1px solid var(--line)}
- h2{font-size:clamp(26px,3.4vw,34px);margin:0 0 12px;letter-spacing:-.01em}
- .sub{color:var(--muted);max-width:44em;margin:0 0 36px}
+  --r-sm:6px;
+  --r:14px;
+  --r-lg:26px;
+  --pad:24px;
 
- /* tiers */
- .tiers{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--panel2)}
- @media(max-width:960px){.tiers{grid-template-columns:repeat(2,1fr)}}
- @media(max-width:520px){.tiers{grid-template-columns:1fr}}
- .tier{padding:20px}
- .tier + .tier{border-left:1px solid var(--line)}
- @media(max-width:960px){.tier + .tier{border-left:none}.tier{border-top:1px solid var(--line)}}
- .tier img{width:100%;border-radius:10px;display:block;margin-bottom:14px}
- .tier h3{margin:0 0 2px;font-size:19px}
- .tier .rate{color:var(--cyan);font-weight:600;font-size:15px}
- .tier .quota{color:var(--muted);font-size:13.5px;margin-top:8px}
- .tier .qbar{height:5px;background:#131A36;border-radius:99px;margin-top:8px;overflow:hidden}
- .tier .qbar i{display:block;height:100%;background:var(--line2)}
- .tier.top{box-shadow:inset 0 0 0 1px var(--gold);background:linear-gradient(180deg,rgba(255,196,77,.08),transparent 65%)}
- .tier.top .rate{color:var(--gold)}
+  --fs-display:clamp(44px,6.2vw,84px);
+  --fs-h2:clamp(28px,3.4vw,44px);
+  --fs-h3:19px;
+  --fs-body:16.5px;
+  --fs-sm:14px;
 
- /* steps */
- .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
- @media(max-width:960px){.steps{grid-template-columns:repeat(2,1fr)}}
- @media(max-width:520px){.steps{grid-template-columns:1fr}}
- .step .num{font-size:15px;color:var(--cyan);font-weight:700;border:1px solid var(--line2);border-radius:50%;width:34px;height:34px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
- .step h3{margin:0 0 6px;font-size:17px}
- .step p{margin:0;color:var(--muted);font-size:14.5px}
+  --zwork-preview-accent:var(--gold);
+  --zwork-preview-mode:dark;
+  --zwork-preview-font-family:var(--font-body);
+  --zwork-preview-type-scale:1;
+  --zwork-preview-density:1;
+  --zwork-preview-motion:1;
+}
 
- /* pricing + mining split */
- .split{display:grid;grid-template-columns:1fr 1fr;gap:56px}
- @media(max-width:860px){.split{grid-template-columns:1fr}}
- table{width:100%;border-collapse:collapse;font-size:15.5px}
- th,td{text-align:left;padding:11px 4px;border-bottom:1px solid var(--line)}
- th{color:var(--muted);font-weight:500}
- tr:last-child td{border-bottom:none}
- td.price{text-align:right;font-weight:600}
- .free{color:var(--cyan)}
- .note{color:var(--muted);font-size:14px;margin-top:16px}
- .facts{list-style:none;margin:0;padding:0}
- .facts li{padding:13px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;font-size:15.5px}
- .facts li:last-child{border-bottom:none}
- .facts li span{color:var(--muted)}
- .facts li b{font-weight:600;text-align:right}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;background:var(--void);color:var(--text);
+  font-family:var(--font-body);font-size:var(--fs-body);line-height:1.6;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+h1,h2,h3,h4,p,ul,figure{margin:0}
+ul{padding:0;list-style:none}
+a{color:var(--gold-lite);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+::selection{background:var(--gold);color:var(--ink)}
 
- /* contracts */
- .contract{display:flex;align-items:center;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
- .contract:last-child{border-bottom:none}
- .contract .who{width:170px;flex:none}
- .contract .who b{display:block;font-size:15.5px}
- .contract .who span{color:var(--faint);font-size:13px}
- .addr{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;color:var(--muted);word-break:break-all;flex:1;min-width:220px}
- .copy{flex:none;background:var(--panel);border:1px solid var(--line2);color:var(--text);border-radius:8px;padding:7px 14px;font:inherit;font-size:13.5px;cursor:pointer}
- .copy:hover{border-color:var(--cyan)}
- .scan{flex:none;font-size:13.5px}
+/* starfield + ambient light, fixed behind everything */
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+    radial-gradient(120% 70% at 78% -10%,rgba(255,194,71,.14),transparent 60%),
+    radial-gradient(90% 60% at 8% 8%,rgba(109,93,246,.16),transparent 62%),
+    radial-gradient(100% 80% at 50% 110%,rgba(57,216,200,.09),transparent 60%),
+    var(--void);
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.55;
+  background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MjAiIGhlaWdodD0iODIwIiB2aWV3Qm94PSIwIDAgODIwIDgyMCI+PGNpcmNsZSBjeD0iMzc4LjYiIGN5PSI1OTguMiIgcj0iMC44IiBmaWxsPSIjRkZFOUMwIiBvcGFjaXR5PSIwLjYxIi8+PGNpcmNsZSBjeD0iMjk3LjQiIGN5PSI0NDguOSIgcj0iMC41NSIgZmlsbD0iI0ZGRTlDMCIgb3BhY2l0eT0iMC40MiIvPjxjaXJjbGUgY3g9IjE2MC43IiBjeT0iMjIzLjciIHI9IjAuNiIgZmlsbD0iI0ZGRTlDMCIgb3BhY2l0eT0iMC4zMyIvPjxjaXJjbGUgY3g9IjM0NS4yIiBjeT0iNTAxLjUiIHI9IjAuODciIGZpbGw9IiNCOUMyRjIiIG9wYWNpdHk9IjAuNjIiLz48Y2lyY2xlIGN4PSIxODcuNyIgY3k9IjM0OS42IiByPSIwLjcyIiBmaWxsPSIjRkZFOUMwIiBvcGFjaXR5PSIwLjQzIi8+PGNpcmNsZSBjeD0iNzMyLjQiIGN5PSIyNTcuNyIgcj0iMC45NSIgZmlsbD0iI0Q5REVGRiIgb3BhY2l0eT0iMC41NSIvPjxjaXJjbGUgY3g9IjY5Mi4xIiBjeT0iNzYwLjkiIHI9IjEuNDciIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuNjkiLz48Y2lyY2xlIGN4PSI2ODMuOSIgY3k9IjE5Mi41IiByPSIwLjYxIiBmaWxsPSIjRDlERUZGIiBvcGFjaXR5PSIwLjI0Ii8+PGNpcmNsZSBjeD0iMTAwLjUiIGN5PSI3NzMuMCIgcj0iMS43OCIgZmlsbD0iI0Q5REVGRiIgb3BhY2l0eT0iMC4xOCIvPjxjaXJjbGUgY3g9IjQ5NC43IiBjeT0iNDk1LjQiIHI9IjEuNDkiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuNzMiLz48Y2lyY2xlIGN4PSI0My44IiBjeT0iNzIxLjEiIHI9IjEuMCIgZmlsbD0iI0I5QzJGMiIgb3BhY2l0eT0iMC42OSIvPjxjaXJjbGUgY3g9IjE3NS43IiBjeT0iNDk1LjIiIHI9IjEuNjIiIGZpbGw9IiNCOUMyRjIiIG9wYWNpdHk9IjAuNDYiLz48Y2lyY2xlIGN4PSIzMjguNSIgY3k9IjQ2LjMiIHI9IjEuMzkiIGZpbGw9IiNCOUMyRjIiIG9wYWNpdHk9IjAuNzIiLz48Y2lyY2xlIGN4PSIzMzEuMCIgY3k9IjM1NC4yIiByPSIxLjc0IiBmaWxsPSIjRkZFOUMwIiBvcGFjaXR5PSIwLjY4Ii8+PGNpcmNsZSBjeD0iMzg2LjEiIGN5PSI1OC4yIiByPSIyLjA3IiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjciLz48Y2lyY2xlIGN4PSIyNTIuNiIgY3k9IjUwNy45IiByPSIxLjA3IiBmaWxsPSIjRkZFOUMwIiBvcGFjaXR5PSIwLjI3Ii8+PGNpcmNsZSBjeD0iNzA3LjEiIGN5PSI1NTguMiIgcj0iMC42NiIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC43MiIvPjxjaXJjbGUgY3g9IjQzOC4wIiBjeT0iOTQuMyIgcj0iMC42NCIgZmlsbD0iI0Q5REVGRiIgb3BhY2l0eT0iMC40MSIvPjxjaXJjbGUgY3g9IjU4NS44IiBjeT0iNTg0LjAiIHI9IjAuNzYiIGZpbGw9IiNGRkU5QzAiIG9wYWNpdHk9IjAuNzIiLz48Y2lyY2xlIGN4PSI3NzMuNiIgY3k9IjE5OS42IiByPSIxLjc5IiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjU2Ii8+PGNpcmNsZSBjeD0iNDMwLjkiIGN5PSIxMzUuOCIgcj0iMS43NSIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC40Ii8+PGNpcmNsZSBjeD0iMTUxLjUiIGN5PSI1OC4xIiByPSIwLjY5IiBmaWxsPSIjQjlDMkYyIiBvcGFjaXR5PSIwLjUzIi8+PGNpcmNsZSBjeD0iNDEwLjkiIGN5PSI3MDYuMiIgcj0iMi4wIiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjI0Ii8+PGNpcmNsZSBjeD0iMTc3LjgiIGN5PSI2MzYuOSIgcj0iMS40NyIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC42Ii8+PGNpcmNsZSBjeD0iMjc2LjIiIGN5PSI1NzUuNCIgcj0iMC45OCIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC41NyIvPjxjaXJjbGUgY3g9IjU2Ny42IiBjeT0iNjEzLjciIHI9IjEuNTciIGZpbGw9IiNEOURFRkYiIG9wYWNpdHk9IjAuODEiLz48Y2lyY2xlIGN4PSI0NjMuMiIgY3k9IjI0NC45IiByPSIxLjE3IiBmaWxsPSIjRDlERUZGIiBvcGFjaXR5PSIwLjU0Ii8+PGNpcmNsZSBjeD0iNjExLjkiIGN5PSI1NjAuMSIgcj0iMC44OCIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC44NSIvPjxjaXJjbGUgY3g9IjI1NS42IiBjeT0iNjU2LjIiIHI9IjEuMTEiIGZpbGw9IiNEOURFRkYiIG9wYWNpdHk9IjAuNTQiLz48Y2lyY2xlIGN4PSIxNzEuNiIgY3k9IjM2NC43IiByPSIwLjYzIiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjE4Ii8+PGNpcmNsZSBjeD0iMjI1LjAiIGN5PSIyMzEuNyIgcj0iMC43NiIgZmlsbD0iI0Q5REVGRiIgb3BhY2l0eT0iMC4zNiIvPjxjaXJjbGUgY3g9IjIzNy44IiBjeT0iNTA5LjUiIHI9IjAuOTYiIGZpbGw9IiNGRkU5QzAiIG9wYWNpdHk9IjAuNTEiLz48Y2lyY2xlIGN4PSIzMzkuNiIgY3k9Ijc4OS42IiByPSIwLjc3IiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjc2Ii8+PGNpcmNsZSBjeD0iMjAyLjAiIGN5PSI1NC4wIiByPSIxLjcyIiBmaWxsPSIjRDlERUZGIiBvcGFjaXR5PSIwLjI4Ii8+PGNpcmNsZSBjeD0iMTUuNyIgY3k9IjgwNS4yIiByPSIxLjA0IiBmaWxsPSIjRkZFOUMwIiBvcGFjaXR5PSIwLjI3Ii8+PGNpcmNsZSBjeD0iNDk1LjkiIGN5PSI5NS4wIiByPSIxLjQ3IiBmaWxsPSIjRDlERUZGIiBvcGFjaXR5PSIwLjIyIi8+PGNpcmNsZSBjeD0iMTA2LjIiIGN5PSIxMzYuOSIgcj0iMC43NyIgZmlsbD0iI0I5QzJGMiIgb3BhY2l0eT0iMC4zNyIvPjxjaXJjbGUgY3g9IjE2Mi4xIiBjeT0iNDA1LjgiIHI9IjEuMyIgZmlsbD0iI0Q5REVGRiIgb3BhY2l0eT0iMC40NiIvPjxjaXJjbGUgY3g9IjguOCIgY3k9IjM0Mi4zIiByPSIwLjkiIGZpbGw9IiNEOURFRkYiIG9wYWNpdHk9IjAuNzkiLz48Y2lyY2xlIGN4PSIyOTQuOCIgY3k9IjQxNS43IiByPSIwLjgyIiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjciLz48Y2lyY2xlIGN4PSIxMy40IiBjeT0iNTEwLjQiIHI9IjEuNCIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC4zIi8+PGNpcmNsZSBjeD0iNzIwLjAiIGN5PSIyMjEuNCIgcj0iMC43OSIgZmlsbD0iI0I5QzJGMiIgb3BhY2l0eT0iMC44NCIvPjxjaXJjbGUgY3g9IjQzMC4zIiBjeT0iMTMuNyIgcj0iMi4wIiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjQ0Ii8+PGNpcmNsZSBjeD0iMzIzLjUiIGN5PSI1NC40IiByPSIwLjk5IiBmaWxsPSIjRkZFOUMwIiBvcGFjaXR5PSIwLjc0Ii8+PGNpcmNsZSBjeD0iMTczLjMiIGN5PSIyNjcuNSIgcj0iMS41OSIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC4zMiIvPjxjaXJjbGUgY3g9Ijc3MC4wIiBjeT0iMjEyLjAiIHI9IjEuMzYiIGZpbGw9IiNGRkU5QzAiIG9wYWNpdHk9IjAuNDUiLz48Y2lyY2xlIGN4PSIyMy45IiBjeT0iMTc2LjciIHI9IjAuODEiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuNTUiLz48Y2lyY2xlIGN4PSI3MjcuNCIgY3k9IjU0Mi4xIiByPSIwLjU2IiBmaWxsPSIjRkZFOUMwIiBvcGFjaXR5PSIwLjU2Ii8+PGNpcmNsZSBjeD0iNzI4LjAiIGN5PSIxODkuOSIgcj0iMS4xMSIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC42NCIvPjxjaXJjbGUgY3g9IjUxNC4zIiBjeT0iNTY1LjAiIHI9IjAuNzciIGZpbGw9IiNGRkU5QzAiIG9wYWNpdHk9IjAuNTgiLz48Y2lyY2xlIGN4PSIzNTIuOCIgY3k9IjcxMC4wIiByPSIxLjQyIiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjU5Ii8+PGNpcmNsZSBjeD0iNDkwLjUiIGN5PSI1MzcuMiIgcj0iMS43NyIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC44MiIvPjxjaXJjbGUgY3g9Ijc4Ny40IiBjeT0iNjcyLjQiIHI9IjAuODciIGZpbGw9IiNEOURFRkYiIG9wYWNpdHk9IjAuNzQiLz48Y2lyY2xlIGN4PSIyODAuMiIgY3k9IjI2Ni42IiByPSIxLjEiIGZpbGw9IiNEOURFRkYiIG9wYWNpdHk9IjAuNTgiLz48Y2lyY2xlIGN4PSI0MzYuMiIgY3k9IjIyNy42IiByPSIxLjI2IiBmaWxsPSIjRkZFOUMwIiBvcGFjaXR5PSIwLjM0Ii8+PGNpcmNsZSBjeD0iMjQ4LjciIGN5PSIyMzcuNSIgcj0iMS4wMyIgZmlsbD0iI0ZGRTlDMCIgb3BhY2l0eT0iMC43MyIvPjxjaXJjbGUgY3g9IjMyMC4yIiBjeT0iMTM4LjEiIHI9IjAuNjciIGZpbGw9IiNCOUMyRjIiIG9wYWNpdHk9IjAuMjkiLz48Y2lyY2xlIGN4PSIxNi4xIiBjeT0iODA0LjkiIHI9IjAuNyIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC4yNSIvPjxjaXJjbGUgY3g9IjcwLjQiIGN5PSIyNTYuMSIgcj0iMS40NyIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC4yMSIvPjxjaXJjbGUgY3g9IjU0Ni4xIiBjeT0iNjUzLjMiIHI9IjAuODIiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuMjkiLz48Y2lyY2xlIGN4PSI0NjQuMCIgY3k9IjI2NC42IiByPSIwLjYzIiBmaWxsPSIjQjlDMkYyIiBvcGFjaXR5PSIwLjQxIi8+PGNpcmNsZSBjeD0iNDM0LjEiIGN5PSIyNjAuNSIgcj0iMS41NiIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC42OCIvPjxjaXJjbGUgY3g9IjI2OC42IiBjeT0iNjguNSIgcj0iMC44NCIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC4yOSIvPjxjaXJjbGUgY3g9IjM1MC45IiBjeT0iNTQ4LjAiIHI9IjEuNDUiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuODMiLz48Y2lyY2xlIGN4PSIyNTYuMSIgY3k9IjMwNy42IiByPSIxLjE5IiBmaWxsPSIjRDlERUZGIiBvcGFjaXR5PSIwLjIxIi8+PGNpcmNsZSBjeD0iMzMzLjciIGN5PSI1MjQuMyIgcj0iMS40MiIgZmlsbD0iI0ZGRTlDMCIgb3BhY2l0eT0iMC44MiIvPjxjaXJjbGUgY3g9IjcxNi44IiBjeT0iMjA0LjQiIHI9IjEuNTUiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuNSIvPjxjaXJjbGUgY3g9IjgwNS42IiBjeT0iMzUyLjciIHI9IjEuOCIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC41MyIvPjxjaXJjbGUgY3g9IjcwNC43IiBjeT0iNjQ2LjEiIHI9IjEuMCIgZmlsbD0iI0ZGRTlDMCIgb3BhY2l0eT0iMC40OSIvPjxjaXJjbGUgY3g9IjQxMC4xIiBjeT0iNzYxLjciIHI9IjEuOTQiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuNDgiLz48Y2lyY2xlIGN4PSI0MDcuOCIgY3k9IjEzNS4xIiByPSIxLjU1IiBmaWxsPSIjRkZFOUMwIiBvcGFjaXR5PSIwLjgzIi8+PGNpcmNsZSBjeD0iNDQuNyIgY3k9IjE1MS41IiByPSIxLjgiIGZpbGw9IiNGRkU5QzAiIG9wYWNpdHk9IjAuNTciLz48Y2lyY2xlIGN4PSI2MzcuOSIgY3k9IjU4LjQiIHI9IjEuOTgiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuMzIiLz48Y2lyY2xlIGN4PSIxOTkuMyIgY3k9Ijc2Mi4wIiByPSIwLjY2IiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjc1Ii8+PGNpcmNsZSBjeD0iMTI3LjEiIGN5PSI0MjIuOSIgcj0iMi4xOSIgZmlsbD0iI0ZGRTlDMCIgb3BhY2l0eT0iMC4yIi8+PGNpcmNsZSBjeD0iNDg1LjAiIGN5PSIyNS4zIiByPSIxLjIxIiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjY3Ii8+PGNpcmNsZSBjeD0iMzkzLjgiIGN5PSIzMzAuNCIgcj0iMC43NiIgZmlsbD0iI0Q5REVGRiIgb3BhY2l0eT0iMC42OCIvPjxjaXJjbGUgY3g9IjI1My4zIiBjeT0iMzQzLjAiIHI9IjEuMzYiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuODEiLz48Y2lyY2xlIGN4PSIxNjIuNSIgY3k9IjEyNC45IiByPSIxLjc2IiBmaWxsPSIjRkZFOUMwIiBvcGFjaXR5PSIwLjQ3Ii8+PGNpcmNsZSBjeD0iMTMzLjYiIGN5PSI0OS4zIiByPSIwLjc3IiBmaWxsPSIjRkZFOUMwIiBvcGFjaXR5PSIwLjYzIi8+PGNpcmNsZSBjeD0iMjg2LjgiIGN5PSI2MTAuMSIgcj0iMC43NiIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC42OCIvPjxjaXJjbGUgY3g9IjU0OS4yIiBjeT0iMjUuMiIgcj0iMC42MSIgZmlsbD0iI0I5QzJGMiIgb3BhY2l0eT0iMC41Ii8+PGNpcmNsZSBjeD0iNzc3LjciIGN5PSI2OTMuMCIgcj0iMS45OSIgZmlsbD0iI0I5QzJGMiIgb3BhY2l0eT0iMC40NiIvPjxjaXJjbGUgY3g9IjExMy43IiBjeT0iMTE1LjEiIHI9IjIuMDQiIGZpbGw9IiNGRkU5QzAiIG9wYWNpdHk9IjAuNjQiLz48Y2lyY2xlIGN4PSI1MjAuNSIgY3k9IjM0Ni43IiByPSIwLjYxIiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjciLz48Y2lyY2xlIGN4PSIxNTguMyIgY3k9IjEzMS4yIiByPSIxLjk1IiBmaWxsPSIjRkZFOUMwIiBvcGFjaXR5PSIwLjI5Ii8+PGNpcmNsZSBjeD0iMzI3LjMiIGN5PSIxMzkuOSIgcj0iMS44OCIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC42MyIvPjxjaXJjbGUgY3g9IjQwOC4zIiBjeT0iODEuMiIgcj0iMC42IiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjY4Ii8+PGNpcmNsZSBjeD0iNDI0LjciIGN5PSIyODMuOCIgcj0iMS40NiIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC41NSIvPjxjaXJjbGUgY3g9IjYyNi42IiBjeT0iMzcuMyIgcj0iMS43NSIgZmlsbD0iI0ZGRTlDMCIgb3BhY2l0eT0iMC42NiIvPjxjaXJjbGUgY3g9Ijc3Ni4zIiBjeT0iMzY1LjIiIHI9IjEuNzIiIGZpbGw9IiNEOURFRkYiIG9wYWNpdHk9IjAuNDMiLz48Y2lyY2xlIGN4PSI1NjEuNSIgY3k9IjQ4Ni44IiByPSIxLjg2IiBmaWxsPSIjRDlERUZGIiBvcGFjaXR5PSIwLjU2Ii8+PGNpcmNsZSBjeD0iNDM3LjUiIGN5PSIxMDAuMCIgcj0iMC42MiIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC40NyIvPjxjaXJjbGUgY3g9IjE5OC42IiBjeT0iNjMwLjIiIHI9IjAuNjMiIGZpbGw9IiNCOUMyRjIiIG9wYWNpdHk9IjAuNDMiLz48Y2lyY2xlIGN4PSI0NDguNCIgY3k9IjEwMi4zIiByPSIyLjAiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuNCIvPjxjaXJjbGUgY3g9Ijc4My45IiBjeT0iNDA4LjAiIHI9IjEuMiIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC4zMSIvPjxjaXJjbGUgY3g9IjY1Mi45IiBjeT0iNDU1LjAiIHI9IjAuNzEiIGZpbGw9IiNGRkU5QzAiIG9wYWNpdHk9IjAuMzkiLz48Y2lyY2xlIGN4PSI3ODIuNSIgY3k9IjEzNC40IiByPSIxLjM4IiBmaWxsPSIjQjlDMkYyIiBvcGFjaXR5PSIwLjU1Ii8+PGNpcmNsZSBjeD0iNDQwLjYiIGN5PSI1OTguNyIgcj0iMC42OSIgZmlsbD0iI0I5QzJGMiIgb3BhY2l0eT0iMC40OSIvPjxjaXJjbGUgY3g9IjYyNi40IiBjeT0iNDkuNCIgcj0iMC44NyIgZmlsbD0iI0Q5REVGRiIgb3BhY2l0eT0iMC40NSIvPjxjaXJjbGUgY3g9Ijc3Mi45IiBjeT0iNDQzLjIiIHI9IjEuMTMiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuMzUiLz48Y2lyY2xlIGN4PSI2MTAuNSIgY3k9IjM1LjgiIHI9IjAuOCIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC40NiIvPjxjaXJjbGUgY3g9IjYxOS45IiBjeT0iNjIxLjMiIHI9IjAuNTMiIGZpbGw9IiNEOURFRkYiIG9wYWNpdHk9IjAuMjUiLz48Y2lyY2xlIGN4PSI4MS45IiBjeT0iMTU2LjkiIHI9IjEuMDciIGZpbGw9IiNGRkU5QzAiIG9wYWNpdHk9IjAuNTMiLz48Y2lyY2xlIGN4PSI3OTcuMyIgY3k9IjI1NS44IiByPSIwLjk1IiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjgxIi8+PGNpcmNsZSBjeD0iMTUzLjUiIGN5PSI0MjUuMiIgcj0iMS4zMSIgZmlsbD0iI0ZGRTlDMCIgb3BhY2l0eT0iMC44MyIvPjxjaXJjbGUgY3g9IjgwNy4wIiBjeT0iMzA4LjMiIHI9IjEuMDMiIGZpbGw9IiNGRkU5QzAiIG9wYWNpdHk9IjAuNjIiLz48Y2lyY2xlIGN4PSIxMTYuMCIgY3k9IjM0NS40IiByPSIwLjc3IiBmaWxsPSIjRDlERUZGIiBvcGFjaXR5PSIwLjU5Ii8+PGNpcmNsZSBjeD0iMTIuNyIgY3k9IjUzOS4zIiByPSIwLjk1IiBmaWxsPSIjRDlERUZGIiBvcGFjaXR5PSIwLjU0Ii8+PGNpcmNsZSBjeD0iNTU0LjciIGN5PSI1MzEuNSIgcj0iMS4zMiIgZmlsbD0iI0I5QzJGMiIgb3BhY2l0eT0iMC4zMyIvPjxjaXJjbGUgY3g9IjIxMy40IiBjeT0iMjAyLjQiIHI9IjAuNTYiIGZpbGw9IiNEOURFRkYiIG9wYWNpdHk9IjAuMzEiLz48Y2lyY2xlIGN4PSIyNDMuNSIgY3k9IjMxNC40IiByPSIxLjQiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuMzkiLz48Y2lyY2xlIGN4PSI1OTMuNCIgY3k9IjcwNC40IiByPSIxLjgxIiBmaWxsPSIjRDlERUZGIiBvcGFjaXR5PSIwLjQ2Ii8+PGNpcmNsZSBjeD0iNjUzLjMiIGN5PSI0NTYuOSIgcj0iMC45OCIgZmlsbD0iI0Q5REVGRiIgb3BhY2l0eT0iMC4zNyIvPjxjaXJjbGUgY3g9IjY5Ny42IiBjeT0iMTI4LjMiIHI9IjEuODIiIGZpbGw9IiNEOURFRkYiIG9wYWNpdHk9IjAuNTYiLz48Y2lyY2xlIGN4PSIyNDQuNSIgY3k9IjI1OS4yIiByPSIxLjM0IiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjI1Ii8+PGNpcmNsZSBjeD0iMTQwLjEiIGN5PSI0NjcuMiIgcj0iMC43OSIgZmlsbD0iI0I5QzJGMiIgb3BhY2l0eT0iMC40NCIvPjxjaXJjbGUgY3g9IjQzNi41IiBjeT0iNzI2LjQiIHI9IjAuNjYiIGZpbGw9IiNGRkU5QzAiIG9wYWNpdHk9IjAuMzYiLz48Y2lyY2xlIGN4PSIzMDQuMiIgY3k9IjEwOC45IiByPSIxLjEzIiBmaWxsPSIjRkZFOUMwIiBvcGFjaXR5PSIwLjI0Ii8+PGNpcmNsZSBjeD0iNDA0LjciIGN5PSI1NzMuNiIgcj0iMC42NyIgZmlsbD0iI0Q5REVGRiIgb3BhY2l0eT0iMC43NyIvPjxjaXJjbGUgY3g9IjczMS4zIiBjeT0iMzQ4LjciIHI9IjEuNDkiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuMzIiLz48Y2lyY2xlIGN4PSI1ODcuOSIgY3k9IjY4LjgiIHI9IjAuNjEiIGZpbGw9IiNCOUMyRjIiIG9wYWNpdHk9IjAuNjUiLz48Y2lyY2xlIGN4PSI1NjkuNCIgY3k9IjY0NS40IiByPSIwLjkxIiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjMiLz48Y2lyY2xlIGN4PSIyNy4yIiBjeT0iNzEyLjkiIHI9IjIuMjciIGZpbGw9IiNCOUMyRjIiIG9wYWNpdHk9IjAuMjEiLz48Y2lyY2xlIGN4PSI1NjQuNCIgY3k9Ijc3OC4xIiByPSIwLjUzIiBmaWxsPSIjRDlERUZGIiBvcGFjaXR5PSIwLjI3Ii8+PGNpcmNsZSBjeD0iNTQzLjMiIGN5PSI0NjguNiIgcj0iMi4yOSIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC4zNSIvPjxjaXJjbGUgY3g9Ijc1My4yIiBjeT0iMzU2LjYiIHI9IjEuNDciIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuMzQiLz48Y2lyY2xlIGN4PSIzMDYuOCIgY3k9IjUxNy4xIiByPSIxLjEzIiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjQ0Ii8+PGNpcmNsZSBjeD0iMzAxLjQiIGN5PSI2NzcuNyIgcj0iMS4yNiIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC44MyIvPjxjaXJjbGUgY3g9IjU2NC40IiBjeT0iMTk4LjciIHI9IjAuOTEiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuNDYiLz48Y2lyY2xlIGN4PSI3MDMuNSIgY3k9IjE2NS4wIiByPSIwLjk2IiBmaWxsPSIjRkZFOUMwIiBvcGFjaXR5PSIwLjQ2Ii8+PGNpcmNsZSBjeD0iODAxLjMiIGN5PSI2MzQuOCIgcj0iMC41NyIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC40MiIvPjxjaXJjbGUgY3g9IjE5NS40IiBjeT0iMzc3LjciIHI9IjAuNTkiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuNDIiLz48Y2lyY2xlIGN4PSI0MzMuOCIgY3k9IjI0NS42IiByPSIxLjE5IiBmaWxsPSIjRkZFOUMwIiBvcGFjaXR5PSIwLjIxIi8+PGNpcmNsZSBjeD0iMTMxLjYiIGN5PSI1MTkuNSIgcj0iMS4wNiIgZmlsbD0iI0ZGRTlDMCIgb3BhY2l0eT0iMC42MiIvPjxjaXJjbGUgY3g9IjczMS40IiBjeT0iNDIuMCIgcj0iMS4wNyIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC4zOSIvPjxjaXJjbGUgY3g9IjgxMC4yIiBjeT0iNTc4LjIiIHI9IjAuOTkiIGZpbGw9IiNCOUMyRjIiIG9wYWNpdHk9IjAuNTMiLz48Y2lyY2xlIGN4PSIyMC4wIiBjeT0iNjM5LjMiIHI9IjEuMDkiIGZpbGw9IiNCOUMyRjIiIG9wYWNpdHk9IjAuNzUiLz48Y2lyY2xlIGN4PSI4OC4xIiBjeT0iMTIyLjQiIHI9IjEuODIiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuNzkiLz48Y2lyY2xlIGN4PSI1Mi43IiBjeT0iNDM5LjgiIHI9IjAuOTUiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuNzMiLz48Y2lyY2xlIGN4PSI1MzYuMCIgY3k9IjQ2LjkiIHI9IjAuNjEiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuNDIiLz48Y2lyY2xlIGN4PSI0NTkuMCIgY3k9IjcwNC44IiByPSIxLjc2IiBmaWxsPSIjRDlERUZGIiBvcGFjaXR5PSIwLjU1Ii8+PGNpcmNsZSBjeD0iNDg5LjIiIGN5PSI1ODMuNyIgcj0iMS4yMiIgZmlsbD0iI0ZGRTlDMCIgb3BhY2l0eT0iMC40NyIvPjxjaXJjbGUgY3g9IjI5OS41IiBjeT0iNTYuOSIgcj0iMC41NiIgZmlsbD0iI0ZGRTlDMCIgb3BhY2l0eT0iMC40OCIvPjxjaXJjbGUgY3g9IjY2NS4wIiBjeT0iNDI5LjQiIHI9IjAuOTciIGZpbGw9IiNCOUMyRjIiIG9wYWNpdHk9IjAuNTkiLz48Y2lyY2xlIGN4PSIxNTQuOCIgY3k9IjI1My4yIiByPSIwLjc3IiBmaWxsPSIjRkZFOUMwIiBvcGFjaXR5PSIwLjM4Ii8+PGNpcmNsZSBjeD0iMzA0LjciIGN5PSI1OTAuMSIgcj0iMS43MSIgZmlsbD0iI0ZGRTlDMCIgb3BhY2l0eT0iMC4yMiIvPjxjaXJjbGUgY3g9IjE5LjAiIGN5PSI2MDEuMyIgcj0iMS40MyIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC40OSIvPjxjaXJjbGUgY3g9Ijc4MC40IiBjeT0iNjcxLjAiIHI9IjAuNzQiIGZpbGw9IiNEOURFRkYiIG9wYWNpdHk9IjAuNjMiLz48Y2lyY2xlIGN4PSI0NjguMiIgY3k9IjU5MS4zIiByPSIxLjk2IiBmaWxsPSIjQjlDMkYyIiBvcGFjaXR5PSIwLjg0Ii8+PGNpcmNsZSBjeD0iMjcyLjAiIGN5PSI1OTkuNCIgcj0iMS4yMiIgZmlsbD0iI0I5QzJGMiIgb3BhY2l0eT0iMC40OCIvPjxjaXJjbGUgY3g9IjEzOS42IiBjeT0iNTgxLjYiIHI9IjAuNTkiIGZpbGw9IiNGRkU5QzAiIG9wYWNpdHk9IjAuMzMiLz48Y2lyY2xlIGN4PSI1NDcuOCIgY3k9Ijc1Ny42IiByPSIwLjg3IiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjgxIi8+PGNpcmNsZSBjeD0iNDQwLjciIGN5PSIyODYuNCIgcj0iMC42MyIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC4zOSIvPjxjaXJjbGUgY3g9IjI4OS45IiBjeT0iNTk0LjYiIHI9IjIuMjYiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuMjciLz48Y2lyY2xlIGN4PSIzMzYuOCIgY3k9IjQ4MS42IiByPSIyLjAzIiBmaWxsPSIjQjlDMkYyIiBvcGFjaXR5PSIwLjQyIi8+PGNpcmNsZSBjeD0iNjgyLjQiIGN5PSI1OTcuMiIgcj0iMS43OSIgZmlsbD0iI0Q5REVGRiIgb3BhY2l0eT0iMC43OCIvPjxjaXJjbGUgY3g9IjE0Mi4yIiBjeT0iOTcuMyIgcj0iMC42OCIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC44NCIvPjxjaXJjbGUgY3g9IjU4My4xIiBjeT0iNDQ0LjkiIHI9IjEuMjYiIGZpbGw9IiNGRkU5QzAiIG9wYWNpdHk9IjAuMjgiLz48Y2lyY2xlIGN4PSI2NzIuNyIgY3k9IjE0NC44IiByPSIwLjc3IiBmaWxsPSIjQjlDMkYyIiBvcGFjaXR5PSIwLjYiLz48cGF0aCBkPSJNMzkyLjQgODMuNiBRMzkyLjQgODguNiAzOTcuNCA4OC42IFEzOTIuNCA4OC42IDM5Mi40IDkzLjYgUTM5Mi40IDg4LjYgMzg3LjQgODguNiBRMzkyLjQgODguNiAzOTIuNCA4My42IFoiIGZpbGw9IiNGRkYzRDAiIG9wYWNpdHk9IjAuMjQiLz48cGF0aCBkPSJNNjgzLjIgNDEwLjIgUTY4My4yIDQxNS4yIDY4OC4yIDQxNS4yIFE2ODMuMiA0MTUuMiA2ODMuMiA0MjAuMiBRNjgzLjIgNDE1LjIgNjc4LjIgNDE1LjIgUTY4My4yIDQxNS4yIDY4My4yIDQxMC4yIFoiIGZpbGw9IiNGRkYzRDAiIG9wYWNpdHk9IjAuMzMiLz48cGF0aCBkPSJNMzQ1LjQgNjE1LjggUTM0NS40IDYyMS44IDM1MS40IDYyMS44IFEzNDUuNCA2MjEuOCAzNDUuNCA2MjcuOCBRMzQ1LjQgNjIxLjggMzM5LjQgNjIxLjggUTM0NS40IDYyMS44IDM0NS40IDYxNS44IFoiIGZpbGw9IiNGRkYzRDAiIG9wYWNpdHk9IjAuMzkiLz48cGF0aCBkPSJNNDM1LjIgNjg2LjMgUTQzNS4yIDY5Mi4zIDQ0MS4yIDY5Mi4zIFE0MzUuMiA2OTIuMyA0MzUuMiA2OTguMyBRNDM1LjIgNjkyLjMgNDI5LjIgNjkyLjMgUTQzNS4yIDY5Mi4zIDQzNS4yIDY4Ni4zIFoiIGZpbGw9IiNGRkYzRDAiIG9wYWNpdHk9IjAuMjQiLz48cGF0aCBkPSJNMzA3LjcgNzUxLjIgUTMwNy43IDc1Ny4yIDMxMy43IDc1Ny4yIFEzMDcuNyA3NTcuMiAzMDcuNyA3NjMuMiBRMzA3LjcgNzU3LjIgMzAxLjcgNzU3LjIgUTMwNy43IDc1Ny4yIDMwNy43IDc1MS4yIFoiIGZpbGw9IiNGRkYzRDAiIG9wYWNpdHk9IjAuNDIiLz48cGF0aCBkPSJNNzE3LjIgNDk0LjQgUTcxNy4yIDQ5OC40IDcyMS4yIDQ5OC40IFE3MTcuMiA0OTguNCA3MTcuMiA1MDIuNCBRNzE3LjIgNDk4LjQgNzEzLjIgNDk4LjQgUTcxNy4yIDQ5OC40IDcxNy4yIDQ5NC40IFoiIGZpbGw9IiNGRkYzRDAiIG9wYWNpdHk9IjAuMjciLz48L3N2Zz4=");
+  background-size:820px 820px;
+}
 
- /* faq */
- details{border-bottom:1px solid var(--line);padding:18px 0}
- details:first-of-type{border-top:1px solid var(--line)}
- summary{cursor:pointer;font-weight:600;font-size:16.5px;list-style:none}
- summary::-webkit-details-marker{display:none}
- summary:hover{color:var(--cyan)}
- details p{color:var(--muted);margin:10px 0 2px;max-width:46em}
+/* ============================================================
+   primitives
+   ============================================================ */
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 26px}
+.eyebrow{
+  font-family:var(--font-display);font-weight:900;font-size:12px;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--faint);
+}
+.eyebrow b{color:var(--gold);font-weight:900}
+.sec{padding:96px 0;border-top:1px solid var(--line);position:relative}
+.sec-head{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:44px;max-width:760px}
+h2{
+  font-family:var(--font-display);font-weight:900;font-size:var(--fs-h2);
+  line-height:.98;letter-spacing:-.025em;text-transform:uppercase;
+  text-wrap:balance;
+}
+h2 em{font-style:normal;color:var(--gold)}
+.lead{color:var(--muted);max-width:60ch;font-size:16px}
+.lead b{color:var(--text);font-weight:600}
 
- footer{border-top:1px solid var(--line);padding:36px 0 48px;color:var(--faint);font-size:13.5px}
- footer .cols{display:flex;gap:40px;flex-wrap:wrap;justify-content:space-between}
+.btn{
+  --bg:var(--space-2);--fg:var(--text);--bd:var(--line-2);
+  display:inline-flex;align-items:center;gap:10px;justify-content:center;
+  min-height:50px;padding:0 22px;border-radius:12px;
+  background:var(--bg);color:var(--fg);border:1px solid var(--bd);
+  font-family:var(--font-display);font-weight:900;font-size:13px;
+  letter-spacing:.06em;text-transform:uppercase;cursor:pointer;
+  transition:transform .16s cubic-bezier(.2,.7,.2,1),box-shadow .16s,background .16s,border-color .16s;
+  text-decoration:none;
+}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+.btn:active{transform:translateY(1px)}
+.btn svg{flex:none;width:17px;height:17px}
+.btn--gold{
+  --bg:var(--gold);--fg:#1A1200;--bd:var(--gold-deep);
+  box-shadow:0 4px 0 var(--gold-deep);
+}
+.btn--gold:hover{--bg:var(--gold-lite);box-shadow:0 6px 0 var(--gold-deep)}
+.btn--gold:active{box-shadow:0 2px 0 var(--gold-deep)}
+.btn--ghost{--bg:transparent;--fg:var(--text);--bd:var(--line-2)}
+.btn--ghost:hover{--bd:var(--gold);--fg:var(--gold-lite)}
+.btn--ink{--bg:var(--ink);--fg:var(--cream);--bd:#000;box-shadow:0 4px 0 rgba(0,0,0,.35)}
+.btn--sm{min-height:40px;padding:0 15px;font-size:12px;border-radius:10px}
 
- /* scroll story — sections reveal via Theatre.js on scroll;
-    the hero intro is pure CSS (compositor-driven, cannot
-    stall in a background tab) */
- .anim-pre [data-anim]{opacity:0}
- .hin{animation:hin .8s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0s)}
- @keyframes hin{from{opacity:0;transform:translateY(var(--dy,26px)) scale(var(--sc,1))}to{opacity:1;transform:translateY(0) scale(1)}}
- @media (prefers-reduced-motion: reduce){.hin{animation:none}}
+/* ============================================================
+   ticker
+   ============================================================ */
+.ticker{
+  border-bottom:1px solid var(--line);background:rgba(5,7,15,.72);
+  overflow:hidden;position:relative;height:38px;display:flex;align-items:center;
+}
+.ticker::before,.ticker::after{
+  content:"";position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none;
+}
+.ticker::before{left:0;background:linear-gradient(90deg,var(--void),transparent)}
+.ticker::after{right:0;background:linear-gradient(270deg,var(--void),transparent)}
+.ticker-track{display:flex;gap:0;white-space:nowrap;will-change:transform;animation:tick 42s linear infinite}
+.ticker span{
+  font-family:var(--font-display);font-weight:900;font-size:12px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--gold);padding:0 18px;display:flex;align-items:center;gap:18px;
+}
+.ticker span::after{content:"";width:5px;height:5px;background:rgba(255,194,71,.5);border-radius:50%}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker.is-paused .ticker-track{animation-play-state:paused}
+.ticker-btn{
+  position:absolute;right:26px;top:50%;translate:0 -50%;z-index:3;
+  width:30px;height:30px;border-radius:50%;cursor:pointer;
+  background:rgba(5,7,15,.92);border:1px solid var(--line-2);color:var(--muted);
+  display:grid;place-items:center;transition:color .15s,border-color .15s;
+}
+.ticker-btn:hover{color:var(--gold);border-color:var(--gold)}
+.ticker-btn svg{width:11px;height:11px}
+.ticker.is-paused .ticker-track{animation-play-state:paused}
+.ticker-btn{
+  position:absolute;right:26px;top:50%;translate:0 -50%;z-index:3;
+  width:30px;height:30px;border-radius:50%;cursor:pointer;
+  background:rgba(5,7,15,.92);border:1px solid var(--line-2);color:var(--muted);
+  display:grid;place-items:center;transition:color .15s,border-color .15s;
+}
+.ticker-btn:hover{color:var(--gold);border-color:var(--gold)}
+.ticker-btn svg{width:11px;height:11px}
+.ticker.is-paused .ticker-track{animation-play-state:paused}
+.ticker-btn{
+  position:absolute;right:26px;top:50%;translate:0 -50%;z-index:3;
+  width:30px;height:30px;border-radius:50%;cursor:pointer;
+  background:rgba(5,7,15,.92);border:1px solid var(--line-2);color:var(--muted);
+  display:grid;place-items:center;transition:color .15s,border-color .15s;
+}
+.ticker-btn:hover{color:var(--gold);border-color:var(--gold)}
+.ticker-btn svg{width:11px;height:11px}
+.ticker.is-paused .ticker-track{animation-play-state:paused}
+.ticker-btn{
+  position:absolute;right:26px;top:50%;translate:0 -50%;z-index:3;
+  width:30px;height:30px;border-radius:50%;cursor:pointer;
+  background:rgba(5,7,15,.92);border:1px solid var(--line-2);color:var(--muted);
+  display:grid;place-items:center;transition:color .15s,border-color .15s;
+}
+.ticker-btn:hover{color:var(--gold);border-color:var(--gold)}
+.ticker-btn svg{width:11px;height:11px}
 
- /* hero cards — three tier cards fanned over the starfield */
- .herocards{position:relative;height:480px}
- @media(max-width:860px){.herocards{height:400px;max-width:520px}}
- .hcardw{position:absolute;width:56%;will-change:transform,opacity}
- .hcardw.c1{left:0;top:52px;z-index:1}
- .hcardw.c2{left:22%;top:0;z-index:2;width:58%}
- .hcardw.c3{right:0;top:52px;z-index:1}
- .hcard{border:1px solid var(--line2);border-radius:16px;padding:8px;background:linear-gradient(165deg,rgba(109,93,246,.16),rgba(92,232,213,.05) 60%,transparent);animation:floaty 7s ease-in-out infinite}
- .hcardw.c1 .hcard{--rot:-7deg;animation-delay:-2s}
- .hcardw.c2 .hcard{--rot:0deg;animation-duration:8s}
- .hcardw.c3 .hcard{--rot:7deg;animation-delay:-4s}
- .hcard.gold{border-color:rgba(255,196,77,.55);box-shadow:0 18px 50px rgba(255,196,77,.12)}
- .hcard img{display:block;width:100%;border-radius:10px}
- .hcard .tag{display:flex;justify-content:space-between;align-items:baseline;padding:9px 6px 3px;font-size:13.5px}
- .hcard .tag b{font-size:15px}
- .hcard .tag span{color:var(--cyan);font-weight:600;font-size:13px}
- .hcard.gold .tag span{color:var(--gold)}
- .herocap{display:flex;justify-content:space-between;margin-top:14px;font-size:13px;color:var(--faint)}
- .herocap b{color:var(--muted);font-weight:500}
- @keyframes floaty{0%,100%{transform:rotate(var(--rot,0deg)) translateY(0)}50%{transform:rotate(var(--rot,0deg)) translateY(-9px)}}
- @media (prefers-reduced-motion: reduce){.hcard{animation:none}}
+/* ============================================================
+   nav
+   ============================================================ */
+.nav{
+  position:sticky;top:0;z-index:60;
+  background:rgba(5,7,15,.82);backdrop-filter:blur(14px) saturate(1.2);
+  border-bottom:1px solid var(--line);
+}
+.nav-in{display:flex;align-items:center;gap:18px;height:68px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex:none}
+.brand:hover{text-decoration:none}
+.brand img{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,194,71,.45)}
+.brand-txt{display:block;line-height:1.05}
+.brand-name{
+  font-family:var(--font-display);font-weight:900;font-size:16px;letter-spacing:-.01em;
+  text-transform:uppercase;color:var(--text);
+}
+.brand-sub{
+  font-family:var(--font-display);font-weight:900;font-size:12px;letter-spacing:.17em;
+  text-transform:uppercase;color:var(--faint);margin-top:4px;
+}
+.nav-links{display:flex;align-items:center;gap:26px;margin-left:auto}
+.nav-links a{
+  font-family:var(--font-display);font-weight:900;font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);white-space:nowrap;
+}
+.nav-links a:hover{color:var(--gold-lite);text-decoration:none}
+.lang{display:flex;border:1px solid var(--line-2);border-radius:99px;padding:2px;gap:2px;flex:none}
+.lang button{
+  background:transparent;border:0;color:var(--muted);cursor:pointer;
+  font-family:var(--font-display);font-weight:900;font-size:12px;letter-spacing:.06em;
+  padding:6px 10px;border-radius:99px;min-height:28px;transition:background .15s,color .15s;
+}
+.lang button:hover{color:var(--text)}
+.lang button[aria-pressed="true"]{background:var(--cream);color:var(--ink)}
+.nav .btn{flex:none}
+
+/* ============================================================
+   hero
+   ============================================================ */
+.hero{position:relative;padding:52px 0 64px;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(243,239,226,.05) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(243,239,226,.05) 1px,transparent 1px);
+  background-size:72px 72px;
+  mask-image:radial-gradient(70% 60% at 50% 40%,#000 20%,transparent 78%);
+  -webkit-mask-image:radial-gradient(70% 60% at 50% 40%,#000 20%,transparent 78%);
+}
+.hero-in{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:52px;align-items:center}
+.kicker{
+  display:inline-flex;align-items:center;gap:9px;padding:7px 13px 7px 10px;
+  border:1px solid var(--line-2);border-radius:99px;background:rgba(255,255,255,.03);
+  font-family:var(--font-display);font-weight:900;font-size:12px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:26px;font-size:12px;letter-spacing:.12em;
+}
+.dot-live{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 0 rgba(57,216,200,.6);animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(57,216,200,.55)}70%{box-shadow:0 0 0 9px rgba(57,216,200,0)}100%{box-shadow:0 0 0 0 rgba(57,216,200,0)}}
+h1{
+  font-family:var(--font-display);font-weight:900;text-transform:uppercase;
+  font-size:var(--fs-display);line-height:.86;letter-spacing:-.03em;
+  margin-bottom:26px;
+}
+h1 .l2{color:var(--gold);display:block}
+h1 .l2 .stroke{color:transparent;-webkit-text-stroke:2.5px var(--gold)}
+@supports not ((-webkit-text-stroke:1px #000)){h1 .l2 .stroke{color:var(--gold)}}
+.hero-lede{color:var(--muted);max-width:50ch;font-size:17px;margin-bottom:30px}
+.hero-lede b{color:var(--text);font-weight:600}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px}
+.hero-facts{display:flex;flex-wrap:wrap;gap:10px 22px}
+.hero-facts li{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+.hero-facts svg{width:15px;height:15px;color:var(--teal);flex:none}
+.hero-facts b{color:var(--text);font-weight:600}
+
+/* card fan */
+.fan{position:relative;width:106%;max-width:520px;margin-left:auto;margin-right:-6%;aspect-ratio:1/.70}
+.fan-glow{
+  position:absolute;inset:8% 4% 10% 4%;border-radius:50%;filter:blur(52px);opacity:.55;
+  background:radial-gradient(closest-side,rgba(255,194,71,.55),rgba(162,119,255,.22) 55%,transparent 75%);
+  pointer-events:none;
+}
+.pcard{
+  position:absolute;border-radius:16px;padding:8px;
+  background:linear-gradient(170deg,#121A38,#080C1C 65%);
+  border:1px solid var(--line-2);
+  box-shadow:0 34px 60px -28px rgba(0,0,0,.95),0 0 0 1px rgba(0,0,0,.4) inset;
+  will-change:transform;
+}
+.pcard img{border-radius:10px;width:100%;height:auto}
+.pcard-a{left:0;top:10%;width:45%;transform:rotate(-10deg);z-index:1;animation:float 9s ease-in-out infinite}
+.pcard-b{left:26.5%;top:0;width:51%;z-index:3;animation:float 11s ease-in-out infinite -3s}
+.pcard-c{right:0;top:12%;width:44%;transform:rotate(10deg);z-index:2;animation:float 10s ease-in-out infinite -6s}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -10px}}
+.pcard-tag{
+  display:flex;align-items:baseline;justify-content:space-between;gap:6px;
+  padding:8px 5px 2px;
+}
+.pcard-tag b{font-family:var(--font-display);font-weight:900;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.pcard-tag span{font-family:var(--font-display);font-weight:900;font-size:12px;letter-spacing:.05em;color:var(--tone,var(--gold))}
+.pcard--top{border-color:rgba(255,194,71,.55);box-shadow:0 34px 70px -26px rgba(255,194,71,.35),0 0 0 1px rgba(255,194,71,.2)}
+.sticker{
+  position:absolute;right:-3%;top:36%;z-index:4;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  width:98px;height:98px;border-radius:50%;rotate:-11deg;
+  background:var(--cream);color:var(--ink);border:3px solid var(--ink);
+  box-shadow:6px 6px 0 rgba(0,0,0,.55);
+  font-family:var(--font-display);font-weight:900;text-transform:uppercase;line-height:1.25;
+}
+.sticker b{font-size:17px;letter-spacing:-.01em}
+.sticker small{font-size:12px;letter-spacing:.1em;margin-top:5px;color:#6B4A08;line-height:1.4}
+
+/* ============================================================
+   stat band
+   ============================================================ */
+.band{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(8,12,28,.5)}
+.band-in{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:30px 26px 30px 0;position:relative}
+.stat + .stat{border-left:1px solid var(--line);padding-left:26px}
+.stat .lbl{
+  font-family:var(--font-display);font-weight:900;font-size:12px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--faint);display:block;margin-bottom:10px;
+}
+.stat .num{
+  font-family:var(--font-display);font-weight:900;font-size:clamp(26px,2.6vw,36px);
+  letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums;
+}
+.stat .num small{font-size:.5em;letter-spacing:.02em;color:var(--gold);margin-left:4px}
+
+/* ============================================================
+   start — steps + agent prompt
+   ============================================================ */
+.start-grid{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:52px;align-items:start}
+.steps{counter-reset:s;display:grid;gap:2px;position:relative}
+.step{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:0 0 26px;position:relative}
+.step:last-child{padding-bottom:0}
+.step::before{
+  content:"";position:absolute;left:21px;top:44px;bottom:6px;width:1px;
+  background:linear-gradient(180deg,var(--line-2),var(--line));
+}
+.step:last-child::before{display:none}
+.step-n{
+  width:44px;height:44px;border-radius:12px;display:grid;place-items:center;flex:none;
+  background:var(--space-2);border:1px solid var(--line-2);
+  font-family:var(--font-display);font-weight:900;font-size:14px;color:var(--gold);
+}
+.step h3{font-family:var(--font-display);font-weight:900;font-size:15px;letter-spacing:.02em;text-transform:uppercase;margin:6px 0 6px}
+.step p{color:var(--muted);font-size:14.5px;line-height:1.55}
+.step p b{color:var(--text);font-weight:600}
+.step code{
+  font-family:var(--font-mono);font-size:.92em;color:var(--gold-lite);
+  background:rgba(255,194,71,.1);border:1px solid rgba(255,194,71,.22);
+  border-radius:5px;padding:1px 5px;
+}
+
+.prompt{
+  border:1px solid var(--line-2);border-radius:var(--r-lg);overflow:hidden;
+  background:linear-gradient(180deg,#0B1128,#060A18);
+  box-shadow:0 40px 80px -50px rgba(0,0,0,1),0 0 60px -30px rgba(255,194,71,.35);
+}
+.prompt-bar{
+  display:flex;align-items:center;gap:12px;padding:12px 14px 12px 18px;
+  border-bottom:1px solid var(--line);background:rgba(255,255,255,.025);
+}
+.prompt-bar .file{display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:12px;color:var(--muted)}
+.prompt-bar .file svg{width:14px;height:14px;color:var(--gold)}
+.prompt-bar .spacer{margin-left:auto}
+.prompt pre{
+  margin:0;padding:20px 20px 22px;overflow-x:auto;overflow-y:hidden;
+  font-family:var(--font-mono);font-size:14px;line-height:1.7;color:#D7DDF5;
+  white-space:pre;
+  scrollbar-width:thin;scrollbar-color:var(--line-2) transparent;
+}
+.prompt pre::-webkit-scrollbar{width:8px}
+.prompt pre::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:9px}
+.prompt pre .k{color:var(--gold)}
+.prompt pre .c{color:var(--faint)}
+.prompt-foot{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  padding:13px 18px;border-top:1px solid var(--line);
+  font-size:12.5px;color:var(--faint);
+}
+.prompt-foot svg{width:14px;height:14px;color:var(--teal);flex:none}
+.prompt-foot a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
+
+/* ============================================================
+   tiers
+   ============================================================ */
+.tier-head-row{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:40px}
+.tiers{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.tier{
+  position:relative;border:1px solid var(--line);border-radius:var(--r);
+  background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.008));
+  padding:0 0 15px;display:flex;flex-direction:column;overflow:hidden;
+  transition:transform .2s cubic-bezier(.2,.7,.2,1),border-color .2s,background .2s;
+  scroll-snap-align:center;
+}
+.tier::after{
+  content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--tone);
+  opacity:.9;z-index:2;
+}
+.tier:hover{transform:translateY(-4px);border-color:rgba(243,239,226,.3);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.015))}
+.tier-art{position:relative;border-radius:12px 12px 0 0;overflow:hidden;background:#0A0F22;margin-bottom:13px}
+.tier-art img{width:100%;height:auto;aspect-ratio:1;object-fit:cover}
+.tier-rank{
+  position:absolute;left:7px;top:7px;
+  font-family:var(--font-display);font-weight:900;font-size:12px;letter-spacing:.1em;
+  padding:4px 7px;border-radius:5px;background:rgba(5,7,15,.82);color:var(--tone);
+  border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(4px);
+}
+.tier h3{
+  font-family:var(--font-display);font-weight:900;font-size:15px;letter-spacing:.02em;
+  text-transform:uppercase;padding:0 13px;
+}
+.tier-rate{
+  font-family:var(--font-display);font-weight:900;font-size:22px;letter-spacing:-.02em;
+  color:var(--tone);padding:0 13px;margin:6px 0 14px;font-variant-numeric:tabular-nums;
+}
+.tier-rate small{
+  font-size:12px;letter-spacing:.1em;color:var(--faint);text-transform:uppercase;
+  display:block;margin-top:2px;
+}
+.meter{height:6px;border-radius:99px;background:rgba(255,255,255,.09);overflow:hidden;margin:0 13px 10px}
+.meter i{display:block;height:100%;background:var(--tone);border-radius:99px;width:0;transition:width 1s cubic-bezier(.2,.7,.2,1)}
+.tier-meta{display:flex;justify-content:space-between;gap:6px;padding:0 13px;font-size:12px;color:#939CBE}
+.tier-meta + .tier-meta{margin-top:4px}
+.tier-meta b{color:var(--muted);font-weight:600;font-variant-numeric:tabular-nums}
+.tier--top{
+  border-color:rgba(255,194,71,.5);
+  background:linear-gradient(180deg,rgba(255,194,71,.13),rgba(255,194,71,.02));
+}
+.tier--top::before{
+  content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+  background:linear-gradient(115deg,transparent 30%,rgba(255,227,161,.16) 45%,transparent 60%);
+  background-size:280% 100%;animation:sheen 6s ease-in-out infinite;
+}
+@keyframes sheen{0%,100%{background-position:130% 0}50%{background-position:-30% 0}}
+
+/* reveal diagram */
+.fair{
+  margin-top:30px;border:1px solid var(--line);border-radius:var(--r);
+  padding:24px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);
+  gap:26px;align-items:center;background:rgba(10,14,32,.6);
+}
+.fair h3{font-family:var(--font-display);font-weight:900;font-size:16px;letter-spacing:.01em;text-transform:uppercase;margin-bottom:8px}
+.fair p{color:var(--muted);font-size:14px;line-height:1.55}
+.flow{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.flow-node{
+  flex:1 1 0;min-width:96px;border:1px solid var(--line-2);border-radius:10px;
+  padding:12px 10px;background:rgba(255,255,255,.035);text-align:center;
+}
+.flow-node b{
+  display:block;font-family:var(--font-display);font-weight:900;font-size:12px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--text);
+}
+.flow-node span{display:block;font-size:12px;color:var(--faint);margin-top:4px;font-family:var(--font-mono)}
+.flow-arrow{color:var(--gold);flex:none;width:16px;height:16px;opacity:.7}
+
+/* ============================================================
+   calculator + pricing
+   ============================================================ */
+.calc-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:28px;align-items:start}
+
+.panel-cream{
+  background:var(--cream);color:var(--ink);border:2px solid #0A0E20;border-radius:var(--r-lg);
+  padding:26px;box-shadow:10px 10px 0 rgba(0,0,0,.5);
+}
+.panel-cream .eyebrow{color:#7A5E22}
+.panel-cream h3{
+  font-family:var(--font-display);font-weight:900;font-size:20px;letter-spacing:-.01em;
+  text-transform:uppercase;margin:8px 0 18px;line-height:1.25;
+}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:20px}
+.chip{
+  flex:1 1 0;min-width:76px;min-height:52px;padding:7px 4px;border-radius:10px;cursor:pointer;
+  background:rgba(8,12,28,.05);border:1.5px solid rgba(8,12,28,.18);color:var(--ink);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;
+  transition:background .15s,border-color .15s,transform .15s;
+}
+.chip:hover{border-color:rgba(8,12,28,.45)}
+.chip:active{transform:translateY(1px)}
+.chip b{font-family:var(--font-display);font-weight:900;font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+.chip small{font-family:var(--font-mono);font-size:12px;color:#5E4E2A}
+.chip[aria-pressed="true"]{
+  background:var(--ink);border-color:var(--ink);color:var(--cream);
+}
+.chip[aria-pressed="true"] small{color:var(--gold)}
+.chip .swatch{width:7px;height:7px;border-radius:50%;background:var(--tone);margin-bottom:3px}
+
+.counter{display:flex;align-items:center;gap:12px;margin-bottom:22px;flex-wrap:wrap}
+.counter .lbl{font-family:var(--font-display);font-weight:900;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#5E4E2A}
+.counter-ctl{display:flex;align-items:center;gap:0;border:1.5px solid rgba(8,12,28,.22);border-radius:10px;overflow:hidden;background:#fff}
+.counter-ctl button{
+  width:38px;height:38px;border:0;background:transparent;cursor:pointer;
+  font-family:var(--font-display);font-weight:900;font-size:16px;color:var(--ink);
+  display:grid;place-items:center;transition:background .14s;
+}
+.counter-ctl button:hover{background:rgba(8,12,28,.07)}
+.counter-ctl button:disabled{opacity:.28;cursor:not-allowed}
+.counter-ctl output{
+  min-width:46px;text-align:center;font-family:var(--font-display);font-weight:900;
+  font-size:17px;font-variant-numeric:tabular-nums;border-left:1.5px solid rgba(8,12,28,.14);
+  border-right:1.5px solid rgba(8,12,28,.14);line-height:38px;
+}
+.counter .hint{font-family:var(--font-mono);font-size:12px;color:#6E5F3C}
+
+.readout{border-top:2px solid var(--ink);padding-top:16px}
+.readout .big{
+  display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:4px;
+}
+.readout .big b{
+  font-family:var(--font-display);font-weight:900;font-size:clamp(38px,5vw,52px);
+  letter-spacing:-.035em;line-height:.9;font-variant-numeric:tabular-nums;
+}
+.readout .big span{font-family:var(--font-display);font-weight:900;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#5E4E2A}
+.readout .rows{display:grid;gap:0;margin-top:14px}
+.readout .rows div{
+  display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  padding:9px 0;border-bottom:1px dashed rgba(8,12,28,.22);font-size:14px;color:#4A4130;
+}
+.readout .rows div:last-child{border-bottom:0}
+.readout .rows b{font-family:var(--font-display);font-weight:900;font-size:14.5px;color:var(--ink);font-variant-numeric:tabular-nums}
+.readout .rows b i{font-style:normal;font-size:12px;letter-spacing:.08em;color:#6E5F3C;margin-left:3px}
+.fine{font-size:14px;color:#6E5F3C;margin-top:16px;line-height:1.5}
+
+/* pricing */
+.price-box{
+  border:1px solid var(--line-2);border-radius:var(--r-lg);padding:26px;
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
+}
+.price-box h3{
+  font-family:var(--font-display);font-weight:900;font-size:20px;letter-spacing:-.01em;
+  text-transform:uppercase;margin-bottom:6px;
+}
+.price-box .sub{color:var(--faint);font-size:13px;margin-bottom:20px}
+.price-row{
+  display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:baseline;
+  padding:14px 0;border-bottom:1px solid var(--line);
+}
+.price-row:last-of-type{border-bottom:0}
+.price-row .r{font-family:var(--font-display);font-weight:900;font-size:12px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;white-space:nowrap}
+.price-row .lead-dots{border-bottom:1px dotted rgba(243,239,226,.28);height:1px;transform:translateY(-4px)}
+.price-row .v{font-family:var(--font-display);font-weight:900;font-size:16px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.price-row .v.free{color:var(--gold)}
+.total{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  margin-top:20px;padding:16px 18px;border-radius:12px;
+  background:rgba(255,194,71,.09);border:1px solid rgba(255,194,71,.32);
+}
+.total .t{font-family:var(--font-display);font-weight:900;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold-lite)}
+.total .n{font-family:var(--font-display);font-weight:900;font-size:20px;font-variant-numeric:tabular-nums;color:var(--gold)}
+.price-note{font-size:14px;color:var(--faint);margin-top:18px;line-height:1.6}
+.price-note b{color:var(--muted);font-weight:600}
+
+/* ============================================================
+   contracts
+   ============================================================ */
+.addr-list{border-top:1px solid var(--line)}
+.addr-row{
+  display:grid;grid-template-columns:190px minmax(0,1fr) auto auto;gap:16px;align-items:center;
+  padding:18px 0;border-bottom:1px solid var(--line);transition:background .15s;
+}
+.addr-row:hover{background:rgba(255,255,255,.02)}
+.addr-name b{display:block;font-family:var(--font-display);font-weight:900;font-size:14px;letter-spacing:.01em}
+.addr-name span{font-family:var(--font-display);font-weight:900;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.addr-code{
+  font-family:var(--font-mono);font-size:13.5px;color:#BEC6E4;letter-spacing:.01em;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.copy-btn{
+  display:inline-flex;align-items:center;gap:7px;min-height:36px;padding:0 12px;
+  border:1px solid var(--line-2);border-radius:9px;background:transparent;color:var(--muted);
+  font-family:var(--font-display);font-weight:900;font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;cursor:pointer;transition:color .15s,border-color .15s,background .15s;
+}
+.copy-btn:hover{color:var(--gold-lite);border-color:var(--gold);background:rgba(255,194,71,.06)}
+.copy-btn svg{width:13px;height:13px}
+.copy-btn.done{color:var(--teal);border-color:rgba(57,216,200,.5)}
+.scan-link{
+  display:inline-flex;align-items:center;gap:6px;font-family:var(--font-display);font-weight:900;
+  font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);white-space:nowrap;
+}
+.scan-link:hover{color:var(--gold-lite);text-decoration:none}
+.scan-link svg{width:13px;height:13px}
+.warn{
+  display:flex;gap:12px;align-items:flex-start;margin-top:22px;padding:15px 17px;
+  border:1px solid rgba(242,83,78,.36);border-radius:12px;background:rgba(242,83,78,.075);
+  font-size:14px;color:#E9C6C4;line-height:1.55;
+}
+.warn svg{width:16px;height:16px;color:var(--crimson);flex:none;margin-top:2px}
+
+/* ============================================================
+   faq
+   ============================================================ */
+.faq-wrap{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1fr);gap:52px;align-items:start}
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{
+  display:flex;align-items:center;gap:16px;cursor:pointer;list-style:none;
+  padding:20px 0;font-family:var(--font-display);font-weight:900;font-size:14.5px;
+  letter-spacing:.01em;line-height:1.35;
+}
+summary::-webkit-details-marker{display:none}
+summary:hover{color:var(--gold-lite)}
+summary .plus{
+  margin-left:auto;flex:none;width:26px;height:26px;border-radius:50%;
+  border:1px solid var(--line-2);display:grid;place-items:center;position:relative;
+  transition:transform .22s cubic-bezier(.2,.7,.2,1),border-color .2s,background .2s;
+}
+summary .plus::before,summary .plus::after{
+  content:"";position:absolute;background:currentColor;border-radius:1px;
+}
+summary .plus::before{width:11px;height:1.6px}
+summary .plus::after{width:1.6px;height:11px;transition:transform .22s,opacity .22s}
+details[open] summary{color:var(--gold-lite)}
+details[open] summary .plus{border-color:var(--gold);background:rgba(255,194,71,.12);transform:rotate(90deg)}
+details[open] summary .plus::after{opacity:0}
+details p{color:var(--muted);font-size:14.5px;line-height:1.65;padding:0 42px 22px 0;max-width:62ch}
+details p b{color:var(--text);font-weight:600}
+details p code{font-family:var(--font-mono);font-size:.92em;color:var(--gold-lite)}
+
+/* faq aside */
+.faq-note{
+  margin-top:26px;padding-top:22px;border-top:1px solid var(--line);
+  display:flex;flex-direction:column;align-items:flex-start;gap:10px;
+}
+.faq-note p{color:var(--muted);font-size:13.5px;line-height:1.55;max-width:34ch}
+
+/* steps aside */
+.steps-note{
+  display:flex;gap:10px;align-items:flex-start;margin-top:30px;padding:14px 0 0;
+  border-top:1px solid var(--line);color:var(--muted);font-size:14px;line-height:1.5;max-width:42ch;
+}
+.steps-note svg{width:15px;height:15px;color:var(--teal);flex:none;margin-top:2px}
+
+/* paper button on cream */
+.btn--paper{--bg:transparent;--fg:#2B2416;--bd:rgba(10,14,32,.28)}
+.btn--paper:hover{--bg:rgba(10,14,32,.06);--fg:var(--ink);--bd:var(--ink)}
+
+/* ============================================================
+   final cta
+   ============================================================ */
+.cta-sec{padding:0 0 96px}
+.cta-band{
+  position:relative;overflow:hidden;border-radius:var(--r-lg);
+  background:var(--cream);color:var(--ink);border:2px solid #0A0E20;
+  padding:clamp(30px,5vw,58px);box-shadow:14px 14px 0 rgba(0,0,0,.45);
+}
+.cta-band::before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(rgba(10,14,32,.16) 1px,transparent 1px);
+  background-size:7px 7px;
+}
+.cta-in{position:relative;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center}
+.cta-band h2{font-size:clamp(30px,4.6vw,58px);line-height:.9;max-width:16ch;letter-spacing:-.03em}
+.cta-band .kicker-line{
+  font-family:var(--font-display);font-weight:900;font-size:12px;letter-spacing:.16em;
+  text-transform:uppercase;color:#6B4A08;margin-bottom:16px;display:flex;align-items:center;gap:9px;
+}
+.cta-band .kicker-line i{width:22px;height:2px;background:var(--ink);display:block}
+.cta-band p{color:#4A4130;margin-top:14px;max-width:44ch;font-size:14.5px}
+.cta-actions{display:flex;flex-direction:column;gap:12px;align-items:stretch;min-width:230px}
+.cta-band .sticker-mini{
+  position:absolute;right:16px;top:16px;width:84px;height:84px;border-radius:50%;
+  background:var(--gold);border:3px solid var(--ink);display:grid;place-items:center;rotate:14deg;
+  font-family:var(--font-display);font-weight:900;font-size:12px;letter-spacing:.06em;text-align:center;line-height:1.4;
+}
+
+/* ============================================================
+   footer
+   ============================================================ */
+footer{border-top:1px solid var(--line);padding:44px 0 54px;color:var(--faint);font-size:14px}
+.foot-in{display:grid;grid-template-columns:1.4fr .6fr .6fr;gap:36px}
+.foot-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.foot-brand img{width:34px;height:34px;border-radius:50%}
+.foot-brand b{font-family:var(--font-display);font-weight:900;font-size:14px;letter-spacing:.02em;text-transform:uppercase;color:var(--muted)}
+footer p{max-width:44ch;line-height:1.65}
+.foot-col h3{
+  font-family:var(--font-display);font-weight:900;font-size:12px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:12px;
+}
+.foot-col a{display:block;color:var(--faint);padding:4px 0;font-size:13px}
+.foot-col a:hover{color:var(--gold-lite)}
+.foot-base{
+  margin-top:34px;padding-top:18px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-family:var(--font-display);font-weight:900;font-size:12px;letter-spacing:.13em;text-transform:uppercase;
+}
+
+/* ============================================================
+   sticky mobile action
+   ============================================================ */
+.dock{
+  position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;
+  padding:10px 18px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(6,9,20,.93);backdrop-filter:blur(14px);
+  border-top:1px solid var(--line-2);
+  transform:translateY(110%);transition:transform .3s cubic-bezier(.2,.7,.2,1);
+}
+.dock.show{transform:none}
+.dock-in{display:flex;align-items:center;gap:12px}
+.dock-txt{line-height:1.15;min-width:0}
+.dock-txt b{display:block;font-family:var(--font-display);font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--cream)}
+.dock-txt span{font-size:12px;color:var(--faint)}
+.dock .btn{flex:none;margin-left:auto}
+
+/* toast */
+.toast{
+  position:fixed;left:50%;bottom:26px;translate:-50% 0;z-index:90;
+  display:flex;align-items:center;gap:9px;
+  padding:12px 18px;border-radius:99px;background:var(--cream);color:var(--ink);
+  font-family:var(--font-display);font-weight:900;font-size:12px;letter-spacing:.06em;
+  text-transform:uppercase;border:2px solid var(--ink);box-shadow:4px 4px 0 rgba(0,0,0,.5);
+  opacity:0;pointer-events:none;transform:translateY(14px);
+  transition:opacity .22s,transform .28s cubic-bezier(.2,.7,.2,1);
+}
+.toast svg{width:15px;height:15px}
+.toast.show{opacity:1;transform:none}
+
+/* ============================================================
+   reveal
+   ============================================================ */
+html.js .rv{opacity:0;transform:translateY(20px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+html.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  html.js .rv{opacity:1;transform:none;transition:none}
+  .ticker-track,.pcard,.dot-live,.tier--top::before{animation:none}
+}
+
+/* ============================================================
+   responsive
+   ============================================================ */
+@media (max-width:1180px){
+  .nav-links{display:none}
+  .fan{width:92%;margin-right:0}
+  .nav .btn--sm span{display:none}
+  .nav .btn--sm{padding:0 12px;min-width:44px}
+}
+@media (max-width:1080px){
+  .hero-in{gap:36px}
+  .tiers{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .start-grid,.calc-grid,.faq-wrap{gap:34px}
+  .fair{grid-template-columns:1fr}
+}
+@media (max-width:900px){
+  .nav-in{height:62px;gap:12px}
+  .brand{margin-right:auto}
+  .hero{padding:36px 0 56px}
+  .hero-in{grid-template-columns:1fr;gap:22px}
+  .hero-copy{order:1}
+  .fan-wrap{order:2}
+  .fan{width:100%;max-width:440px;margin:0 auto}
+  .hero-lede{max-width:46ch}
+  .start-grid{grid-template-columns:1fr}
+  .steps{max-width:560px}
+  .calc-grid{grid-template-columns:1fr}
+  .faq-wrap{grid-template-columns:1fr;gap:24px}
+  .sec{padding:70px 0}
+  .foot-in{grid-template-columns:1fr 1fr;gap:26px}
+  .addr-row{grid-template-columns:1fr auto auto;row-gap:8px}
+  .addr-name{grid-column:1 / -1}
+
+}
+@media (max-width:760px){
+  .dock{display:block}
+  footer{padding-bottom:96px}
+  .band-in{grid-template-columns:1fr 1fr}
+  .stat{padding:22px 16px 22px 0}
+  .stat:nth-child(3){border-left:0;padding-left:0}
+  .stat:nth-child(3),.stat:nth-child(4){border-top:1px solid var(--line)}
+  .tiers{
+    display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;
+    padding-bottom:10px;margin:0 -26px;padding-left:26px;padding-right:26px;
+    scrollbar-width:none;
+  }
+  .tiers::-webkit-scrollbar{display:none}
+  .tier{flex:0 0 74%;max-width:280px}
+  .cta-in{grid-template-columns:1fr}
+  .cta-actions{flex-direction:row;flex-wrap:wrap;min-width:0}
+  .cta-actions .btn{flex:1 1 180px}
+  .sticker{width:86px;height:86px;right:0;bottom:2%}
+  .pcard-a{top:12%}
+  .pcard-c{top:14%}
+  .sticker b{font-size:14px}
+  .sticker small{font-size:12px}
+}
+@media (max-width:640px){
+  .brand-sub{display:none}
+  .brand-name{font-size:15px}
+  .brand img{width:32px;height:32px}
+}
+@media (max-width:520px){
+  .wrap{padding:0 18px}
+  .fan{max-width:332px}
+  .sticker{width:78px;height:78px;right:-4px;top:auto;bottom:-2px}
+  .sticker b{font-size:13px}
+  .sticker small{font-size:12px}
+  .pcard-a{transform:rotate(-8deg)}
+  .pcard-c{transform:rotate(8deg)}
+  .prompt pre{font-size:14px;padding:16px 12px 18px;line-height:1.6;white-space:pre-wrap;overflow-wrap:anywhere}
+  .prompt-bar{padding:10px 12px 10px 14px}
+  .prompt-foot{padding:12px 14px;font-size:12px}
+  .hero-lede{font-size:15.5px}
+  h1{letter-spacing:-.025em}
+  .hero-cta .btn{flex:1 1 100%}
+  .panel-cream,.price-box{padding:20px}
+  .panel-cream,.cta-band{box-shadow:8px 8px 0 rgba(0,0,0,.45)}
+  .tiers{margin:0 -18px;padding-left:18px;padding-right:18px}
+  .chips .chip{min-width:0;flex:1 1 30%}
+  .foot-in{grid-template-columns:1fr}
+  .fair{padding:18px}
+  .flow-node{min-width:0;padding:10px 6px}
+  .flow-node span{font-size:12px}
+  .cta-band .sticker-mini{display:none}
+  .addr-code{font-size:12px;white-space:normal;overflow-wrap:anywhere}
+  details p{padding-right:0}
+}
+
+/* live supply bar (hero) */
+.supply{margin-top:26px;max-width:420px}
+.supply-row{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;color:var(--faint);margin-bottom:8px}
+.supply-row b{color:var(--text);font-weight:600;font-size:14px}
+.supply-track{height:6px;border-radius:99px;background:rgba(255,255,255,.09);overflow:hidden}
+.supply-track i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold-deep),var(--gold));border-radius:99px;transition:width 1.2s cubic-bezier(.2,.7,.2,1)}
 </style>
-<script>
- document.documentElement.classList.add('anim-pre');
- setTimeout(function(){ if (!window.__animReady) document.documentElement.classList.remove('anim-pre'); }, 3000);
-</script>
 </head>
 <body>
 
-<div class="wrap">
- <nav class="hin" style="--d:0s;--dy:-14px">
-  <a class="mark" href="./">
-   <img src="images/astro-logo.png" alt="$ASTRO logo">
-   <span>Astromine<small>Mining Corps · BNB Chain</small></span>
-  </a>
-  <div class="links">
-   <a href="#tier" data-i18n="nav_tier">Tiers</a>
-   <a href="#cara" data-i18n="nav_how">How it works</a>
-   <a href="#harga" data-i18n="nav_price">Pricing</a>
-   <a href="#kontrak" data-i18n="nav_contracts">Contracts</a>
-   <a href="skill.md" data-i18n="nav_guide">Agent guide</a>
-   <div class="lang" role="group" aria-label="Language">
-    <button type="button" data-lang="en" aria-pressed="true">EN</button>
-    <button type="button" data-lang="id" aria-pressed="false">ID</button>
-    <button type="button" data-lang="zh" aria-pressed="false">中文</button>
-   </div>
-  </div>
- </nav>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M15 5.5A2.5 2.5 0 0 0 12.5 3H6.5A3.5 3.5 0 0 0 3 6.5v6A2.5 2.5 0 0 0 5.5 15"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-8.5 8.5"/><path d="M18 14v4.5A2.5 2.5 0 0 1 15.5 21h-9A2.5 2.5 0 0 1 4 18.5v-9A2.5 2.5 0 0 1 6.5 7H11"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.4-3 7.7-7 9.5-4-1.8-7-5.1-7-9.5V6l7-3z"/><path d="M9 12l2.2 2.2L15.5 10"/></symbol>
+    <symbol id="i-warn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5 21 19H3l9-14.5z"/><path d="M12 10v4M12 17h.01"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.53.85l10.2-6.5a1 1 0 0 0 0-1.7L9.53 4.65A1 1 0 0 0 8 5.5z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></symbol>
+  </defs>
+</svg>
+
+<div class="ticker">
+  <div class="ticker-track" id="tickerTrack" aria-hidden="true"></div>
+  <button class="ticker-btn" type="button" data-ticker-toggle aria-pressed="false" aria-label="Pause ticker">
+    <svg aria-hidden="true"><use href="#i-pause"/></svg>
+  </button>
 </div>
 
-<header>
- <canvas id="stars" aria-hidden="true"></canvas>
- <div class="wrap">
-  <div class="hero">
-   <div>
-    <h1 data-i18n="hero_h1" class="hin" style="--d:.15s;--dy:34px">Asteroid-mining robots, working for your agent.</h1>
-    <p class="lede hin" data-i18n="hero_lede" style="--d:.45s;--dy:26px">Astromine is a fleet of 10,000 asteroid-miner NFTs on BNB Chain, exclusively for wallets holding a Binance Agent ID (<b>.ai</b>). Your first Miner is <b>free</b>. Every Miner with a revealed tier mines the <b>$ASTRO</b> token every hour, hands-off.</p>
-    <div class="cta hin" style="--d:.75s;--dy:20px">
-     <a class="btn primary" href="skill.md" data-i18n="cta_mint">Mint through your agent</a>
-     <a class="btn" href="#cara" data-i18n="cta_how">How it works</a>
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">
+      <img src="images/astro-logo.png" alt="Astromine logo">
+      <span class="brand-txt">
+        <span class="brand-name">Astromine</span>
+        <span class="brand-sub" data-i18n="brand_sub">Mining Corps · BNB Chain</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="#tier" data-i18n="nav_tier">Tiers</a>
+      <a href="#mulai" data-i18n="nav_start">Start</a>
+      <a href="#hitung" data-i18n="nav_calc">Numbers</a>
+      <a href="#kontrak" data-i18n="nav_contracts">Contracts</a>
+      <a href="skill.md" data-i18n="nav_guide">Guide</a>
     </div>
-    <div class="supply hin" style="--d:1s;--dy:16px">
-     <div class="row"><span data-i18n="supply_label">Minted supply</span><b><span id="mintedCount">…</span> / 10,000</b></div>
-     <div class="bar"><i id="mintedBar"></i></div>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="id" aria-pressed="false">ID</button>
+      <button type="button" data-lang="zh" aria-pressed="false">中文</button>
     </div>
-   </div>
-   <div>
-    <div class="herocards">
-     <div class="hcardw c1 hin" style="--d:.35s;--dy:34px;--sc:.92">
-      <div class="hcard">
-       <img src="images/engineer.png" alt="Engineer tier Miner">
-       <div class="tag"><b>Engineer</b><span>20 $ASTRO / <span data-i18n="per_hour">hour</span></span></div>
-      </div>
-     </div>
-     <div class="hcardw c2 hin" style="--d:.55s;--dy:34px;--sc:.92">
-      <div class="hcard gold">
-       <img src="images/admiral.png" alt="Admiral tier Miner">
-       <div class="tag"><b>Admiral</b><span>150 $ASTRO / <span data-i18n="per_hour">hour</span></span></div>
-      </div>
-     </div>
-     <div class="hcardw c3 hin" style="--d:.75s;--dy:34px;--sc:.92">
-      <div class="hcard">
-       <img src="images/pilot.png" alt="Pilot tier Miner">
-       <div class="tag"><b>Pilot</b><span>40 $ASTRO / <span data-i18n="per_hour">hour</span></span></div>
-      </div>
-     </div>
-    </div>
-    <div class="herocap"><span data-i18n="hero_caption">Mining units, Cadet to Admiral class</span><b>EST. 2026 · <span data-i18n="hero_belt">The Asteroid Belt</span></b></div>
-   </div>
+    <button class="btn btn--gold btn--sm" type="button" data-copy-prompt>
+      <svg aria-hidden="true"><use href="#i-copy"/></svg>
+      <span data-i18n="copy_prompt_short">Copy prompt</span>
+    </button>
   </div>
- </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <span class="kicker"><i class="dot-live"></i><span data-i18n="kicker">Phase 01 · live on BNB Chain</span></span>
+      <h1>
+        <span class="l1" data-i18n="h1a">Miners for</span>
+        <span class="l2"><span class="stroke" data-i18n="h1b">your agent</span>.</span>
+      </h1>
+      <p class="hero-lede" data-i18n="lede">A fleet of 10,000 asteroid-mining robots on BNB Chain, reserved for wallets holding a Binance Agent ID (<b>.ai</b>). Miner #1 is <b>free</b>. Every revealed Miner mines <b>$ASTRO</b> every hour, hands-off.</p>
+      <div class="hero-cta">
+        <button class="btn btn--gold" type="button" data-copy-prompt>
+          <svg aria-hidden="true"><use href="#i-copy"/></svg>
+          <span data-i18n="cta_copy">Copy agent prompt</span>
+        </button>
+        <a class="btn btn--ghost" href="#mulai">
+          <span data-i18n="cta_how">How it works</span>
+          <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+      </div>
+      <ul class="hero-facts">
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="fact1">Miner #1 — <b>0 BNB</b></span></li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="fact2"><b>Agent ID</b> required</span></li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="fact3">Tier drawn from a block hash</span></li>
+      </ul>
+      <div class="supply">
+        <div class="supply-row"><span data-i18n="minted_l">Minted supply</span><b><span id="mintedCount">…</span> / 10,000</b></div>
+        <div class="supply-track"><i id="supplyFill"></i></div>
+      </div>
+    </div>
+
+    <div class="fan-wrap">
+      <div class="fan">
+        <div class="fan-glow" aria-hidden="true"></div>
+        <figure class="pcard pcard-a" style="--tone:#39D8C8">
+          <img src="images/cadet.png" alt="Cadet class Miner robot holding a pickaxe">
+        </figure>
+        <figure class="pcard pcard-b pcard--top" style="--tone:#FFC247">
+          <img src="images/admiral.png" alt="Admiral class Miner robot in gold armour with a crown">
+          <figcaption class="pcard-tag"><b>Admiral</b><span>150 / h</span></figcaption>
+        </figure>
+        <figure class="pcard pcard-c" style="--tone:#A277FF">
+          <img src="images/commander.png" alt="Commander class Miner robot in violet armour">
+        </figure>
+        <div class="sticker" aria-hidden="true"><b data-i18n="sticker">Free</b><small data-i18n="sticker_sub">Miner #1</small></div>
+      </div>
+    </div>
+  </div>
 </header>
 
-<div class="wrap">
- <div class="stats">
-  <div class="stat" data-anim="stat1" data-sheet="Stats"><div class="n" data-count="10000">10,000</div><div class="l" data-i18n="stat1">Total Miner supply — never to be increased</div></div>
-  <div class="stat" data-anim="stat2" data-sheet="Stats"><div class="n" data-i18n="stat2n">5 tiers</div><div class="l" data-i18n="stat2">Fixed quota per tier, drawn from block hashes</div></div>
-  <div class="stat" data-anim="stat3" data-sheet="Stats"><div class="n" data-count="30">30</div><div class="l" data-i18n="stat3">Maximum Miners per wallet</div></div>
-  <div class="stat" data-anim="stat4" data-sheet="Stats"><div class="n" data-count="150">150</div><div class="l" data-i18n="stat4">$ASTRO per hour at the top tier</div></div>
- </div>
-
- <section id="tier">
-  <h2 data-i18n="tier_h" data-anim="head" data-sheet="Tiers">Five tiers, quotas set in stone</h2>
-  <p class="sub" data-i18n="tier_sub" data-anim="head" data-sheet="Tiers">A tier stays sealed at mint and opens from the hash of the block three blocks later, drawn against the remaining quota. The final counts land exactly on the quotas below — nobody can rig them, including the project's creator.</p>
-  <div class="tiers">
-   <div class="tier" data-anim="tier1" data-sheet="Tiers">
-    <img src="images/cadet.png" alt="Cadet tier Miner">
-    <h3>Cadet</h3><div class="rate">10 $ASTRO / <span data-i18n="per_hour">hour</span></div>
-    <div class="quota"><span data-i18n="quota_word">Quota</span> 4,200 · <span data-i18n="remain_word">remaining</span> <span data-remain="0">…</span></div>
-    <div class="qbar"><i data-qbar="0"></i></div>
-   </div>
-   <div class="tier" data-anim="tier2" data-sheet="Tiers">
-    <img src="images/engineer.png" alt="Engineer tier Miner">
-    <h3>Engineer</h3><div class="rate">20 $ASTRO / <span data-i18n="per_hour">hour</span></div>
-    <div class="quota"><span data-i18n="quota_word">Quota</span> 2,820 · <span data-i18n="remain_word">remaining</span> <span data-remain="1">…</span></div>
-    <div class="qbar"><i data-qbar="1"></i></div>
-   </div>
-   <div class="tier" data-anim="tier3" data-sheet="Tiers">
-    <img src="images/pilot.png" alt="Pilot tier Miner">
-    <h3>Pilot</h3><div class="rate">40 $ASTRO / <span data-i18n="per_hour">hour</span></div>
-    <div class="quota"><span data-i18n="quota_word">Quota</span> 1,740 · <span data-i18n="remain_word">remaining</span> <span data-remain="2">…</span></div>
-    <div class="qbar"><i data-qbar="2"></i></div>
-   </div>
-   <div class="tier" data-anim="tier4" data-sheet="Tiers">
-    <img src="images/commander.png" alt="Commander tier Miner">
-    <h3>Commander</h3><div class="rate">75 $ASTRO / <span data-i18n="per_hour">hour</span></div>
-    <div class="quota"><span data-i18n="quota_word">Quota</span> 900 · <span data-i18n="remain_word">remaining</span> <span data-remain="3">…</span></div>
-    <div class="qbar"><i data-qbar="3"></i></div>
-   </div>
-   <div class="tier top" data-anim="tier5" data-sheet="Tiers">
-    <img src="images/admiral.png" alt="Admiral tier Miner">
-    <h3>Admiral</h3><div class="rate">150 $ASTRO / <span data-i18n="per_hour">hour</span></div>
-    <div class="quota"><span data-i18n="quota_word">Quota</span> 340 · <span data-i18n="remain_word">remaining</span> <span data-remain="4">…</span></div>
-    <div class="qbar"><i data-qbar="4"></i></div>
-   </div>
+<div class="band">
+  <div class="wrap band-in">
+    <div class="stat">
+      <span class="lbl" data-i18n="s1l">Miner supply, fixed</span>
+      <div class="num" data-count="10000">10,000</div>
+    </div>
+    <div class="stat">
+      <span class="lbl" data-i18n="s2l">Classes with a fixed quota</span>
+      <div class="num" data-count="5">5</div>
+    </div>
+    <div class="stat">
+      <span class="lbl" data-i18n="s3l">Max Miners per wallet</span>
+      <div class="num" data-count="30">30</div>
+    </div>
+    <div class="stat">
+      <span class="lbl" data-i18n="s4l">$ASTRO / hour, top class</span>
+      <div class="num" data-count="150">150</div>
+    </div>
   </div>
- </section>
-
- <section id="cara">
-  <h2 data-i18n="how_h" data-anim="head" data-sheet="How">How it works</h2>
-  <p class="sub" data-anim="head" data-sheet="How"><span data-i18n="how_sub">Everything runs through your AI agent — this site never touches your wallet or asks for any keys. The full technical guide lives in</span> <a href="skill.md">skill.md</a>.</p>
-  <div class="steps">
-   <div class="step" data-anim="step1" data-sheet="How"><div class="num">1</div><h3 data-i18n="s1h">Hold an Agent ID</h3><p data-i18n="s1p">Your agent's wallet needs a <b>.ai</b> name from SPACE ID. Without one, the contract refuses the mint.</p></div>
-   <div class="step" data-anim="step2" data-sheet="How"><div class="num">2</div><h3 data-i18n="s2h">Mint a Miner</h3><p data-i18n="s2p">Your agent reads the exact price from the contract, shows it to you, then mints. The first one is free.</p></div>
-   <div class="step" data-anim="step3" data-sheet="How"><div class="num">3</div><h3 data-i18n="s3h">Reveal the tier</h3><p data-i18n="s3p">The tier is drawn from a block hash by itself. Your agent calls <i>reveal</i> a few seconds after minting and reports your tier.</p></div>
-   <div class="step" data-anim="step4" data-sheet="How"><div class="num">4</div><h3 data-i18n="s4h">Mine $ASTRO</h3><p data-i18n="s4p">One <i>start()</i> call switches mining on, then your Miner gathers $ASTRO every hour. Claim whenever you like.</p></div>
-  </div>
- </section>
-
- <section id="harga">
-  <div class="split">
-   <div data-anim="colL" data-sheet="Pricing">
-    <h2 data-i18n="price_h">Mint pricing</h2>
-    <p class="sub" style="margin-bottom:20px" data-i18n="price_sub">Steps up per wallet, computed by the contract — not a promotional number.</p>
-    <table>
-     <tr><th data-i18n="price_th1">Miner #</th><th style="text-align:right" data-i18n="price_th2">Price per Miner</th></tr>
-     <tr><td>1</td><td class="price free" data-i18n="price_free">Free</td></tr>
-     <tr><td>2 – 10</td><td class="price">0.0003 BNB</td></tr>
-     <tr><td>11 – 20</td><td class="price">0.0006 BNB</td></tr>
-     <tr><td>21 – 30</td><td class="price">0.0009 BNB</td></tr>
-    </table>
-    <p class="note" data-i18n="price_note">Every mint payment is forwarded by the contract straight to the project wallet in the same transaction — the NFT contract never holds BNB. Secondary-sale royalty is 5% (ERC-2981).</p>
-   </div>
-   <div data-anim="colR" data-sheet="Pricing">
-    <h2 data-i18n="mine_h">Mining $ASTRO</h2>
-    <p class="sub" style="margin-bottom:20px" data-i18n="mine_sub">Mined tokens pile up until storage fills, then pause until you claim.</p>
-    <ul class="facts">
-     <li><span data-i18n="f1l">Storage capacity</span><b data-i18n="f1v">48 hours of your mining rate</b></li>
-     <li><span data-i18n="f2l">Claim fee</span><b data-i18n="f2v">5% to the project</b></li>
-     <li><span data-i18n="f3l">$ASTRO supply</span><b data-i18n="f3v">1 billion, fixed</b></li>
-     <li><span data-i18n="f4l">Mining allocation</span><b data-i18n="f4v">900 million in the mining contracts</b></li>
-     <li><span data-i18n="f5l">$ASTRO market</span><b data-i18n="f5v">No pool yet — not sellable</b></li>
-    </ul>
-    <p class="note" data-i18n="mine_note">$ASTRO is a game and community token. It has no market price today, and there is no promise of future value.</p>
-   </div>
-  </div>
- </section>
-
- <section id="kontrak">
-  <h2 data-i18n="contracts_h" data-anim="head" data-sheet="Contracts">Official contracts</h2>
-  <p class="sub" data-i18n="contracts_sub" data-anim="head" data-sheet="Contracts">Only these three addresses. An address from a message, a post, or any other site is not Astromine.</p>
-  <div class="contract" data-anim="row1" data-sheet="Contracts">
-   <div class="who"><b>Astromine Miners</b><span>NFT · ERC-721</span></div>
-   <span class="addr" id="minersAddr">…</span>
-   <button class="copy" data-copy="minersAddr" type="button" data-i18n="copy">Copy</button>
-   <a class="scan" id="minersScan" href="#" target="_blank" rel="noopener">BscScan</a>
-  </div>
-  <div class="contract" data-anim="row2" data-sheet="Contracts">
-   <div class="who"><b>$ASTRO</b><span>Token · BEP-20</span></div>
-   <span class="addr" id="astroAddr">…</span>
-   <button class="copy" data-copy="astroAddr" type="button" data-i18n="copy">Copy</button>
-   <a class="scan" id="astroScan" href="#" target="_blank" rel="noopener">BscScan</a>
-  </div>
-  <div class="contract" data-anim="row3" data-sheet="Contracts">
-   <div class="who"><b data-i18n="mining_name">Mining</b><span data-i18n="mining_sub">Mining contract</span></div>
-   <span class="addr" id="miningAddr">…</span>
-   <button class="copy" data-copy="miningAddr" type="button" data-i18n="copy">Copy</button>
-   <a class="scan" id="miningScan" href="#" target="_blank" rel="noopener">BscScan</a>
-  </div>
- </section>
-
- <section id="faq">
-  <h2 data-i18n="faq_h" data-anim="head" data-sheet="Faq">Frequently asked</h2>
-  <details data-anim="item1" data-sheet="Faq">
-   <summary data-i18n="q1">Why is my Miner still “Sealed”?</summary>
-   <p data-i18n="a1">Tiers are sealed at mint so the draw stays fair. A tier opens through a <i>reveal</i> call a few seconds after minting — your agent normally does this by following the guide. If it hasn't, ask your agent to call reveal for your mint batch; it costs only a little gas from your own wallet.</p>
-  </details>
-  <details data-anim="item2" data-sheet="Faq">
-   <summary data-i18n="q2">Can I mint without an AI agent?</summary>
-   <p data-i18n="a2">Yes — the contract is public. Any wallet holding an Agent ID (.ai) and a little BNB for gas can mint directly. The agent guide is simply the easiest and safest route.</p>
-  </details>
-  <details data-anim="item3" data-sheet="Faq">
-   <summary data-i18n="q3">When does mining start earning?</summary>
-   <p data-i18n="a3">Right after the tier is revealed and your agent switches mining on with one <i>start()</i> call. Earnings accumulate up to 48 hours of your rate, then pause until you claim.</p>
-  </details>
-  <details data-anim="item4" data-sheet="Faq">
-   <summary data-i18n="q4">Can $ASTRO be sold?</summary>
-   <p data-i18n="a4">Not yet. There is no pool or market for $ASTRO today, so the token has no price. Treat Astromine as a collectible and a game, not an investment.</p>
-  </details>
- </section>
 </div>
 
-<footer>
- <div class="wrap">
-  <div class="cols">
-   <span data-i18n="footer_note">Astromine Mining Corps — an independent project, not affiliated with Binance or SPACE ID.</span>
-   <span><a href="skill.md" data-i18n="nav_guide">Agent guide</a> · <a href="#kontrak" data-i18n="nav_contracts">Contracts</a></span>
+<main>
+
+<section class="sec" id="mulai">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow"><b>02</b> — <span data-i18n="start_eyebrow">Start here</span></span>
+      <h2 data-i18n="start_h">One prompt. Sixty seconds.</h2>
+      <p class="lead" data-i18n="start_lead">Everything runs through your AI agent — this site never touches your wallet and never asks for a key. Copy the prompt, paste it into your agent, and it handles mint, reveal and start.</p>
+    </div>
+
+    <div class="start-grid">
+      <div class="steps rv">
+        <div class="step">
+          <div class="step-n">1</div>
+          <div>
+            <h3 data-i18n="st1h">Hold an Agent ID</h3>
+            <p data-i18n="st1p">Your agent's wallet needs a <b>.ai</b> name from SPACE ID. Without one, the contract refuses the mint.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">2</div>
+          <div>
+            <h3 data-i18n="st2h">Paste the prompt</h3>
+            <p data-i18n="st2p">Send it to your agent. The agent reads the live price from the contract and shows it to you before signing anything.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">3</div>
+          <div>
+            <h3 data-i18n="st3h">Reveal and start</h3>
+            <p data-i18n="st3p">Three blocks after mint, the tier opens from a block hash. One <code>start()</code> call turns the rigs on.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">4</div>
+          <div>
+            <h3 data-i18n="st4h">Claim when you like</h3>
+            <p data-i18n="st4p">$ASTRO stacks up to 48 hours of your rate, then waits. Claim any time — a 5% fee goes back to the project.</p>
+          </div>
+        </div>
+        <p class="steps-note"><svg aria-hidden="true"><use href="#i-shield"/></svg><span data-i18n="steps_note">No wallet connect, no seed phrase, no key. The page only hands your agent the instructions.</span></p>
+      </div>
+
+      <div class="prompt rv">
+        <div class="prompt-bar">
+          <span class="file"><svg aria-hidden="true"><use href="#i-file"/></svg>agent-prompt.txt</span>
+          <span class="spacer"></span>
+          <button class="copy-btn" type="button" data-copy-prompt>
+            <svg aria-hidden="true"><use href="#i-copy"/></svg>
+            <span data-i18n="copy">Copy</span>
+          </button>
+        </div>
+        <pre id="promptText" tabindex="0">You are operating the Astromine Mining Corps on BNB Chain (chainId 56).
+Wallet: &lt;YOUR_WALLET&gt;        # must hold a .ai name from SPACE ID
+
+Official contracts:
+  NFT     0x02b60c20abb77873590752571a8f941dB773fF79
+  $ASTRO  0xBE6352376026A7Ed6bFc3854E99cD90415bAcFfe
+  Mining  0x278c69e1cb6871a7d9da41026453859ea8fd3187
+
+Do this, in order:
+1. Read the current mint price from the NFT contract and show it to me.
+   Do not sign anything until I confirm.
+2. Mint 1 Miner. My first one is free.
+3. Wait 3 blocks, then call reveal for that token and report my tier.
+4. Call start() on the Mining contract for that Miner.
+5. Report tier, $ASTRO per hour, storage cap and remaining quota.
+
+Never ask for my seed phrase or private key. Show each transaction's
+to-address and value before I sign.</pre>
+        <div class="prompt-foot">
+          <svg aria-hidden="true"><use href="#i-shield"/></svg>
+          <span data-i18n="prompt_foot">Works with any agent that can sign on BNB Chain.</span>
+          <a href="skill.md" data-i18n="prompt_guide">Full guide → skill.md</a>
+        </div>
+      </div>
+    </div>
   </div>
- </div>
+</section>
+
+<section class="sec" id="tier">
+  <div class="wrap">
+    <div class="tier-head-row">
+      <div class="sec-head rv" style="margin-bottom:0">
+        <span class="eyebrow"><b>03</b> — <span data-i18n="tier_eyebrow">The fleet</span></span>
+        <h2 data-i18n="tier_h">Five classes. Quotas set in stone.</h2>
+        <p class="lead" data-i18n="tier_lead">A tier stays sealed at mint and opens from the hash of the block three blocks later, drawn against the remaining quota. The final counts land exactly on the quotas below — the deployer cannot rig them either.</p>
+      </div>
+    </div>
+
+    <div class="tiers rv">
+      <article class="tier" style="--tone:#39D8C8">
+        <div class="tier-art"><img src="images/cadet.png" alt="Cadet class Miner" loading="lazy"><span class="tier-rank">01</span></div>
+        <h3>Cadet</h3>
+        <div class="tier-rate">10<small data-i18n="per_hour">$ASTRO / hour</small></div>
+        <div class="meter"><i data-w="42"></i></div>
+        <div class="tier-meta"><span data-i18n="quota">Quota</span><b>4,200</b></div>
+        <div class="tier-meta"><span data-i18n="odds">Draw odds</span><b data-odds="0">42%</b></div>
+      </article>
+      <article class="tier" style="--tone:#F59A3C">
+        <div class="tier-art"><img src="images/engineer.png" alt="Engineer class Miner" loading="lazy"><span class="tier-rank">02</span></div>
+        <h3>Engineer</h3>
+        <div class="tier-rate">20<small data-i18n="per_hour">$ASTRO / hour</small></div>
+        <div class="meter"><i data-w="28.2"></i></div>
+        <div class="tier-meta"><span data-i18n="quota">Quota</span><b>2,820</b></div>
+        <div class="tier-meta"><span data-i18n="odds">Draw odds</span><b data-odds="1">28.2%</b></div>
+      </article>
+      <article class="tier" style="--tone:#4D8DF2">
+        <div class="tier-art"><img src="images/pilot.png" alt="Pilot class Miner" loading="lazy"><span class="tier-rank">03</span></div>
+        <h3>Pilot</h3>
+        <div class="tier-rate">40<small data-i18n="per_hour">$ASTRO / hour</small></div>
+        <div class="meter"><i data-w="17.4"></i></div>
+        <div class="tier-meta"><span data-i18n="quota">Quota</span><b>1,740</b></div>
+        <div class="tier-meta"><span data-i18n="odds">Draw odds</span><b data-odds="2">17.4%</b></div>
+      </article>
+      <article class="tier" style="--tone:#A277FF">
+        <div class="tier-art"><img src="images/commander.png" alt="Commander class Miner" loading="lazy"><span class="tier-rank">04</span></div>
+        <h3>Commander</h3>
+        <div class="tier-rate">75<small data-i18n="per_hour">$ASTRO / hour</small></div>
+        <div class="meter"><i data-w="9"></i></div>
+        <div class="tier-meta"><span data-i18n="quota">Quota</span><b>900</b></div>
+        <div class="tier-meta"><span data-i18n="odds">Draw odds</span><b data-odds="3">9%</b></div>
+      </article>
+      <article class="tier tier--top" style="--tone:#FFC247">
+        <div class="tier-art"><img src="images/admiral.png" alt="Admiral class Miner" loading="lazy"><span class="tier-rank">05</span></div>
+        <h3>Admiral</h3>
+        <div class="tier-rate">150<small data-i18n="per_hour">$ASTRO / hour</small></div>
+        <div class="meter"><i data-w="3.4"></i></div>
+        <div class="tier-meta"><span data-i18n="quota">Quota</span><b>340</b></div>
+        <div class="tier-meta"><span data-i18n="odds">Draw odds</span><b data-odds="4">3.4%</b></div>
+      </article>
+    </div>
+
+    <div class="fair rv">
+      <div>
+        <h3 data-i18n="fair_h">The draw cannot be rigged</h3>
+        <p data-i18n="fair_p">No admin switch, no allowlist, no manual roll. Your tier comes from a block header nobody controls — and the quotas close exactly once they are full.</p>
+      </div>
+      <div class="flow" aria-label="Reveal flow">
+        <div class="flow-node"><b data-i18n="f1">Mint</b><span>tx</span></div>
+        <svg class="flow-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+        <div class="flow-node"><b data-i18n="f2">+3 blocks</b><span>~9s</span></div>
+        <svg class="flow-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+        <div class="flow-node"><b data-i18n="f3">Block hash</b><span>0x…</span></div>
+        <svg class="flow-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+        <div class="flow-node"><b data-i18n="f4">Tier</b><span>1 / 5</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="sec" id="hitung">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow"><b>04</b> — <span data-i18n="calc_eyebrow">Run the numbers</span></span>
+      <h2 data-i18n="calc_h">Do the math before you mint.</h2>
+      <p class="lead" data-i18n="calc_lead">Pick a class and a hangar size. Rates come straight from the contract; mined tokens stack until the storage cap, then wait for your claim.</p>
+    </div>
+
+    <div class="calc-grid">
+      <div class="panel-cream rv">
+        <span class="eyebrow" data-i18n="calc_panel">Mining estimate</span>
+        <h3 data-i18n="calc_h3">Per hour, per day, per claim</h3>
+
+        <div class="chips" role="group" aria-label="Class" id="chips">
+          <button class="chip" type="button" data-rate="10" aria-pressed="true" style="--tone:#39D8C8"><span class="swatch" aria-hidden="true"></span><b>Cadet</b><small>10/h</small></button>
+          <button class="chip" type="button" data-rate="20" aria-pressed="false" style="--tone:#F59A3C"><span class="swatch" aria-hidden="true"></span><b>Engineer</b><small>20/h</small></button>
+          <button class="chip" type="button" data-rate="40" aria-pressed="false" style="--tone:#4D8DF2"><span class="swatch" aria-hidden="true"></span><b>Pilot</b><small>40/h</small></button>
+          <button class="chip" type="button" data-rate="75" aria-pressed="false" style="--tone:#A277FF"><span class="swatch" aria-hidden="true"></span><b>Commander</b><small>75/h</small></button>
+          <button class="chip" type="button" data-rate="150" aria-pressed="false" style="--tone:#FFC247"><span class="swatch" aria-hidden="true"></span><b>Admiral</b><small>150/h</small></button>
+        </div>
+
+        <div class="counter">
+          <span class="lbl" data-i18n="counter_lbl">Miners</span>
+          <div class="counter-ctl">
+            <button type="button" data-step="-1" aria-label="Minus one Miner">−</button>
+            <output id="countOut" for="countOut">1</output>
+            <button type="button" data-step="1" aria-label="Plus one Miner">+</button>
+          </div>
+          <span class="hint" data-i18n="counter_hint">max 30 / wallet</span>
+        </div>
+
+        <div class="readout" aria-live="polite">
+          <div class="big"><b id="outHour">10</b><span data-i18n="per_hour_out">$ASTRO / hour</span></div>
+          <div class="rows">
+            <div><span data-i18n="r1">Per day, 24 hours</span><b id="outDay">240</b></div>
+            <div><span data-i18n="r2">Storage caps at 48 hours</span><b id="outCap">480</b></div>
+            <div><span data-i18n="r3">After the 5% claim fee</span><b id="outNet">228</b></div>
+          </div>
+        </div>
+        <p class="fine" data-i18n="calc_fine">An estimate built from contract numbers, not a promise of returns. $ASTRO has no market yet.</p>
+      </div>
+
+      <div class="price-box rv">
+        <h3 data-i18n="price_h">Mint price</h3>
+        <p class="sub" data-i18n="price_sub">Steps up per wallet, computed by the contract — not a promo number.</p>
+        <div class="price-row">
+          <span class="r" data-i18n="pr1">Miner #1</span><span class="lead-dots"></span><span class="v free" data-i18n="pr_free">Free</span>
+        </div>
+        <div class="price-row">
+          <span class="r">#2 – 10</span><span class="lead-dots"></span><span class="v">0.0003 BNB</span>
+        </div>
+        <div class="price-row">
+          <span class="r">#11 – 20</span><span class="lead-dots"></span><span class="v">0.0006 BNB</span>
+        </div>
+        <div class="price-row">
+          <span class="r">#21 – 30</span><span class="lead-dots"></span><span class="v">0.0009 BNB</span>
+        </div>
+        <div class="total">
+          <span class="t" data-i18n="total_l">Full hangar · 30 Miners</span>
+          <span class="n">0.0177 BNB</span>
+        </div>
+        <p class="price-note" data-i18n="price_note">Every mint payment is forwarded by the contract to the project wallet in the same transaction — the NFT contract never holds BNB. Secondary royalty is 5% (ERC-2981).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="kontrak">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow"><b>05</b> — <span data-i18n="con_eyebrow">Verify</span></span>
+      <h2 data-i18n="con_h">Three addresses. Nothing else.</h2>
+      <p class="lead" data-i18n="con_lead">Any contract that reaches you through a DM, a post or another site is not Astromine. Copy from here or from BscScan.</p>
+    </div>
+
+    <div class="addr-list rv">
+      <div class="addr-row">
+        <div class="addr-name"><b data-i18n="c1n">Astromine Miners</b><span>NFT · ERC-721</span></div>
+        <span class="addr-code" id="addr1">0x02b60c20abb77873590752571a8f941dB773fF79</span>
+        <button class="copy-btn" type="button" data-copy="addr1" data-i18n-aria="copy_addr">
+          <svg aria-hidden="true"><use href="#i-copy"/></svg><span data-i18n="copy">Copy</span>
+        </button>
+        <a class="scan-link" href="https://bscscan.com/address/0x02b60c20abb77873590752571a8f941dB773fF79" target="_blank" rel="noopener">BscScan<svg aria-hidden="true"><use href="#i-ext"/></svg></a>
+      </div>
+      <div class="addr-row">
+        <div class="addr-name"><b>$ASTRO</b><span data-i18n="c2t">Token · BEP-20</span></div>
+        <span class="addr-code" id="addr2">0xBE6352376026A7Ed6bFc3854E99cD90415bAcFfe</span>
+        <button class="copy-btn" type="button" data-copy="addr2" data-i18n-aria="copy_addr">
+          <svg aria-hidden="true"><use href="#i-copy"/></svg><span data-i18n="copy">Copy</span>
+        </button>
+        <a class="scan-link" href="https://bscscan.com/address/0xBE6352376026A7Ed6bFc3854E99cD90415bAcFfe" target="_blank" rel="noopener">BscScan<svg aria-hidden="true"><use href="#i-ext"/></svg></a>
+      </div>
+      <div class="addr-row">
+        <div class="addr-name"><b data-i18n="c3n">Mining</b><span data-i18n="c3t">Mining contract</span></div>
+        <span class="addr-code" id="addr3">0x278c69e1cb6871a7d9da41026453859ea8fd3187</span>
+        <button class="copy-btn" type="button" data-copy="addr3" data-i18n-aria="copy_addr">
+          <svg aria-hidden="true"><use href="#i-copy"/></svg><span data-i18n="copy">Copy</span>
+        </button>
+        <a class="scan-link" href="https://bscscan.com/address/0x278c69e1cb6871a7d9da41026453859ea8fd3187" target="_blank" rel="noopener">BscScan<svg aria-hidden="true"><use href="#i-ext"/></svg></a>
+      </div>
+    </div>
+
+    <div class="warn rv">
+      <svg aria-hidden="true"><use href="#i-warn"/></svg>
+      <span data-i18n="warn">No one from the project will ever DM you a “new” contract or ask for a seed phrase. There is no second mint, no migration, no presale.</span>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="faq">
+  <div class="wrap faq-wrap">
+    <div class="sec-head rv" style="margin-bottom:0">
+      <span class="eyebrow"><b>06</b> — <span data-i18n="faq_eyebrow">FAQ</span></span>
+      <h2 data-i18n="faq_h">Straight answers.</h2>
+      <p class="lead" data-i18n="faq_lead">Five questions every new operator asks before the first mint.</p>
+      <div class="faq-note">
+        <span class="eyebrow" data-i18n="faq_note_l">Still stuck</span>
+        <p data-i18n="faq_note_p">The agent guide lists every call the contract exposes, with the exact arguments.</p>
+        <a class="btn btn--ghost btn--sm" href="skill.md"><span data-i18n="faq_note_a">Open skill.md</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+
+    <div class="rv">
+      <details open>
+        <summary><span data-i18n="q1">Why is my Miner still “Sealed”?</span><span class="plus" aria-hidden="true"></span></summary>
+        <p data-i18n="a1">Tiers are sealed at mint so the draw stays fair. A tier opens through a <code>reveal</code> call a few seconds after minting — your agent normally does this by following the guide. If it hasn't, ask your agent to call reveal for your mint batch; it costs only a little gas from your own wallet.</p>
+      </details>
+      <details>
+        <summary><span data-i18n="q2">Can I mint without an AI agent?</span><span class="plus" aria-hidden="true"></span></summary>
+        <p data-i18n="a2">Yes — the contract is public. Any wallet holding an Agent ID (<b>.ai</b>) and a little BNB for gas can mint directly. The agent route is simply the easiest and safest one.</p>
+      </details>
+      <details>
+        <summary><span data-i18n="q3">When does mining start earning?</span><span class="plus" aria-hidden="true"></span></summary>
+        <p data-i18n="a3">Right after the tier is revealed and one <code>start()</code> call switches mining on. Earnings stack up to 48 hours of your rate, then pause until you claim.</p>
+      </details>
+      <details>
+        <summary><span data-i18n="q4">How much BNB do I need?</span><span class="plus" aria-hidden="true"></span></summary>
+        <p data-i18n="a4">Your first Miner is free in BNB terms, but every transaction still costs gas on BSC. Keep a small BNB balance in the wallet your agent signs with so mint, reveal and start can all go through.</p>
+      </details>
+      <details>
+        <summary><span data-i18n="q5">Can $ASTRO be sold?</span><span class="plus" aria-hidden="true"></span></summary>
+        <p data-i18n="a5">Not yet. There is no pool or market for $ASTRO today, so the token has no price. Treat Astromine as a collectible and a game, not an investment.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-sec">
+  <div class="wrap">
+    <div class="cta-band rv">
+      <div class="sticker-mini" aria-hidden="true">0<br>BNB</div>
+      <div class="cta-in">
+        <div>
+          <div class="kicker-line"><i></i><span data-i18n="cta_kicker">Miner #1 is free</span></div>
+          <h2 data-i18n="cta_h">Claim your first Miner tonight.</h2>
+          <p data-i18n="cta_p">One prompt does the whole thing: mint, reveal, start. Your wallet keeps the keys the entire time.</p>
+        </div>
+        <div class="cta-actions">
+          <button class="btn btn--ink" type="button" data-copy-prompt>
+            <svg aria-hidden="true"><use href="#i-copy"/></svg>
+            <span data-i18n="cta_copy2">Copy the prompt</span>
+          </button>
+          <a class="btn btn--paper" href="skill.md">
+            <span data-i18n="cta_guide">Read the guide</span>
+            <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-in">
+      <div>
+        <div class="foot-brand">
+          <img src="images/astro-logo.png" alt="">
+          <b>Astromine Mining Corps</b>
+        </div>
+        <p data-i18n="foot_p">Astromine is an independent project. It is not affiliated with, endorsed by, or sponsored by Binance or SPACE ID. $ASTRO is a game and community token with no market price today, and no promise of future value.</p>
+      </div>
+      <div class="foot-col">
+        <h3 data-i18n="foot_c1">Project</h3>
+        <a href="#tier" data-i18n="nav_tier">Tiers</a>
+        <a href="#hitung" data-i18n="nav_calc">Numbers</a>
+        <a href="#kontrak" data-i18n="nav_contracts">Contracts</a>
+        <a href="skill.md" data-i18n="nav_guide">Guide</a>
+      </div>
+      <div class="foot-col">
+        <h3 data-i18n="foot_c2">On-chain</h3>
+        <a href="https://bscscan.com/address/0x02b60c20abb77873590752571a8f941dB773fF79" target="_blank" rel="noopener">Miners NFT ↗</a>
+        <a href="https://bscscan.com/address/0xBE6352376026A7Ed6bFc3854E99cD90415bAcFfe" target="_blank" rel="noopener">$ASTRO ↗</a>
+        <a href="https://bscscan.com/address/0x278c69e1cb6871a7d9da41026453859ea8fd3187" target="_blank" rel="noopener">Mining ↗</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span data-i18n="foot_left">Est. 2026 · The Asteroid Belt · BNB Chain</span>
+      <span data-i18n="foot_right">Not affiliated with Binance or SPACE ID</span>
+    </div>
+  </div>
 </footer>
+
+<div class="dock" id="dock" aria-hidden="true">
+  <div class="dock-in">
+    <div class="dock-txt">
+      <b data-i18n="dock_b">Miner #1 is free</b>
+      <span data-i18n="dock_s">One prompt, no keys</span>
+    </div>
+    <button class="btn btn--gold btn--sm" type="button" data-copy-prompt>
+      <svg aria-hidden="true"><use href="#i-copy"/></svg>
+      <span data-i18n="dock_btn">Copy prompt</span>
+    </button>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <svg aria-hidden="true"><use href="#i-check"/></svg>
+  <span id="toastMsg"></span>
+</div>
+<script>
+(function(){
+  "use strict";
+  document.documentElement.className += ' js';
+
+  /* ---------- copy ---------- */
+  var TOAST = document.getElementById('toast');
+  var TOAST_MSG = document.getElementById('toastMsg');
+  var toastTimer = null;
+  function toast(msg){
+    TOAST_MSG.textContent = msg;
+    TOAST.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ TOAST.classList.remove('show'); }, 2200);
+  }
+  function fallbackCopy(text){
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly','');
+    ta.style.cssText = 'position:fixed;top:0;left:-9999px;opacity:0';
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+  function copyText(text){
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      return navigator.clipboard.writeText(text).then(function(){ return true; }, function(){ return fallbackCopy(text); });
+    }
+    return Promise.resolve(fallbackCopy(text));
+  }
+
+  /* ---------- i18n ---------- */
+  var T = {
+    id: {
+      title: 'Astromine — Miner untuk agenmu · BNB Chain',
+      desc: '10.000 Miner NFT penambang asteroid di BNB Chain, khusus pemegang Binance Agent ID (.ai). Miner pertama gratis, tier diundi dari hash blok, tiap Miner menambang $ASTRO setiap jam.',
+      brand_sub: 'Mining Corps · BNB Chain',
+      nav_tier: 'Tier', nav_start: 'Mulai', nav_calc: 'Hitungan', nav_contracts: 'Kontrak', nav_guide: 'Panduan',
+      copy_prompt_short: 'Salin prompt',
+      minted_l: 'Suplai termint',
+      kicker: 'Fase 01 · live di BNB Chain',
+      h1a: 'Miner untuk', h1b: 'agenmu',
+      lede: '10.000 robot penambang asteroid di BNB Chain, khusus wallet yang punya Binance Agent ID (<b>.ai</b>). Miner #1 <b>gratis</b>. Tiap Miner yang sudah terbuka menambang <b>$ASTRO</b> setiap jam — tanpa kamu urus.',
+      cta_copy: 'Salin prompt agen', cta_how: 'Cara kerjanya',
+      fact1: 'Miner #1 — <b>0 BNB</b>', fact2: 'Wajib <b>Agent ID</b>', fact3: 'Tier diundi dari hash blok',
+      sticker: 'Gratis', sticker_sub: 'Miner #1',
+      s1l: 'Suplai Miner, tetap', s2l: 'Kelas dengan kuota pasti', s3l: 'Maks Miner per wallet', s4l: '$ASTRO / jam, kelas tertinggi',
+      start_eyebrow: 'Mulai di sini',
+      start_h: 'Satu prompt. Enam puluh detik.',
+      start_lead: 'Semua jalan lewat agen AI-mu — situs ini tidak pernah menyentuh wallet dan tidak pernah minta kunci. Salin promptnya, tempel ke agen, sisanya dia yang urus: mint, reveal, start.',
+      st1h: 'Punya Agent ID', st1p: 'Wallet agenmu harus punya nama <b>.ai</b> dari SPACE ID. Tanpa itu, kontrak menolak mint.',
+      st2h: 'Tempel promptnya', st2p: 'Kirim ke agenmu. Agen membaca harga langsung dari kontrak dan menunjukkannya sebelum tanda tangan apa pun.',
+      st3h: 'Reveal lalu start', st3p: 'Tiga blok setelah mint, tier terbuka dari hash blok. Satu panggilan <code>start()</code> menyalakan rig-nya.',
+      st4h: 'Klaim kapan saja', st4p: '$ASTRO menumpuk sampai 48 jam laju mining-mu, lalu berhenti menunggu. Klaim kapan pun — fee 5% kembali ke proyek.',
+      steps_note: 'Tanpa connect wallet, tanpa seed phrase, tanpa kunci. Situs ini cuma menyerahkan instruksi ke agenmu.',
+      copy: 'Salin',
+      prompt_foot: 'Jalan di agen apa pun yang bisa tanda tangan di BNB Chain.',
+      prompt_guide: 'Panduan lengkap → skill.md',
+      tier_eyebrow: 'Armada',
+      tier_h: 'Lima kelas. Kuota terkunci.',
+      tier_lead: 'Tier tetap tersegel saat mint dan terbuka dari hash blok tiga blok setelahnya, diundi terhadap sisa kuota. Hasil akhirnya persis angka di bawah — deployer pun tidak bisa mengaturnya.',
+      per_hour: '$ASTRO / jam', quota: 'Kuota', odds: 'Peluang',
+      fair_h: 'Undiannya tidak bisa diakali',
+      fair_p: 'Tidak ada saklar admin, tidak ada allowlist, tidak ada roll manual. Tier-mu datang dari blok yang tidak dikendalikan siapa pun — dan kuota menutup tepat saat penuh.',
+      f1: 'Mint', f2: '+3 blok', f3: 'Hash blok', f4: 'Tier',
+      calc_eyebrow: 'Hitung dulu',
+      calc_h: 'Hitung sebelum mint.',
+      calc_lead: 'Pilih kelas, pilih isi hangar. Laju diambil dari kontrak; hasil menumpuk sampai batas simpan, lalu menunggu kamu klaim.',
+      calc_panel: 'Estimasi tambang', calc_h3: 'Per jam, per hari, per klaim',
+      counter_lbl: 'Miner', counter_hint: 'maks 30 / wallet',
+      per_hour_out: '$ASTRO / jam',
+      r1: 'Per hari, 24 jam', r2: 'Batas simpan 48 jam', r3: 'Setelah fee klaim 5%',
+      calc_fine: 'Estimasi dari angka kontrak, bukan janji hasil. $ASTRO belum punya pasar.',
+      price_h: 'Harga mint',
+      price_sub: 'Naik per wallet, dihitung kontrak — bukan angka promosi.',
+      pr1: 'Miner #1', pr_free: 'Gratis',
+      total_l: 'Hangar penuh · 30 Miner',
+      price_note: 'Tiap pembayaran mint diteruskan kontrak langsung ke wallet proyek di transaksi yang sama — kontrak NFT tidak pernah menahan BNB. Royalti pasar sekunder 5% (ERC-2981).',
+      con_eyebrow: 'Verifikasi',
+      con_h: 'Tiga alamat. Cuma itu.',
+      con_lead: 'Kontrak yang datang lewat DM, postingan, atau situs lain bukan Astromine. Salin dari sini atau dari BscScan.',
+      c1n: 'Astromine Miners', c2t: 'Token · BEP-20', c3n: 'Mining', c3t: 'Kontrak tambang',
+      copy_addr: 'Salin alamat kontrak',
+      warn: 'Tidak ada orang dari proyek yang akan DM kamu “kontrak baru” atau meminta seed phrase. Tidak ada mint kedua, tidak ada migrasi, tidak ada presale.',
+      faq_eyebrow: 'FAQ', faq_h: 'Jawaban langsung.',
+      faq_lead: 'Lima hal yang ditanya tiap operator baru sebelum mint pertama.',
+      faq_note_l: 'Masih bingung', faq_note_p: 'Panduan agen mencantumkan setiap fungsi kontrak beserta argumennya.', faq_note_a: 'Buka skill.md',
+      q1: 'Kenapa Miner saya masih “Sealed”?',
+      a1: 'Tier memang tersegel saat mint supaya undiannya adil. Tier terbuka lewat panggilan <code>reveal</code> beberapa detik setelah mint — biasanya agenmu yang melakukan, mengikuti panduan. Kalau belum, minta agenmu memanggil reveal untuk batch mint-mu; biayanya cuma gas kecil dari wallet-mu.',
+      q2: 'Bisa mint tanpa agen AI?',
+      a2: 'Bisa — kontraknya publik. Wallet mana pun yang punya Agent ID (<b>.ai</b>) dan sedikit BNB untuk gas bisa mint langsung. Jalur agen cuma yang paling gampang dan paling aman.',
+      q3: 'Kapan tambangnya mulai menghasilkan?',
+      a3: 'Tepat setelah tier terbuka dan satu panggilan <code>start()</code> menyalakan tambang. Hasil menumpuk sampai 48 jam laju mining-mu, lalu berhenti sampai kamu klaim.',
+      q4: 'Butuh BNB berapa banyak?',
+      a4: 'Miner pertamamu gratis dari sisi BNB, tapi tiap transaksi tetap kena gas di BSC. Simpan sedikit BNB di wallet yang dipakai agenmu supaya mint, reveal, dan start semuanya lancar.',
+      q5: '$ASTRO bisa dijual?',
+      a5: 'Belum. Hari ini belum ada pool atau pasar untuk $ASTRO, jadi tokennya belum punya harga. Anggap Astromine sebagai koleksi dan game, bukan investasi.',
+      cta_kicker: 'Miner #1 gratis', cta_h: 'Ambil Miner pertamamu malam ini.',
+      cta_p: 'Satu prompt menyelesaikan semuanya: mint, reveal, start. Kunci wallet tetap di tanganmu.',
+      cta_copy2: 'Salin promptnya', cta_guide: 'Baca panduan',
+      foot_p: 'Astromine adalah proyek independen. Tidak berafiliasi dengan, tidak didukung oleh, dan tidak disponsori Binance atau SPACE ID. $ASTRO adalah token permainan dan komunitas yang belum punya harga pasar, dan tidak ada janji nilai di kemudian hari.',
+      foot_c1: 'Proyek', foot_c2: 'On-chain',
+      foot_left: 'Est. 2026 · Sabuk Asteroid · BNB Chain',
+      foot_right: 'Tidak berafiliasi dengan Binance atau SPACE ID',
+      dock_b: 'Miner #1 gratis', dock_s: 'Satu prompt, tanpa kunci', dock_btn: 'Salin prompt',
+      toast_prompt: 'Prompt tersalin — tempel ke agenmu',
+      toast_addr: 'Alamat tersalin',
+      copied: 'Tersalin',
+      copy_fail: 'Gagal menyalin',
+      ticker: ['Miner #1 gratis','Suplai 10.000 · tetap','Tier diundi dari hash blok','Maks 30 Miner per wallet','BNB Chain','Fee klaim 5%','Royalti ERC-2981'],
+      prompt: 'Kamu mengoperasikan Astromine Mining Corps di BNB Chain (chainId 56).\nWallet: <WALLET_KAMU>        # harus punya nama .ai dari SPACE ID\n\nKontrak resmi:\n  NFT     0x02b60c20abb77873590752571a8f941dB773fF79\n  $ASTRO  0xBE6352376026A7Ed6bFc3854E99cD90415bAcFfe\n  Mining  0x278c69e1cb6871a7d9da41026453859ea8fd3187\n\nLakukan berurutan:\n1. Baca harga mint terkini dari kontrak NFT dan tunjukkan ke saya.\n   Jangan tanda tangan apa pun sebelum saya setujui.\n2. Mint 1 Miner. Miner pertama saya gratis.\n3. Tunggu 3 blok, lalu panggil reveal untuk token itu dan laporkan tier saya.\n4. Panggil start() di kontrak Mining untuk Miner tersebut.\n5. Laporkan: tier, $ASTRO per jam, batas simpan, dan sisa kuota tier saya.\n\nJangan pernah meminta seed phrase atau private key saya. Tunjukkan alamat\ntujuan dan nilai setiap transaksi sebelum saya tanda tangan.'
+    },
+    zh: {
+      title: 'Astromine — 为你的 AI 代理采矿 · BNB Chain',
+      desc: '10,000 个小行星采矿 Miner NFT，运行在 BNB Chain，只开放给持有 Binance Agent ID（.ai）的钱包。第 1 个 Miner 免费，等级由区块哈希抽取，每个 Miner 每小时开采 $ASTRO。',
+      brand_sub: 'Mining Corps · BNB Chain',
+      nav_tier: '等级', nav_start: '开始', nav_calc: '算一算', nav_contracts: '合约', nav_guide: '指南',
+      copy_prompt_short: '复制提示词',
+      minted_l: '已铸造',
+      kicker: '第一阶段 · BNB Chain 已上线',
+      h1a: '为你的代理', h1b: '采矿',
+      lede: '10,000 台小行星采矿机器人，运行在 BNB Chain，只开放给持有 Binance Agent ID（<b>.ai</b>）的钱包。第 1 个 Miner <b>免费</b>。每个已揭示等级的 Miner 每小时自动开采 <b>$ASTRO</b>，全程无需操心。',
+      cta_copy: '复制代理提示词', cta_how: '运作方式',
+      fact1: '第 1 个 Miner — <b>0 BNB</b>', fact2: '需要 <b>Agent ID</b>', fact3: '等级由区块哈希抽取',
+      sticker: '免费', sticker_sub: '第 1 个',
+      s1l: 'Miner 总供应量，固定', s2l: '各等级的固定配额', s3l: '每个钱包最多持有', s4l: '最高等级每小时 $ASTRO',
+      start_eyebrow: '从这里开始',
+      start_h: '一句提示词。六十秒。',
+      start_lead: '全部通过你的 AI 代理完成——本站不接触你的钱包，也不会索要任何密钥。复制提示词，粘贴给代理，铸造、揭示、开机都由它完成。',
+      st1h: '持有 Agent ID', st1p: '代理钱包需要一个来自 SPACE ID 的 <b>.ai</b> 名称。没有的话，合约会拒绝铸造。',
+      st2h: '粘贴提示词', st2p: '发给你的代理。它会先从合约读取实时价格并给你看，等你确认后才签名。',
+      st3h: '揭示并开机', st3p: '铸造三个区块后，等级由区块哈希开启。一次 <code>start()</code> 调用开启采矿。',
+      st4h: '随时领取', st4p: '$ASTRO 累积到你速率的 48 小时上限后暂停等待。随时可领取，5% 手续费归项目方。',
+      steps_note: '不连接钱包、不要助记词、不要私钥。本站只把指令交给你的代理。',
+      copy: '复制',
+      prompt_foot: '适用于任何能在 BNB Chain 上签名的代理。',
+      prompt_guide: '完整指南 → skill.md',
+      tier_eyebrow: '舰队',
+      tier_h: '五个等级。配额不可更改。',
+      tier_lead: '等级在铸造时密封，三个区块后由该区块的哈希揭示，并按剩余配额抽取。最终数量与下方配额完全一致——部署者也无法操纵。',
+      per_hour: '$ASTRO / 小时', quota: '配额', odds: '抽中概率',
+      fair_h: '抽签不可操纵',
+      fair_p: '没有 admin 开关，没有白名单，也没有手动抽奖。你的等级来自一个无人能控制的区块头——配额满即关闭。',
+      f1: '铸造', f2: '+3 区块', f3: '区块哈希', f4: '等级',
+      calc_eyebrow: '先算一算',
+      calc_h: '铸造前先算清楚。',
+      calc_lead: '选等级、选矿机数量。速率直接来自合约；产出累积到储存上限，等你领取。',
+      calc_panel: '采矿估算', calc_h3: '每小时、每天、每次领取',
+      counter_lbl: 'Miner 数量', counter_hint: '每个钱包最多 30',
+      per_hour_out: '$ASTRO / 小时',
+      r1: '每天 24 小时', r2: '储存上限 48 小时', r3: '扣除 5% 领取费后',
+      calc_fine: '按合约数字估算，不是收益承诺。$ASTRO 目前没有市场。',
+      price_h: '铸造价格',
+      price_sub: '按钱包阶梯递增，由合约计算——不是促销数字。',
+      pr1: '第 1 个 Miner', pr_free: '免费',
+      total_l: '满编 · 30 个 Miner',
+      price_note: '每笔铸造付款都由合约在同一笔交易中转给项目钱包——NFT 合约从不持有 BNB。二级版税 5%（ERC-2981）。',
+      con_eyebrow: '核验',
+      con_h: '只有这三个地址。',
+      con_lead: '通过私信、帖子或其他网站给你的合约，都不是 Astromine。请只从这里或 BscScan 复制。',
+      c1n: 'Astromine Miners', c2t: '代币 · BEP-20', c3n: 'Mining', c3t: '采矿合约',
+      copy_addr: '复制合约地址',
+      warn: '项目方不会私信你“新”合约，也不会索要助记词。没有第二次铸造、没有迁移、没有预售。',
+      faq_eyebrow: '常见问题', faq_h: '直给答案。',
+      faq_lead: '新操作员在第一次铸造前最常问的五件事。',
+      faq_note_l: '还有疑问', faq_note_p: '代理指南列出了合约的每个调用和参数。', faq_note_a: '打开 skill.md',
+      q1: '为什么我的 Miner 还是“Sealed”？',
+      a1: '等级在铸造时密封，才能保证抽取公平。等级在铸造几秒后通过一次 <code>reveal</code> 调用开启——通常由你的代理按指南完成。如果还没有，请让代理为你的铸造批次调用 reveal；只需从你自己的钱包支付少量 gas。',
+      q2: '没有 AI 代理可以铸造吗？',
+      a2: '可以——合约是公开的。任何持有 Agent ID（<b>.ai</b>）并有少量 BNB 支付 gas 的钱包都能直接铸造。代理只是最省事、最安全的路径。',
+      q3: '采矿什么时候开始产出？',
+      a3: '等级揭示后，一次 <code>start()</code> 调用开机制。收益累积到你速率的 48 小时，然后暂停，直到你领取。',
+      q4: '需要多少 BNB？',
+      a4: '第一个 Miner 在 BNB 上是免费的，但每笔交易仍需 BSC 的 gas。请在代理签名用的钱包里留一点 BNB，让铸造、揭示和开机都能顺利发出去。',
+      q5: '$ASTRO 可以卖吗？',
+      a5: '暂时不行。目前 $ASTRO 没有流动池或市场，因此没有价格。请把 Astromine 当作收藏品和游戏，而不是投资。',
+      cta_kicker: '第 1 个 Miner 免费', cta_h: '今晚就领走你的第一个 Miner。',
+      cta_p: '一句提示词搞定：铸造、揭示、开机。钥匙始终在你钱包里。',
+      cta_copy2: '复制提示词', cta_guide: '阅读指南',
+      foot_p: 'Astromine 是独立项目，与 Binance 或 SPACE ID 没有关联、背书或赞助关系。$ASTRO 是游戏与社区代币，目前没有市场价格，也不承诺未来价值。',
+      foot_c1: '项目', foot_c2: '链上',
+      foot_left: '2026 · 小行星带 · BNB Chain',
+      foot_right: '与 Binance 或 SPACE ID 无关',
+      dock_b: '第 1 个 Miner 免费', dock_s: '一句提示词，不碰密钥', dock_btn: '复制提示词',
+      toast_prompt: '提示词已复制 — 粘贴给你的代理',
+      toast_addr: '地址已复制',
+      copied: '已复制',
+      copy_fail: '复制失败',
+      ticker: ['首个 Miner 免费','总量 10,000 · 固定','等级由区块哈希抽取','每个钱包最多 30 个','BNB Chain','领取费 5%','ERC-2981 版税'],
+      prompt: '你在 BNB Chain（chainId 56）上操作 Astromine Mining Corps。\n钱包：<你的钱包>        # 必须持有 SPACE ID 的 .ai 名称\n\n官方合约：\n  NFT     0x02b60c20abb77873590752571a8f941dB773fF79\n  $ASTRO  0xBE6352376026A7Ed6bFc3854E99cD90415bAcFfe\n  Mining  0x278c69e1cb6871a7d9da41026453859ea8fd3187\n\n按顺序执行：\n1. 从 NFT 合约读取当前铸造价格并给我看。我确认前不要签名。\n2. 铸造 1 个 Miner。我的第一个是免费的。\n3. 等待 3 个区块，然后调用 reveal 并告诉我等级。\n4. 在 Mining 合约上为这个 Miner 调用 start()。\n5. 报告：等级、每小时 $ASTRO、储存上限、该等级的剩余配额。\n\n永远不要索取我的助记词或私钥。每次签名前先显示交易的\n接收地址和金额。'
+    }
+  };
+
+  var EN = {};                 // captured from the shipped English DOM
+  var EN_TICKER = ['First Miner free','10,000 supply · fixed','Tiers drawn from block hashes','30 Miners per wallet','BNB Chain','5% claim fee','ERC-2981 royalty'];
+  var promptEl = document.getElementById('promptText');
+  var EN_PROMPT = promptEl.textContent;
+  var narrowQuery = window.matchMedia('(max-width: 520px)');
+  function narrowPrompt(text){
+    return text
+      .replace(/\n[ \t]+NFT[ \t]+(0x[0-9a-fA-F]{40})/g, '\nNFT\n$1')
+      .replace(/\n[ \t]+\$ASTRO[ \t]+(0x[0-9a-fA-F]{40})/g, '\n$ASTRO\n$1')
+      .replace(/\n[ \t]+Mining[ \t]+(0x[0-9a-fA-F]{40})/g, '\nMining\n$1');
+  }
+  function renderPrompt(){
+    var d = langDict(lang);
+    var base = (d && d.prompt) ? d.prompt : EN_PROMPT;
+    promptEl.textContent = narrowQuery.matches ? narrowPrompt(base) : base;
+  }
+  if (narrowQuery.addEventListener) narrowQuery.addEventListener('change', renderPrompt);
+  var lang = 'en';
+
+  var htmlEls = Array.prototype.slice.call(document.querySelectorAll('[data-i18n]'));
+  function langDict(l){ return l === 'en' ? null : T[l]; }
+
+  function fmt(n){
+    var loc = lang === 'id' ? 'id-ID' : lang === 'zh' ? 'zh-CN' : 'en-US';
+    return new Intl.NumberFormat(loc).format(n);
+  }
+
+  /* ---------- ticker ---------- */
+  var track = document.getElementById('tickerTrack');
+  function renderTicker(){
+    var items = lang === 'en' ? EN_TICKER : T[lang].ticker;
+    var frag = document.createDocumentFragment();
+    for (var pass = 0; pass < 2; pass++){
+      for (var i = 0; i < items.length; i++){
+        var s = document.createElement('span');
+        s.textContent = items[i];
+        frag.appendChild(s);
+      }
+    }
+    track.textContent = '';
+    track.appendChild(frag);
+  }
+
+  /* ---------- ticker ---------- */
+  var tickerEl = document.querySelector('.ticker');
+  var tickerBtn = document.querySelector('[data-ticker-toggle]');
+  var tickerIcon = tickerBtn.querySelector('use');
+  function paintTickerBtn(){
+    var paused = tickerEl.classList.contains('is-paused');
+    var d = langDict(lang);
+    tickerBtn.setAttribute('aria-pressed', paused ? 'true' : 'false');
+    tickerBtn.setAttribute('aria-label', paused
+      ? ((d && d.ticker_play) || 'Play ticker')
+      : ((d && d.ticker_pause) || 'Pause ticker'));
+    tickerIcon.setAttribute('href', paused ? '#i-play' : '#i-pause');
+  }
+  tickerBtn.addEventListener('click', function(){
+    tickerEl.classList.toggle('is-paused');
+    paintTickerBtn();
+  });
+
+  /* ---------- calculator ---------- */
+  var state = { rate: 10, count: 1 };
+  var outHour = document.getElementById('outHour');
+  var outDay = document.getElementById('outDay');
+  var outCap = document.getElementById('outCap');
+  var outNet = document.getElementById('outNet');
+  var countOut = document.getElementById('countOut');
+  var stepBtns = Array.prototype.slice.call(document.querySelectorAll('[data-step]'));
+  function updateCalc(){
+    var hour = state.rate * state.count;
+    countOut.textContent = String(state.count);
+    outHour.textContent = fmt(hour);
+    outDay.textContent = fmt(hour * 24);
+    outCap.textContent = fmt(hour * 48);
+    outNet.textContent = fmt(Math.round(hour * 24 * 0.95));
+    stepBtns.forEach(function(b){
+      var step = Number(b.getAttribute('data-step'));
+      b.disabled = (step < 0 && state.count <= 1) || (step > 0 && state.count >= 30);
+    });
+  }
+  document.getElementById('chips').addEventListener('click', function(e){
+    var chip = e.target.closest('.chip');
+    if (!chip) return;
+    this.querySelectorAll('.chip').forEach(function(c){ c.setAttribute('aria-pressed','false'); });
+    chip.setAttribute('aria-pressed','true');
+    state.rate = Number(chip.getAttribute('data-rate'));
+    updateCalc();
+  });
+  stepBtns.forEach(function(b){
+    b.addEventListener('click', function(){
+      state.count = Math.min(30, Math.max(1, state.count + Number(b.getAttribute('data-step'))));
+      updateCalc();
+    });
+  });
+
+  /* ---------- language ---------- */
+  function applyLang(l){
+    lang = l;
+    htmlEls.forEach(function(el){
+      var k = el.getAttribute('data-i18n');
+      if (!(k in EN)) EN[k] = el.innerHTML;
+      var d = langDict(l);
+      el.innerHTML = (d && d[k] != null) ? d[k] : EN[k];
+    });
+    var pd = langDict(l);
+    renderPrompt();
+    var d2 = langDict(l);
+    document.querySelectorAll('[data-i18n-aria]').forEach(function(el){
+      var k = el.getAttribute('data-i18n-aria');
+      el.setAttribute('aria-label', d2 && d2[k] ? d2[k] : 'Copy contract address');
+    });
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : l;
+    document.title = (d2 && d2.title) ? d2.title : 'Astromine — Miners for your agent · BNB Chain';
+    var md = document.querySelector('meta[name="description"]');
+    if (md && d2 && d2.desc) md.setAttribute('content', d2.desc);
+    document.querySelectorAll('.lang button').forEach(function(b){
+      b.setAttribute('aria-pressed', b.getAttribute('data-lang') === l ? 'true' : 'false');
+    });
+    renderTicker();
+    updateCalc();
+    paintTickerBtn();
+    try { localStorage.setItem('astromine-lang', l); } catch (e) {}
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){
+    b.addEventListener('click', function(){ applyLang(b.getAttribute('data-lang')); });
+  });
+  var saved = null;
+  try { saved = localStorage.getItem('astromine-lang'); } catch (e) {}
+  if (!saved){
+    var nav = (navigator.language || 'en').toLowerCase();
+    saved = nav.indexOf('id') === 0 ? 'id' : nav.indexOf('zh') === 0 ? 'zh' : 'en';
+  }
+  applyLang({ en: 'en', id: 'id', zh: 'zh' }[saved] || 'en');
+
+  /* ---------- copy buttons ---------- */
+  function flash(btn, ok){
+    if (!btn) return;
+    var label = btn.querySelector('[data-i18n="copy"]') || btn.querySelector('span');
+    var d = langDict(lang);
+    var done = ok ? ((d && d.copied) || 'Copied') : ((d && d.copy_fail) || 'Copy failed');
+    btn.classList.toggle('done', ok);
+    if (label){
+      var prev = label.textContent;
+      label.textContent = done;
+      setTimeout(function(){ label.textContent = prev; btn.classList.remove('done'); }, 1600);
+    }
+  }
+  document.querySelectorAll('[data-copy-prompt]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var text = document.getElementById('promptText').textContent;
+      copyText(text).then(function(ok){
+        var d = langDict(lang);
+        toast(ok ? ((d && d.toast_prompt) || 'Prompt copied — paste it into your agent') : ((d && d.copy_fail) || 'Copy failed'));
+        flash(btn, ok);
+      });
+    });
+  });
+  document.querySelectorAll('[data-copy]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var el = document.getElementById(btn.getAttribute('data-copy'));
+      if (!el) return;
+      copyText(el.textContent.trim()).then(function(ok){
+        var d = langDict(lang);
+        toast(ok ? ((d && d.toast_addr) || 'Address copied') : ((d && d.copy_fail) || 'Copy failed'));
+        flash(btn, ok);
+      });
+    });
+  });
+
+  /* ---------- reveal on scroll + meters + counters ---------- */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function countUp(el){
+    var target = Number(el.getAttribute('data-count'));
+    if (reduce || !target){ el.textContent = fmt(target); return; }
+    var start = performance.now(), dur = 950;
+    (function step(now){
+      var p = Math.min(1, (now - start) / dur);
+      var e = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(Math.round(target * e));
+      if (p < 1) requestAnimationFrame(step);
+    })(start);
+  }
+  var nums = Array.prototype.slice.call(document.querySelectorAll('.num[data-count]'));
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        if (en.target.classList.contains('rv')) en.target.classList.add('in');
+        if (en.target.classList.contains('tiers')){
+          en.target.querySelectorAll('.meter i').forEach(function(i){
+            i.style.width = i.getAttribute('data-w') + '%';
+          });
+        }
+        if (en.target.classList.contains('num')) countUp(en.target);
+        if (en.target.classList.contains('band')){ nums.forEach(countUp); }
+        io.unobserve(en.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    document.querySelectorAll('.rv, .tiers, .num, .band').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); });
+    document.querySelectorAll('.meter i').forEach(function(i){ i.style.width = i.getAttribute('data-w') + '%'; });
+    nums.forEach(countUp);
+  }
+
+  setTimeout(function(){
+    document.querySelectorAll('.rv:not(.in)').forEach(function(el){ el.classList.add('in'); });
+  }, 2600);
+
+  /* ---------- mobile dock ---------- */
+  var dock = document.getElementById('dock');
+  var cta = document.querySelector('.cta-band');
+  var ctaVisible = false;
+  if ('IntersectionObserver' in window && cta){
+    new IntersectionObserver(function(entries){
+      ctaVisible = entries[0].isIntersecting;
+      syncDock();
+    }, { threshold: 0.15 }).observe(cta);
+  }
+  function syncDock(){
+    var show = window.scrollY > 620 && !ctaVisible;
+    dock.classList.toggle('show', show);
+    dock.setAttribute('aria-hidden', show ? 'false' : 'true');
+  }
+  window.addEventListener('scroll', syncDock, { passive: true });
+  window.addEventListener('resize', syncDock);
+  syncDock();
+})();
+</script>
 
 <script src="config.js"></script>
 <script>
- const c = window.ASTROMINE_CONFIG || {};
- const set = (id, v) => { const el = document.getElementById(id); if (el && v) el.textContent = v; };
- set('minersAddr', c.minersContract); set('astroAddr', c.astroToken); set('miningAddr', c.miningContract);
- const scan = (id, v) => { const el = document.getElementById(id); if (el && v) el.href = 'https://bscscan.com/address/' + v; };
- scan('minersScan', c.minersContract); scan('astroScan', c.astroToken); scan('miningScan', c.miningContract);
-
- /* ---------- i18n: English is the default; ID and ZH switch in place ---------- */
- const T = {
-  en: null, // the page ships in English; keys below cover id + zh
-  id: {
-   title: 'Astromine — Robot Penambang Asteroid untuk Agen AI di BNB Chain',
-   nav_tier: 'Tier', nav_how: 'Cara kerja', nav_price: 'Harga', nav_contracts: 'Kontrak', nav_guide: 'Panduan agen',
-   hero_h1: 'Robot penambang asteroid, bekerja untuk agenmu.',
-   hero_lede: 'Astromine adalah 10.000 NFT penambang luar angkasa di BNB Chain, khusus untuk wallet pemegang Binance Agent ID (<b>.ai</b>). Miner pertamamu <b>gratis</b>. Setiap Miner yang tier-nya terbuka menambang token <b>$ASTRO</b> tiap jam, tanpa perlu kamu urus.',
-   cta_mint: 'Mint lewat agenmu', cta_how: 'Cara kerjanya', supply_label: 'Suplai ter-mint',
-   hero_caption: 'Unit penambang kelas Cadet–Admiral', hero_belt: 'Sabuk Asteroid',
-   stat1: 'Total suplai Miner, tidak akan ditambah', stat2n: '5 tier', stat2: 'Kuota pasti per tier, terundi dari hash block',
-   stat3: 'Maksimal Miner per wallet', stat4: '$ASTRO per jam untuk tier tertinggi',
-   tier_h: 'Lima tier, kuota yang tidak bisa diubah',
-   tier_sub: 'Tier tersegel saat mint dan terbuka dari hash block tiga block setelahnya, digambar melawan sisa kuota. Hasil akhirnya persis seperti kuota di bawah — tidak ada yang bisa mengaturnya, termasuk pembuat proyek.',
-   per_hour: 'jam', quota_word: 'Kuota', remain_word: 'sisa',
-   how_h: 'Cara kerjanya', how_sub: 'Semua lewat agen AI-mu — situs ini tidak pernah menyentuh wallet atau meminta kunci apa pun. Panduan teknis lengkapnya ada di',
-   s1h: 'Pegang Agent ID', s1p: 'Wallet agenmu harus memiliki nama <b>.ai</b> dari SPACE ID. Tanpa itu, kontrak menolak mint.',
-   s2h: 'Mint Miner', s2p: 'Agen membaca harga persis dari kontrak, menampilkannya kepadamu, lalu mint. Yang pertama gratis.',
-   s3h: 'Buka tier', s3p: 'Tier terundi sendiri dari hash block. Agen memanggil <i>reveal</i> beberapa detik setelah mint dan melaporkan tier-mu.',
-   s4h: 'Tambang $ASTRO', s4p: 'Satu panggilan <i>start()</i> menyalakan mining, lalu Miner-mu mengumpulkan $ASTRO tiap jam. Klaim kapan saja.',
-   price_h: 'Harga mint', price_sub: 'Bertahap per wallet, dihitung kontrak — bukan angka promosi.',
-   price_th1: 'Miner ke-', price_th2: 'Harga per Miner', price_free: 'Gratis',
-   price_note: 'Seluruh pembayaran mint diteruskan kontrak langsung ke wallet proyek di transaksi yang sama — kontrak NFT tidak pernah menahan BNB. Royalti perdagangan sekunder 5% (ERC-2981).',
-   mine_h: 'Mining $ASTRO', mine_sub: 'Hasil tambang menumpuk sampai penyimpanan penuh, lalu berhenti sampai diklaim.',
-   f1l: 'Kapasitas penyimpanan', f1v: '48 jam dari laju mining-mu', f2l: 'Fee klaim', f2v: '5% untuk proyek',
-   f3l: 'Suplai $ASTRO', f3v: '1 miliar, tetap', f4l: 'Alokasi mining', f4v: '900 juta di kontrak mining',
-   f5l: 'Pasar $ASTRO', f5v: 'Belum ada pool — belum bisa dijual',
-   mine_note: '$ASTRO adalah token permainan dan komunitas. Belum ada harga pasar, dan tidak ada janji nilai di kemudian hari.',
-   contracts_h: 'Kontrak resmi', contracts_sub: 'Hanya tiga alamat ini. Alamat dari pesan, postingan, atau situs lain bukan milik Astromine.',
-   mining_name: 'Mining', mining_sub: 'Kontrak penambangan', copy: 'Salin', copied: 'Tersalin',
-   faq_h: 'Sering ditanyakan',
-   q1: 'Kenapa Miner saya masih “Sealed”?',
-   a1: 'Tier memang tersegel saat mint supaya undiannya adil. Tier terbuka lewat panggilan <i>reveal</i> beberapa detik setelah mint — biasanya dilakukan agenmu mengikuti panduan. Kalau belum, minta agenmu memanggil reveal untuk batch mint-mu; biayanya hanya gas kecil dari wallet-mu.',
-   q2: 'Apakah saya bisa mint tanpa agen AI?',
-   a2: 'Bisa — kontraknya publik. Siapa pun dengan wallet berisi Agent ID (.ai) dan sedikit BNB untuk gas dapat mint langsung. Panduan agen hanya cara termudah dan teraman.',
-   q3: 'Kapan mining mulai menghasilkan?',
-   a3: 'Segera setelah tier terbuka dan agen menyalakan mining dengan satu panggilan <i>start()</i>. Hasil menumpuk sampai 48 jam laju mining-mu, lalu berhenti sampai kamu klaim.',
-   q4: 'Apakah $ASTRO bisa dijual?',
-   a4: 'Belum. Saat ini belum ada pool atau pasar untuk $ASTRO, jadi token ini belum punya harga. Perlakukan Astromine sebagai koleksi dan permainan, bukan investasi.',
-   footer_note: 'Astromine Mining Corps — proyek independen, tidak berafiliasi dengan Binance atau SPACE ID.'
-  },
-  zh: {
-   title: 'Astromine — BNB Chain 上为 AI 代理工作的小行星采矿机器人',
-   nav_tier: '等级', nav_how: '运作方式', nav_price: '价格', nav_contracts: '合约', nav_guide: '代理指南',
-   hero_h1: '小行星采矿机器人，为你的代理打工。',
-   hero_lede: 'Astromine 是 BNB Chain 上的 10,000 个小行星采矿 NFT，专为持有 Binance Agent ID（<b>.ai</b>）的钱包而设。你的第一个 Miner <b>免费</b>。每个已揭示等级的 Miner 每小时自动开采 <b>$ASTRO</b> 代币，无需你操心。',
-   cta_mint: '通过你的代理铸造', cta_how: '运作方式', supply_label: '已铸造数量',
-   hero_caption: '采矿单位，学员至上将级别', hero_belt: '小行星带',
-   stat1: 'Miner 总供应量，永不增发', stat2n: '5 个等级', stat2: '每个等级配额固定，由区块哈希抽取',
-   stat3: '每个钱包最多持有的 Miner', stat4: '最高等级每小时 $ASTRO 产量',
-   tier_h: '五个等级，配额不可更改',
-   tier_sub: '等级在铸造时密封，三个区块后由该区块的哈希揭示，并按剩余配额抽取。最终数量将与下表配额完全一致——任何人都无法操纵，包括项目创建者。',
-   per_hour: '小时', quota_word: '配额', remain_word: '剩余',
-   how_h: '运作方式', how_sub: '一切都通过你的 AI 代理完成——本站从不接触你的钱包，也不会索要任何密钥。完整技术指南见',
-   s1h: '持有 Agent ID', s1p: '你的代理钱包需要一个来自 SPACE ID 的 <b>.ai</b> 名称。没有它，合约会拒绝铸造。',
-   s2h: '铸造 Miner', s2p: '代理从合约读取确切价格，向你展示，然后铸造。第一个免费。',
-   s3h: '揭示等级', s3p: '等级由区块哈希自动抽取。代理在铸造几秒后调用 <i>reveal</i> 并向你报告等级。',
-   s4h: '开采 $ASTRO', s4p: '一次 <i>start()</i> 调用开启采矿，之后你的 Miner 每小时收集 $ASTRO。随时可以领取。',
-   price_h: '铸造价格', price_sub: '按钱包阶梯递增，由合约计算——不是促销数字。',
-   price_th1: '第几个 Miner', price_th2: '每个 Miner 价格', price_free: '免费',
-   price_note: '每笔铸造付款都由合约在同一笔交易中直接转发到项目钱包——NFT 合约从不持有 BNB。二级销售版税为 5%（ERC-2981）。',
-   mine_h: '开采 $ASTRO', mine_sub: '开采所得不断累积，直到储存装满，然后暂停，直到你领取。',
-   f1l: '储存容量', f1v: '你采矿速率的 48 小时', f2l: '领取费用', f2v: '5% 归项目方',
-   f3l: '$ASTRO 供应量', f3v: '10 亿，固定', f4l: '采矿分配', f4v: '采矿合约中 9 亿',
-   f5l: '$ASTRO 市场', f5v: '暂无流动池——尚不可出售',
-   mine_note: '$ASTRO 是游戏和社区代币。目前没有市场价格，也不承诺未来价值。',
-   contracts_h: '官方合约', contracts_sub: '只有这三个地址。来自消息、帖子或任何其他网站的地址都不属于 Astromine。',
-   mining_name: '采矿', mining_sub: '采矿合约', copy: '复制', copied: '已复制',
-   faq_h: '常见问题',
-   q1: '为什么我的 Miner 还是“Sealed”？',
-   a1: '等级在铸造时密封是为了保证抽取公平。等级在铸造几秒后通过一次 <i>reveal</i> 调用开启——通常由你的代理按指南完成。如果还没有，请让你的代理为你的铸造批次调用 reveal；只需从你自己的钱包支付少量 gas。',
-   q2: '没有 AI 代理可以铸造吗？',
-   a2: '可以——合约是公开的。任何持有 Agent ID（.ai）且有少量 BNB 支付 gas 的钱包都可以直接铸造。代理指南只是最简单、最安全的途径。',
-   q3: '采矿什么时候开始产生收益？',
-   a3: '等级揭示后，代理用一次 <i>start()</i> 调用开启采矿即可。收益累积至你速率的 48 小时，然后暂停，直到你领取。',
-   q4: '$ASTRO 可以出售吗？',
-   a4: '暂时不可以。目前 $ASTRO 没有流动池或市场，因此没有价格。请把 Astromine 当作收藏品和游戏，而不是投资。',
-   footer_note: 'Astromine Mining Corps——独立项目，与 Binance 或 SPACE ID 无关。'
+/* Live chain data: minted supply + remaining tier quotas.
+   Static values stay on any failure; nothing throws. */
+(function(){
+  var c = window.ASTROMINE_CONFIG;
+  if (!c || !c.rpc || !c.minersContract) return;
+  function loc(){
+    var l = document.documentElement.lang || 'en';
+    return l.indexOf('id') === 0 ? 'id-ID'
+      : l.indexOf('zh') === 0 ? 'zh-CN' : 'en-US';
   }
- };
- const EN = {}; // captured from the shipped English DOM on first switch
- let lang = 'en';
- const fmt = (n) => n.toLocaleString(lang === 'id' ? 'id-ID' : lang === 'zh' ? 'zh-CN' : 'en-US');
- function applyLang(l) {
-  lang = l;
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-   const k = el.dataset.i18n;
-   if (!(k in EN)) EN[k] = el.innerHTML;
-   const dict = T[l];
-   el.innerHTML = dict && dict[k] ? dict[k] : EN[k];
+  function fmt(n){ return new Intl.NumberFormat(loc()).format(n); }
+  function call(data){
+    return fetch(c.rpc, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'eth_call',
+        params: [{ to: c.minersContract, data: data }, 'latest'] })
+    }).then(function(r){ return r.json(); })
+      .then(function(j){
+        if (!j || !j.result) throw new Error('rpc');
+        return parseInt(j.result, 16);
+      });
+  }
+  var minted = null, remaining = null;
+  function render(){
+    if (minted != null){
+      var mc = document.getElementById('mintedCount');
+      if (mc) mc.textContent = fmt(minted);
+      var f = document.getElementById('supplyFill');
+      if (f) f.style.width = (minted / 100) + '%';
+    }
+    if (remaining){
+      var total = 0, i;
+      for (i = 0; i < remaining.length; i++) total += remaining[i];
+      document.querySelectorAll('.tiers .tier').forEach(function(card, idx){
+        if (idx >= remaining.length) return;
+        var w = remaining[idx] / 100;
+        var m = card.querySelector('.meter i');
+        if (m){
+          m.setAttribute('data-w', w);
+          if (m.style.width) m.style.width = w + '%';
+        }
+        var o = card.querySelector('[data-odds]');
+        if (o && total > 0){
+          var p = remaining[idx] / total * 100;
+          o.textContent = new Intl.NumberFormat(loc(),
+            { maximumFractionDigits: 1 }).format(p) + '%';
+        }
+      });
+    }
+  }
+  var jobs = [call('0xa2309ff8')];
+  for (var t = 0; t < 5; t++){
+    jobs.push(call('0xa65720f0' +
+      t.toString(16).padStart(64, '0')));
+  }
+  Promise.all(jobs).then(function(res){
+    minted = res[0];
+    remaining = res.slice(1);
+    render();
+  }).catch(function(){ /* keep static values */ });
+  document.querySelectorAll('.lang button').forEach(function(b){
+    b.addEventListener('click', function(){ setTimeout(render, 60); });
   });
-  document.title = T[l] && T[l].title ? T[l].title : 'Astromine — Asteroid-Mining Robots for AI Agents on BNB Chain';
-  document.documentElement.lang = l === 'zh' ? 'zh-CN' : l;
-  document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === l ? 'true' : 'false'));
-  document.querySelectorAll('.copy').forEach(b => b.textContent = T[l] && T[l].copy ? T[l].copy : 'Copy');
-  try { localStorage.setItem('astromine-lang', l); } catch {}
-  if (window.__minted !== undefined) document.getElementById('mintedCount').textContent = fmt(window.__minted);
- }
- document.querySelectorAll('.lang button').forEach(b => b.addEventListener('click', () => applyLang(b.dataset.lang)));
- try { const saved = localStorage.getItem('astromine-lang'); if (saved && saved !== 'en') applyLang(saved); } catch {}
-
- document.querySelectorAll('.copy').forEach(btn => {
-  btn.addEventListener('click', async () => {
-   const el = document.getElementById(btn.dataset.copy);
-   if (!el) return;
-   const ok = T[lang] && T[lang].copied ? T[lang].copied : 'Copied';
-   try { await navigator.clipboard.writeText(el.textContent.trim()); btn.textContent = ok; }
-   catch { btn.textContent = '✕'; }
-   setTimeout(() => btn.textContent = T[lang] && T[lang].copy ? T[lang].copy : 'Copy', 1600);
-  });
- });
-
- // Live supply data, read straight from the NFT contract.
- (async () => {
-  if (!c.minersContract || !c.rpc) return;
-  const call = async (data) => {
-   const r = await fetch(c.rpc, { method: 'POST', headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'eth_call', params: [{ to: c.minersContract, data }, 'latest'] }) });
-   const j = await r.json();
-   return j.result ? BigInt(j.result) : null;
-  };
-  try {
-   const minted = await call('0xa2309ff8');
-   if (minted !== null) {
-    window.__minted = Number(minted);
-    document.getElementById('mintedCount').textContent = fmt(window.__minted);
-    document.getElementById('mintedBar').style.width = (Number(minted) / 100).toFixed(2) + '%';
-   }
-   const quotas = [4200, 2820, 1740, 900, 340];
-   for (let t = 0; t < 5; t++) {
-    const rem = await call('0xa65720f0' + t.toString(16).padStart(64, '0'));
-    if (rem === null) continue;
-    const el = document.querySelector(`[data-remain="${t}"]`);
-    if (el) el.textContent = fmt(Number(rem));
-    const bar = document.querySelector(`[data-qbar="${t}"]`);
-    if (bar) bar.style.width = ((quotas[t] - Number(rem)) / quotas[t] * 100).toFixed(1) + '%';
-   }
-  } catch { /* static fallback stays */ }
- })();
-
- // One quiet moment of motion: a slow starfield behind the hero.
- (() => {
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const cv = document.getElementById('stars'), ctx = cv.getContext('2d');
-  let w, h, stars = [];
-  const seed = () => {
-   w = cv.width = cv.offsetWidth; h = cv.height = cv.offsetHeight;
-   stars = Array.from({ length: Math.min(150, w / 9) }, () => ({
-    x: Math.random() * w, y: Math.random() * h,
-    r: Math.random() * 1.3 + .3, p: Math.random() * Math.PI * 2, s: .008 + Math.random() * .02
-   }));
-  };
-  seed(); addEventListener('resize', seed);
-  (function tick() {
-   ctx.clearRect(0, 0, w, h);
-   for (const st of stars) {
-    st.p += st.s;
-    ctx.globalAlpha = .25 + Math.abs(Math.sin(st.p)) * .55;
-    ctx.fillStyle = '#C9D4FF';
-    ctx.beginPath(); ctx.arc(st.x, st.y, st.r, 0, 7); ctx.fill();
-   }
-   ctx.globalAlpha = 1;
-   requestAnimationFrame(tick);
-  })();
- })();
+})();
 </script>
-<script type="module" src="scroll-anim.js?v=5"></script>
 </body>
 </html>
