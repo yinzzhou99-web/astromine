@@ -1,11 +1,15 @@
 {
-  "name": "Astromine Miner #255 (Sealed)",
-  "description": "A sealed Astromine Miner. Its tier is drawn from a future block hash — reveal it to start mining $ASTRO.",
-  "image": "https://astromine-miners.pages.dev/images/sealed.png",
+  "name": "Astromine Miner #255 — Pilot",
+  "description": "A Pilot-class Astromine Miner robot, mining $ASTRO among the asteroids.",
+  "image": "https://astromine-miners.pages.dev/images/pilot.png",
   "attributes": [
     {
       "trait_type": "Tier",
-      "value": "Sealed"
+      "value": "Pilot"
+    },
+    {
+      "trait_type": "Mining rate",
+      "value": "40 ASTRO/hour"
     }
   ]
 }
