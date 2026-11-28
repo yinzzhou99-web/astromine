@@ -48,11 +48,11 @@
     "tracksByObject": {
      "nav": {
       "trackData": {
-       "rKlO4AB0QS": {
+       "jZ9zKprxhF": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "AXzrwJn01G",
+          "id": "vqpca24vpE",
           "position": 0,
           "connectedRight": true,
           "handles": [
@@ -64,7 +64,7 @@
           "value": 0
          },
          {
-          "id": "0K2qER1far",
+          "id": "O83aEoJrvi",
           "position": 0.5,
           "connectedRight": true,
           "handles": [
@@ -78,11 +78,11 @@
         ],
         "__debugName": "opacity"
        },
-       "0lYYNgvfHS": {
+       "jpNQPXPDSa": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "PfkRmk8VyI",
+          "id": "DE5NdAerYO",
           "position": 0,
           "connectedRight": true,
           "handles": [
@@ -94,7 +94,7 @@
           "value": -14
          },
          {
-          "id": "zpJriBA9qk",
+          "id": "4cxVsEOfEb",
           "position": 0.5,
           "connectedRight": true,
           "handles": [
@@ -110,17 +110,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "rKlO4AB0QS",
-       "[\"y\"]": "0lYYNgvfHS"
+       "[\"opacity\"]": "jZ9zKprxhF",
+       "[\"y\"]": "jpNQPXPDSa"
       }
      },
      "h1": {
       "trackData": {
-       "x7C8AxPgLT": {
+       "QHSFDYUOQv": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "PCmpArD2Ss",
+          "id": "o1N0XUi8yR",
           "position": 0.15,
           "connectedRight": true,
           "handles": [
@@ -132,7 +132,7 @@
           "value": 0
          },
          {
-          "id": "BRthKbzegj",
+          "id": "pmCouIILHN",
           "position": 0.9500000000000001,
           "connectedRight": true,
           "handles": [
@@ -146,11 +146,11 @@
         ],
         "__debugName": "opacity"
        },
-       "ei0j5rjnHx": {
+       "pWXHGOzg9U": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "qbwd9ZKy9c",
+          "id": "SWkIRx2hyK",
           "position": 0.15,
           "connectedRight": true,
           "handles": [
@@ -162,7 +162,7 @@
           "value": 34
          },
          {
-          "id": "19ejoAHx0w",
+          "id": "ctzJCIu9Ev",
           "position": 0.9500000000000001,
           "connectedRight": true,
           "handles": [
@@ -178,17 +178,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "x7C8AxPgLT",
-       "[\"y\"]": "ei0j5rjnHx"
+       "[\"opacity\"]": "QHSFDYUOQv",
+       "[\"y\"]": "pWXHGOzg9U"
       }
      },
      "lede": {
       "trackData": {
-       "mQwOIdyHxc": {
+       "oktyFp0z6U": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "NQJB3LeW17",
+          "id": "DxSGhUxspb",
           "position": 0.45,
           "connectedRight": true,
           "handles": [
@@ -200,7 +200,7 @@
           "value": 0
          },
          {
-          "id": "q4LzTNPC2n",
+          "id": "lhcXIBApEY",
           "position": 1.2,
           "connectedRight": true,
           "handles": [
@@ -214,11 +214,11 @@
         ],
         "__debugName": "opacity"
        },
-       "JXItytesBp": {
+       "GqyEocl7AD": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "t5gw8b0SnA",
+          "id": "u1BSF4gDUl",
           "position": 0.45,
           "connectedRight": true,
           "handles": [
@@ -230,7 +230,7 @@
           "value": 26
          },
          {
-          "id": "t1CRSoTKZj",
+          "id": "TolUlKdr2d",
           "position": 1.2,
           "connectedRight": true,
           "handles": [
@@ -246,17 +246,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "mQwOIdyHxc",
-       "[\"y\"]": "JXItytesBp"
+       "[\"opacity\"]": "oktyFp0z6U",
+       "[\"y\"]": "GqyEocl7AD"
       }
      },
      "cta": {
       "trackData": {
-       "BDwU3eXPAf": {
+       "6FhwTd4Nlx": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "jeg2E4KiEE",
+          "id": "w7wLjKRbpN",
           "position": 0.75,
           "connectedRight": true,
           "handles": [
@@ -268,7 +268,7 @@
           "value": 0
          },
          {
-          "id": "X7iwTURCto",
+          "id": "sn5C2k74yg",
           "position": 1.45,
           "connectedRight": true,
           "handles": [
@@ -282,11 +282,11 @@
         ],
         "__debugName": "opacity"
        },
-       "Gd9ruf0MFR": {
+       "RVZR9AAtZU": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "TARwjOJmic",
+          "id": "evyD89OP8E",
           "position": 0.75,
           "connectedRight": true,
           "handles": [
@@ -298,7 +298,7 @@
           "value": 20
          },
          {
-          "id": "lOfMvqtO7e",
+          "id": "eoL7aFeFU6",
           "position": 1.45,
           "connectedRight": true,
           "handles": [
@@ -314,17 +314,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "BDwU3eXPAf",
-       "[\"y\"]": "Gd9ruf0MFR"
+       "[\"opacity\"]": "6FhwTd4Nlx",
+       "[\"y\"]": "RVZR9AAtZU"
       }
      },
      "supply": {
       "trackData": {
-       "9WubbJpt8b": {
+       "smmLE15GCV": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "PVMp2LhSS1",
+          "id": "KvEPdrLbsu",
           "position": 1.0,
           "connectedRight": true,
           "handles": [
@@ -336,7 +336,7 @@
           "value": 0
          },
          {
-          "id": "o111SQBb76",
+          "id": "xTyBoZBuYC",
           "position": 1.7,
           "connectedRight": true,
           "handles": [
@@ -350,11 +350,11 @@
         ],
         "__debugName": "opacity"
        },
-       "qVU8CJwcDj": {
+       "5Ha17grQLB": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "97Sxf0KVqf",
+          "id": "jRiv9q6vvJ",
           "position": 1.0,
           "connectedRight": true,
           "handles": [
@@ -366,7 +366,7 @@
           "value": 16
          },
          {
-          "id": "RJSy842yKB",
+          "id": "I5OR4vZoz9",
           "position": 1.7,
           "connectedRight": true,
           "handles": [
@@ -382,17 +382,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "9WubbJpt8b",
-       "[\"y\"]": "qVU8CJwcDj"
+       "[\"opacity\"]": "smmLE15GCV",
+       "[\"y\"]": "5Ha17grQLB"
       }
      },
      "art": {
       "trackData": {
-       "kHpVIGghgL": {
+       "GArNt61BGh": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "3zuKiuK9IR",
+          "id": "tsDl9q45Qj",
           "position": 0.3,
           "connectedRight": true,
           "handles": [
@@ -404,7 +404,7 @@
           "value": 0
          },
          {
-          "id": "fcQurm9cXI",
+          "id": "lPx0TgpiBv",
           "position": 1.3,
           "connectedRight": true,
           "handles": [
@@ -418,11 +418,11 @@
         ],
         "__debugName": "opacity"
        },
-       "EBtm3SD1HZ": {
+       "5ipM5XH36Y": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "99L0LAXj27",
+          "id": "bkYVRy3PWW",
           "position": 0.3,
           "connectedRight": true,
           "handles": [
@@ -434,7 +434,7 @@
           "value": 26
          },
          {
-          "id": "DwN2zevNqb",
+          "id": "mne3abeqGN",
           "position": 1.3,
           "connectedRight": true,
           "handles": [
@@ -448,11 +448,11 @@
         ],
         "__debugName": "x"
        },
-       "W0m7hCyART": {
+       "TdcWcy4nhT": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "XHgWNcs7cI",
+          "id": "StyTI79gEd",
           "position": 0.3,
           "connectedRight": true,
           "handles": [
@@ -464,7 +464,7 @@
           "value": 0.94
          },
          {
-          "id": "8i6vyUbX3z",
+          "id": "46NL1ZYRz4",
           "position": 1.3,
           "connectedRight": true,
           "handles": [
@@ -480,9 +480,9 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "kHpVIGghgL",
-       "[\"x\"]": "EBtm3SD1HZ",
-       "[\"scale\"]": "W0m7hCyART"
+       "[\"opacity\"]": "GArNt61BGh",
+       "[\"x\"]": "5ipM5XH36Y",
+       "[\"scale\"]": "TdcWcy4nhT"
       }
      }
     }
@@ -524,11 +524,11 @@
     "tracksByObject": {
      "stat1": {
       "trackData": {
-       "SqkuxYVRYs": {
+       "QqlcrzNZY9": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "S8NAPnOImS",
+          "id": "tbtJbggYlo",
           "position": 0.0,
           "connectedRight": true,
           "handles": [
@@ -540,7 +540,7 @@
           "value": 0
          },
          {
-          "id": "OADHdoOdAn",
+          "id": "f109sKtfdY",
           "position": 0.55,
           "connectedRight": true,
           "handles": [
@@ -554,11 +554,11 @@
         ],
         "__debugName": "opacity"
        },
-       "R06rPnQ5BE": {
+       "kTpzPkiifb": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "gFJNqF1oS8",
+          "id": "RtrTpoRZsp",
           "position": 0.0,
           "connectedRight": true,
           "handles": [
@@ -570,7 +570,7 @@
           "value": 22
          },
          {
-          "id": "6l5KDKWEmv",
+          "id": "RqNgY7rPTx",
           "position": 0.55,
           "connectedRight": true,
           "handles": [
@@ -586,17 +586,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "SqkuxYVRYs",
-       "[\"y\"]": "R06rPnQ5BE"
+       "[\"opacity\"]": "QqlcrzNZY9",
+       "[\"y\"]": "kTpzPkiifb"
       }
      },
      "stat2": {
       "trackData": {
-       "Q91BBdkxyD": {
+       "YdRpGNAZgh": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "ADdcjYMZeJ",
+          "id": "3fHjrmQOB5",
           "position": 0.12,
           "connectedRight": true,
           "handles": [
@@ -608,7 +608,7 @@
           "value": 0
          },
          {
-          "id": "axj1zd8DGc",
+          "id": "WBcvf9xi0m",
           "position": 0.67,
           "connectedRight": true,
           "handles": [
@@ -622,11 +622,11 @@
         ],
         "__debugName": "opacity"
        },
-       "zkpTxPEaZY": {
+       "GxyGTGg9oa": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "zixTne4T1C",
+          "id": "06iTZOeiD8",
           "position": 0.12,
           "connectedRight": true,
           "handles": [
@@ -638,7 +638,7 @@
           "value": 22
          },
          {
-          "id": "qcwDivLxWa",
+          "id": "LJZMS126T0",
           "position": 0.67,
           "connectedRight": true,
           "handles": [
@@ -654,17 +654,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "Q91BBdkxyD",
-       "[\"y\"]": "zkpTxPEaZY"
+       "[\"opacity\"]": "YdRpGNAZgh",
+       "[\"y\"]": "GxyGTGg9oa"
       }
      },
      "stat3": {
       "trackData": {
-       "qbYMIMXuBX": {
+       "BjxZsAAqd7": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "UZ2u0xo0Jx",
+          "id": "iLccpwmuxN",
           "position": 0.24,
           "connectedRight": true,
           "handles": [
@@ -676,7 +676,7 @@
           "value": 0
          },
          {
-          "id": "Xfcp303lAj",
+          "id": "tZMomWMqSL",
           "position": 0.79,
           "connectedRight": true,
           "handles": [
@@ -690,11 +690,11 @@
         ],
         "__debugName": "opacity"
        },
-       "d8vsPdtEUh": {
+       "UMu4SYKLvA": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "hfgMCx3low",
+          "id": "IOgvdB41fQ",
           "position": 0.24,
           "connectedRight": true,
           "handles": [
@@ -706,7 +706,7 @@
           "value": 22
          },
          {
-          "id": "L692Kv7hJg",
+          "id": "GbSBEsmjaj",
           "position": 0.79,
           "connectedRight": true,
           "handles": [
@@ -722,17 +722,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "qbYMIMXuBX",
-       "[\"y\"]": "d8vsPdtEUh"
+       "[\"opacity\"]": "BjxZsAAqd7",
+       "[\"y\"]": "UMu4SYKLvA"
       }
      },
      "stat4": {
       "trackData": {
-       "mDZg8lXIlA": {
+       "vRmxW6uTJ2": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "aptUxkKg3Z",
+          "id": "11H6aOcrrj",
           "position": 0.36,
           "connectedRight": true,
           "handles": [
@@ -744,7 +744,7 @@
           "value": 0
          },
          {
-          "id": "ZLa4TzEEwJ",
+          "id": "6iKpjIzuZr",
           "position": 0.91,
           "connectedRight": true,
           "handles": [
@@ -758,11 +758,11 @@
         ],
         "__debugName": "opacity"
        },
-       "C54zQZXURC": {
+       "QGO7k90esI": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "EihP3mufmz",
+          "id": "3CmsElXesA",
           "position": 0.36,
           "connectedRight": true,
           "handles": [
@@ -774,7 +774,7 @@
           "value": 22
          },
          {
-          "id": "t7x53Vf6U4",
+          "id": "zmL8BTlCI9",
           "position": 0.91,
           "connectedRight": true,
           "handles": [
@@ -790,8 +790,8 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "mDZg8lXIlA",
-       "[\"y\"]": "C54zQZXURC"
+       "[\"opacity\"]": "vRmxW6uTJ2",
+       "[\"y\"]": "QGO7k90esI"
       }
      }
     }
@@ -845,11 +845,11 @@
     "tracksByObject": {
      "head": {
       "trackData": {
-       "6tN9WVWmVT": {
+       "fviHecjjTj": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "S5RhiVYglv",
+          "id": "SEP0x9lcWh",
           "position": 0,
           "connectedRight": true,
           "handles": [
@@ -861,7 +861,7 @@
           "value": 0
          },
          {
-          "id": "FVg2OTUu8y",
+          "id": "adimNbz31i",
           "position": 0.4,
           "connectedRight": true,
           "handles": [
@@ -875,11 +875,11 @@
         ],
         "__debugName": "opacity"
        },
-       "FvR1RV3yM7": {
+       "1cOgMaoEOV": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "q23qrvYIa5",
+          "id": "BVI1bNUmp1",
           "position": 0,
           "connectedRight": true,
           "handles": [
@@ -891,7 +891,7 @@
           "value": 24
          },
          {
-          "id": "4jDVZbYlaN",
+          "id": "WZNQuUlR8N",
           "position": 0.4,
           "connectedRight": true,
           "handles": [
@@ -907,17 +907,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "6tN9WVWmVT",
-       "[\"y\"]": "FvR1RV3yM7"
+       "[\"opacity\"]": "fviHecjjTj",
+       "[\"y\"]": "1cOgMaoEOV"
       }
      },
      "tier1": {
       "trackData": {
-       "z3iYNSmzqe": {
+       "kMHmn8IEbS": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "R9F7feUuFc",
+          "id": "TiL0cRljk6",
           "position": 0.15,
           "connectedRight": true,
           "handles": [
@@ -929,8 +929,8 @@
           "value": 0
          },
          {
-          "id": "4BrTfsRpgx",
-          "position": 0.65,
+          "id": "yD8VnpAPMm",
+          "position": 0.6,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -943,11 +943,11 @@
         ],
         "__debugName": "opacity"
        },
-       "f7RbYqYwPW": {
+       "2J9Lsy9gwu": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "vUVUJP3ZLD",
+          "id": "eUSIwW6QOW",
           "position": 0.15,
           "connectedRight": true,
           "handles": [
@@ -959,8 +959,8 @@
           "value": 36
          },
          {
-          "id": "PzgSrQjKro",
-          "position": 0.65,
+          "id": "QeOUR9WEdl",
+          "position": 0.6,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -973,11 +973,11 @@
         ],
         "__debugName": "y"
        },
-       "azRUt9UQSk": {
+       "tNGG1qpdkX": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "Huo8ptw0fG",
+          "id": "utyvI1cVBD",
           "position": 0.15,
           "connectedRight": true,
           "handles": [
@@ -989,8 +989,8 @@
           "value": 0.97
          },
          {
-          "id": "xDfHwtP3Gg",
-          "position": 0.65,
+          "id": "WhnJ4S8VDe",
+          "position": 0.6,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1005,19 +1005,19 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "z3iYNSmzqe",
-       "[\"y\"]": "f7RbYqYwPW",
-       "[\"scale\"]": "azRUt9UQSk"
+       "[\"opacity\"]": "kMHmn8IEbS",
+       "[\"y\"]": "2J9Lsy9gwu",
+       "[\"scale\"]": "tNGG1qpdkX"
       }
      },
      "tier2": {
       "trackData": {
-       "vYwo6mIbeK": {
+       "EIRty6wF5Y": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "Q2JwrSqWC5",
-          "position": 0.25,
+          "id": "4ClQCPCPFV",
+          "position": 0.24,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1028,8 +1028,8 @@
           "value": 0
          },
          {
-          "id": "MA4eyKKTWJ",
-          "position": 0.75,
+          "id": "8drMfGbEWm",
+          "position": 0.69,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1042,12 +1042,12 @@
         ],
         "__debugName": "opacity"
        },
-       "MkilpQSfXY": {
+       "p1SV1hM7XE": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "t09mGpYt8W",
-          "position": 0.25,
+          "id": "K7YKVgAZ4H",
+          "position": 0.24,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1058,8 +1058,8 @@
           "value": 36
          },
          {
-          "id": "F7IDYnj0Uo",
-          "position": 0.75,
+          "id": "L6lzvABlLG",
+          "position": 0.69,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1072,12 +1072,12 @@
         ],
         "__debugName": "y"
        },
-       "iUGoEIFiVV": {
+       "KjsYzYcwck": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "PLbcosW85G",
-          "position": 0.25,
+          "id": "18VGJLUWCo",
+          "position": 0.24,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1088,8 +1088,8 @@
           "value": 0.97
          },
          {
-          "id": "emoNoAjoKN",
-          "position": 0.75,
+          "id": "nItm361y3p",
+          "position": 0.69,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1104,19 +1104,19 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "vYwo6mIbeK",
-       "[\"y\"]": "MkilpQSfXY",
-       "[\"scale\"]": "iUGoEIFiVV"
+       "[\"opacity\"]": "EIRty6wF5Y",
+       "[\"y\"]": "p1SV1hM7XE",
+       "[\"scale\"]": "KjsYzYcwck"
       }
      },
      "tier3": {
       "trackData": {
-       "XcMuoCwJ22": {
+       "aiYH3C2Yqp": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "12yeGhCo5I",
-          "position": 0.35,
+          "id": "tvcgxqSEvU",
+          "position": 0.32999999999999996,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1127,8 +1127,8 @@
           "value": 0
          },
          {
-          "id": "LShsUFDXDy",
-          "position": 0.85,
+          "id": "qd5iN5tUtd",
+          "position": 0.78,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1141,12 +1141,12 @@
         ],
         "__debugName": "opacity"
        },
-       "ybwJEBj3Sw": {
+       "I6KmlIbGHj": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "46a9h9LlPs",
-          "position": 0.35,
+          "id": "HglJ1MR2r7",
+          "position": 0.32999999999999996,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1157,8 +1157,8 @@
           "value": 36
          },
          {
-          "id": "ucjn9jkhRP",
-          "position": 0.85,
+          "id": "X456Uo53pp",
+          "position": 0.78,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1171,12 +1171,12 @@
         ],
         "__debugName": "y"
        },
-       "auQFoHm0zz": {
+       "Q1q0FVoPVd": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "DJSn9JDnDP",
-          "position": 0.35,
+          "id": "mf2kOYfnlL",
+          "position": 0.32999999999999996,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1187,8 +1187,8 @@
           "value": 0.97
          },
          {
-          "id": "1cDe16k19w",
-          "position": 0.8500000000000001,
+          "id": "f3j9KtUmha",
+          "position": 0.78,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1203,19 +1203,19 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "XcMuoCwJ22",
-       "[\"y\"]": "ybwJEBj3Sw",
-       "[\"scale\"]": "auQFoHm0zz"
+       "[\"opacity\"]": "aiYH3C2Yqp",
+       "[\"y\"]": "I6KmlIbGHj",
+       "[\"scale\"]": "Q1q0FVoPVd"
       }
      },
      "tier4": {
       "trackData": {
-       "71SfmILsmt": {
+       "LqiwiOFiBg": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "WtuAjGlbuK",
-          "position": 0.45000000000000007,
+          "id": "WTgRUHQr9h",
+          "position": 0.42000000000000004,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1226,8 +1226,8 @@
           "value": 0
          },
          {
-          "id": "ywKXdMGe5R",
-          "position": 0.9500000000000001,
+          "id": "209Qj8mNj8",
+          "position": 0.8700000000000001,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1240,12 +1240,12 @@
         ],
         "__debugName": "opacity"
        },
-       "CIcMzbgFb2": {
+       "ddCta0BKXw": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "Gh0nbABbfk",
-          "position": 0.45000000000000007,
+          "id": "W7mtVLQREf",
+          "position": 0.42000000000000004,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1256,8 +1256,8 @@
           "value": 36
          },
          {
-          "id": "nBz0F81y6k",
-          "position": 0.9500000000000001,
+          "id": "6ToS91oHHY",
+          "position": 0.8700000000000001,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1270,12 +1270,12 @@
         ],
         "__debugName": "y"
        },
-       "hK3in5wNUp": {
+       "V13lWrSwXi": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "7WGdR82uAl",
-          "position": 0.45000000000000007,
+          "id": "U5Dv4cqO1y",
+          "position": 0.42000000000000004,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1286,8 +1286,8 @@
           "value": 0.97
          },
          {
-          "id": "sqet27P9IR",
-          "position": 0.9500000000000001,
+          "id": "a2EVetYmFF",
+          "position": 0.87,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1302,19 +1302,19 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "71SfmILsmt",
-       "[\"y\"]": "CIcMzbgFb2",
-       "[\"scale\"]": "hK3in5wNUp"
+       "[\"opacity\"]": "LqiwiOFiBg",
+       "[\"y\"]": "ddCta0BKXw",
+       "[\"scale\"]": "V13lWrSwXi"
       }
      },
      "tier5": {
       "trackData": {
-       "Dn9fx37ZWW": {
+       "4dXMj9wf2j": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "F69Pl7as6t",
-          "position": 0.55,
+          "id": "awX0Fq5vrB",
+          "position": 0.51,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1325,8 +1325,8 @@
           "value": 0
          },
          {
-          "id": "LOtNc4knbm",
-          "position": 1.05,
+          "id": "LGT5jQ7wXz",
+          "position": 0.96,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1339,12 +1339,12 @@
         ],
         "__debugName": "opacity"
        },
-       "wZYlRar44t": {
+       "JnaarcKWqN": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "8yptpBzKp4",
-          "position": 0.55,
+          "id": "hZMyBZWSP7",
+          "position": 0.51,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1355,8 +1355,8 @@
           "value": 36
          },
          {
-          "id": "87NFxYw6mf",
-          "position": 1.05,
+          "id": "Sn5WDlKHvi",
+          "position": 0.96,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1369,12 +1369,12 @@
         ],
         "__debugName": "y"
        },
-       "mLtFfjjQwo": {
+       "e130u7KITf": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "rZ9tuIW8ha",
-          "position": 0.55,
+          "id": "2E9H5WH09s",
+          "position": 0.51,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1385,8 +1385,8 @@
           "value": 0.97
          },
          {
-          "id": "XXT0j6LxIx",
-          "position": 1.05,
+          "id": "tcWxdpLnoB",
+          "position": 0.96,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1401,9 +1401,9 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "Dn9fx37ZWW",
-       "[\"y\"]": "wZYlRar44t",
-       "[\"scale\"]": "mLtFfjjQwo"
+       "[\"opacity\"]": "4dXMj9wf2j",
+       "[\"y\"]": "JnaarcKWqN",
+       "[\"scale\"]": "e130u7KITf"
       }
      }
     }
@@ -1451,11 +1451,11 @@
     "tracksByObject": {
      "head": {
       "trackData": {
-       "O0XQiC46u1": {
+       "as4fTFWYjd": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "z6Lm3CWBpW",
+          "id": "r8cLPMPzEa",
           "position": 0,
           "connectedRight": true,
           "handles": [
@@ -1467,7 +1467,7 @@
           "value": 0
          },
          {
-          "id": "H5Qiri8ScE",
+          "id": "KKkddNIgQZ",
           "position": 0.4,
           "connectedRight": true,
           "handles": [
@@ -1481,11 +1481,11 @@
         ],
         "__debugName": "opacity"
        },
-       "2EP5A9ry45": {
+       "0iyaggge0l": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "QPWKJBeu7L",
+          "id": "45kdpbbIez",
           "position": 0,
           "connectedRight": true,
           "handles": [
@@ -1497,7 +1497,7 @@
           "value": 24
          },
          {
-          "id": "pSozxFbJRe",
+          "id": "EYb8frKUvS",
           "position": 0.4,
           "connectedRight": true,
           "handles": [
@@ -1513,17 +1513,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "O0XQiC46u1",
-       "[\"y\"]": "2EP5A9ry45"
+       "[\"opacity\"]": "as4fTFWYjd",
+       "[\"y\"]": "0iyaggge0l"
       }
      },
      "step1": {
       "trackData": {
-       "usK0jN6Gzf": {
+       "f9FhM8ceHv": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "DwYqw0sfhl",
+          "id": "nF5rUHTQGq",
           "position": 0.15,
           "connectedRight": true,
           "handles": [
@@ -1535,8 +1535,8 @@
           "value": 0
          },
          {
-          "id": "kXwnF0TNX5",
-          "position": 0.65,
+          "id": "m4vlhfagao",
+          "position": 0.6,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1549,11 +1549,11 @@
         ],
         "__debugName": "opacity"
        },
-       "MLwzsOeHug": {
+       "xI09qZxiGp": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "ShhTgq0wvz",
+          "id": "uXrpEbI1cK",
           "position": 0.15,
           "connectedRight": true,
           "handles": [
@@ -1565,8 +1565,8 @@
           "value": 30
          },
          {
-          "id": "OMGG9VSNFN",
-          "position": 0.65,
+          "id": "vt8lDZXF4l",
+          "position": 0.6,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1581,18 +1581,18 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "usK0jN6Gzf",
-       "[\"y\"]": "MLwzsOeHug"
+       "[\"opacity\"]": "f9FhM8ceHv",
+       "[\"y\"]": "xI09qZxiGp"
       }
      },
      "step2": {
       "trackData": {
-       "ZtC4PlZBpv": {
+       "tlcfAqjMRl": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "KVagTsF6f7",
-          "position": 0.27,
+          "id": "2TSZtCMyiW",
+          "position": 0.26,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1603,8 +1603,8 @@
           "value": 0
          },
          {
-          "id": "PUSrIazGHr",
-          "position": 0.77,
+          "id": "GVK4BQTkYZ",
+          "position": 0.71,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1617,12 +1617,12 @@
         ],
         "__debugName": "opacity"
        },
-       "y5cHzBLBOj": {
+       "kzeM9gDZzB": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "6H9MesgoCb",
-          "position": 0.27,
+          "id": "a2bd3cxaXl",
+          "position": 0.26,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1633,8 +1633,8 @@
           "value": 30
          },
          {
-          "id": "bGi5Q5dRu4",
-          "position": 0.77,
+          "id": "GegafISkJg",
+          "position": 0.71,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1649,18 +1649,18 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "ZtC4PlZBpv",
-       "[\"y\"]": "y5cHzBLBOj"
+       "[\"opacity\"]": "tlcfAqjMRl",
+       "[\"y\"]": "kzeM9gDZzB"
       }
      },
      "step3": {
       "trackData": {
-       "hKX44o4E9Q": {
+       "NheNIE6WQu": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "lHOe5Y5B2R",
-          "position": 0.39,
+          "id": "1S0na7bkv0",
+          "position": 0.37,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1671,8 +1671,8 @@
           "value": 0
          },
          {
-          "id": "MUDYXepK2M",
-          "position": 0.89,
+          "id": "DpDMIiLCaT",
+          "position": 0.8200000000000001,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1685,12 +1685,12 @@
         ],
         "__debugName": "opacity"
        },
-       "o0FG6aD4HS": {
+       "tOJgnhynrr": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "ohdb8vg7cR",
-          "position": 0.39,
+          "id": "hqOkzkJCIE",
+          "position": 0.37,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1701,8 +1701,8 @@
           "value": 30
          },
          {
-          "id": "48V19a3XzU",
-          "position": 0.89,
+          "id": "6yybQhaZDx",
+          "position": 0.8200000000000001,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1717,18 +1717,18 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "hKX44o4E9Q",
-       "[\"y\"]": "o0FG6aD4HS"
+       "[\"opacity\"]": "NheNIE6WQu",
+       "[\"y\"]": "tOJgnhynrr"
       }
      },
      "step4": {
       "trackData": {
-       "vdBKQKEVYM": {
+       "D4QQa1BIec": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "rY3XVZRdsM",
-          "position": 0.51,
+          "id": "sctfYEbvvu",
+          "position": 0.48,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1739,8 +1739,8 @@
           "value": 0
          },
          {
-          "id": "vQsUgvsB2J",
-          "position": 1.01,
+          "id": "lNY0TkVnFu",
+          "position": 0.9299999999999999,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1753,12 +1753,12 @@
         ],
         "__debugName": "opacity"
        },
-       "AszGkUMh57": {
+       "S0uBFXyhoA": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "nZK7rxCrDW",
-          "position": 0.51,
+          "id": "s4onxixSEC",
+          "position": 0.48,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1769,8 +1769,8 @@
           "value": 30
          },
          {
-          "id": "ACK18NkhEg",
-          "position": 1.01,
+          "id": "m0NYmqEfu8",
+          "position": 0.9299999999999999,
           "connectedRight": true,
           "handles": [
            0.5,
@@ -1785,8 +1785,8 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "vdBKQKEVYM",
-       "[\"y\"]": "AszGkUMh57"
+       "[\"opacity\"]": "D4QQa1BIec",
+       "[\"y\"]": "S0uBFXyhoA"
       }
      }
     }
@@ -1816,11 +1816,11 @@
     "tracksByObject": {
      "colL": {
       "trackData": {
-       "zNZBWz2ysU": {
+       "eBCztXEk4P": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "GdZb17Fl3y",
+          "id": "iUiOxuN6dt",
           "position": 0,
           "connectedRight": true,
           "handles": [
@@ -1832,7 +1832,7 @@
           "value": 0
          },
          {
-          "id": "5r1cNLL2yV",
+          "id": "zMUogBMhQx",
           "position": 0.6,
           "connectedRight": true,
           "handles": [
@@ -1846,11 +1846,11 @@
         ],
         "__debugName": "opacity"
        },
-       "OmO8Sa5mBX": {
+       "q0cd6Azj6N": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "kRd5YQZiPL",
+          "id": "wl2Oxvinm3",
           "position": 0,
           "connectedRight": true,
           "handles": [
@@ -1862,7 +1862,7 @@
           "value": -36
          },
          {
-          "id": "fvOYxPIUGA",
+          "id": "SvGHsa8PT0",
           "position": 0.6,
           "connectedRight": true,
           "handles": [
@@ -1878,17 +1878,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "zNZBWz2ysU",
-       "[\"x\"]": "OmO8Sa5mBX"
+       "[\"opacity\"]": "eBCztXEk4P",
+       "[\"x\"]": "q0cd6Azj6N"
       }
      },
      "colR": {
       "trackData": {
-       "8pzm3nTngZ": {
+       "8ulbhPAuwD": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "ytBch2nRkB",
+          "id": "dczi6QIJHw",
           "position": 0.1,
           "connectedRight": true,
           "handles": [
@@ -1900,7 +1900,7 @@
           "value": 0
          },
          {
-          "id": "TuCKsJOGjt",
+          "id": "UKglNsUjQ7",
           "position": 0.7,
           "connectedRight": true,
           "handles": [
@@ -1914,11 +1914,11 @@
         ],
         "__debugName": "opacity"
        },
-       "zq6ide5OAP": {
+       "vNZfPT1wMT": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "2hdJtqhhOf",
+          "id": "9goIHNEoye",
           "position": 0.1,
           "connectedRight": true,
           "handles": [
@@ -1930,7 +1930,7 @@
           "value": 36
          },
          {
-          "id": "ncnc4oOaBd",
+          "id": "nB8ouXeQlt",
           "position": 0.7,
           "connectedRight": true,
           "handles": [
@@ -1946,8 +1946,8 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "8pzm3nTngZ",
-       "[\"x\"]": "zq6ide5OAP"
+       "[\"opacity\"]": "8ulbhPAuwD",
+       "[\"x\"]": "vNZfPT1wMT"
       }
      }
     }
@@ -1989,11 +1989,11 @@
     "tracksByObject": {
      "head": {
       "trackData": {
-       "kjWo2B3Xdk": {
+       "kUg5S4VkIN": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "4oLLZcfyB1",
+          "id": "rF39bUw6Ai",
           "position": 0,
           "connectedRight": true,
           "handles": [
@@ -2005,7 +2005,7 @@
           "value": 0
          },
          {
-          "id": "k9CUIMr3eC",
+          "id": "etGFQKp2o2",
           "position": 0.4,
           "connectedRight": true,
           "handles": [
@@ -2019,11 +2019,11 @@
         ],
         "__debugName": "opacity"
        },
-       "jvo0IhO2Cg": {
+       "GK24zNamut": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "pcq8x1o3ok",
+          "id": "zQHsIcoShA",
           "position": 0,
           "connectedRight": true,
           "handles": [
@@ -2035,7 +2035,7 @@
           "value": 24
          },
          {
-          "id": "VChDmOGRun",
+          "id": "zDqzege5sQ",
           "position": 0.4,
           "connectedRight": true,
           "handles": [
@@ -2051,17 +2051,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "kjWo2B3Xdk",
-       "[\"y\"]": "jvo0IhO2Cg"
+       "[\"opacity\"]": "kUg5S4VkIN",
+       "[\"y\"]": "GK24zNamut"
       }
      },
      "row1": {
       "trackData": {
-       "Y28fdOzGw8": {
+       "Cl9ta4yQ6z": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "oEMMWvKrtw",
+          "id": "8Lyw4AeU73",
           "position": 0.15,
           "connectedRight": true,
           "handles": [
@@ -2073,7 +2073,7 @@
           "value": 0
          },
          {
-          "id": "vpKWmPMGCR",
+          "id": "FY9p3C4nLq",
           "position": 0.65,
           "connectedRight": true,
           "handles": [
@@ -2087,11 +2087,11 @@
         ],
         "__debugName": "opacity"
        },
-       "KvWSK8k3Ts": {
+       "rQV07VqdmI": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "3UKOTr8euz",
+          "id": "GqDftcbCb0",
           "position": 0.15,
           "connectedRight": true,
           "handles": [
@@ -2103,7 +2103,7 @@
           "value": 18
          },
          {
-          "id": "quKjSUJ3j8",
+          "id": "wsDvgYsNIi",
           "position": 0.65,
           "connectedRight": true,
           "handles": [
@@ -2119,17 +2119,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "Y28fdOzGw8",
-       "[\"y\"]": "KvWSK8k3Ts"
+       "[\"opacity\"]": "Cl9ta4yQ6z",
+       "[\"y\"]": "rQV07VqdmI"
       }
      },
      "row2": {
       "trackData": {
-       "1FdtIGvaPP": {
+       "SQ2AibFZKl": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "p72hwFSwqS",
+          "id": "K6SbNAB6y8",
           "position": 0.28,
           "connectedRight": true,
           "handles": [
@@ -2141,7 +2141,7 @@
           "value": 0
          },
          {
-          "id": "86JS4eX8d9",
+          "id": "YgYbjx45vK",
           "position": 0.78,
           "connectedRight": true,
           "handles": [
@@ -2155,11 +2155,11 @@
         ],
         "__debugName": "opacity"
        },
-       "bCa0sW2QQv": {
+       "NGIwFgh5gu": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "6cjZiZFdqk",
+          "id": "tJ3g8IcaM9",
           "position": 0.28,
           "connectedRight": true,
           "handles": [
@@ -2171,7 +2171,7 @@
           "value": 18
          },
          {
-          "id": "xU3ZzzbT9l",
+          "id": "LAcxuonm3n",
           "position": 0.78,
           "connectedRight": true,
           "handles": [
@@ -2187,17 +2187,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "1FdtIGvaPP",
-       "[\"y\"]": "bCa0sW2QQv"
+       "[\"opacity\"]": "SQ2AibFZKl",
+       "[\"y\"]": "NGIwFgh5gu"
       }
      },
      "row3": {
       "trackData": {
-       "dFnw8zEntW": {
+       "9FgdZ9EWwF": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "9uISe5TuTH",
+          "id": "UyFCwnsgj6",
           "position": 0.41000000000000003,
           "connectedRight": true,
           "handles": [
@@ -2209,7 +2209,7 @@
           "value": 0
          },
          {
-          "id": "GOdJ4vPgNp",
+          "id": "9OQuWH3gqb",
           "position": 0.91,
           "connectedRight": true,
           "handles": [
@@ -2223,11 +2223,11 @@
         ],
         "__debugName": "opacity"
        },
-       "Hyxsd8AK6S": {
+       "E2ahKNXJ3o": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "p02MRVhgbs",
+          "id": "F6iB5LDB9J",
           "position": 0.41000000000000003,
           "connectedRight": true,
           "handles": [
@@ -2239,7 +2239,7 @@
           "value": 18
          },
          {
-          "id": "ef6VTElkKi",
+          "id": "jG5d49zrnZ",
           "position": 0.91,
           "connectedRight": true,
           "handles": [
@@ -2255,8 +2255,8 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "dFnw8zEntW",
-       "[\"y\"]": "Hyxsd8AK6S"
+       "[\"opacity\"]": "9FgdZ9EWwF",
+       "[\"y\"]": "E2ahKNXJ3o"
       }
      }
     }
@@ -2304,11 +2304,11 @@
     "tracksByObject": {
      "head": {
       "trackData": {
-       "KlOy4l0BcS": {
+       "rbg8ssoI1j": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "fahJCDC09z",
+          "id": "N04VUIyjzB",
           "position": 0,
           "connectedRight": true,
           "handles": [
@@ -2320,7 +2320,7 @@
           "value": 0
          },
          {
-          "id": "qleyc4iBPf",
+          "id": "7NosFtAdSu",
           "position": 0.4,
           "connectedRight": true,
           "handles": [
@@ -2334,11 +2334,11 @@
         ],
         "__debugName": "opacity"
        },
-       "OH8AncnXqK": {
+       "N5EMCjzh3n": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "NeLtMqCPEM",
+          "id": "iLMs3OEEkL",
           "position": 0,
           "connectedRight": true,
           "handles": [
@@ -2350,7 +2350,7 @@
           "value": 24
          },
          {
-          "id": "EZEwEwsmud",
+          "id": "aV80VlxuHb",
           "position": 0.4,
           "connectedRight": true,
           "handles": [
@@ -2366,17 +2366,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "KlOy4l0BcS",
-       "[\"y\"]": "OH8AncnXqK"
+       "[\"opacity\"]": "rbg8ssoI1j",
+       "[\"y\"]": "N5EMCjzh3n"
       }
      },
      "item1": {
       "trackData": {
-       "rL6KDyq2p7": {
+       "4l2amBPjci": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "1xY42OYb1X",
+          "id": "Fy3xnwGvwW",
           "position": 0.15,
           "connectedRight": true,
           "handles": [
@@ -2388,7 +2388,7 @@
           "value": 0
          },
          {
-          "id": "qfR69XEDVe",
+          "id": "ZzJuXJhgCF",
           "position": 0.6,
           "connectedRight": true,
           "handles": [
@@ -2402,11 +2402,11 @@
         ],
         "__debugName": "opacity"
        },
-       "G7W1RJ8Sit": {
+       "oFaUGA8pq5": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "GEbGahoeH2",
+          "id": "kvML0l6Fmz",
           "position": 0.15,
           "connectedRight": true,
           "handles": [
@@ -2418,7 +2418,7 @@
           "value": 14
          },
          {
-          "id": "pLzqhmZtu8",
+          "id": "D4pZxdhvwE",
           "position": 0.6,
           "connectedRight": true,
           "handles": [
@@ -2434,17 +2434,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "rL6KDyq2p7",
-       "[\"y\"]": "G7W1RJ8Sit"
+       "[\"opacity\"]": "4l2amBPjci",
+       "[\"y\"]": "oFaUGA8pq5"
       }
      },
      "item2": {
       "trackData": {
-       "lTPTmYufge": {
+       "rx0CdthrHD": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "eAqOKHlkkx",
+          "id": "i41TRok070",
           "position": 0.25,
           "connectedRight": true,
           "handles": [
@@ -2456,7 +2456,7 @@
           "value": 0
          },
          {
-          "id": "Z7lviqqYEo",
+          "id": "qKh4CawI1b",
           "position": 0.7,
           "connectedRight": true,
           "handles": [
@@ -2470,11 +2470,11 @@
         ],
         "__debugName": "opacity"
        },
-       "Dv9kbyd6QI": {
+       "tLmN8NzbOT": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "YlCpnsGJ3V",
+          "id": "ceNTdaafFH",
           "position": 0.25,
           "connectedRight": true,
           "handles": [
@@ -2486,7 +2486,7 @@
           "value": 14
          },
          {
-          "id": "6BxJJ32k3O",
+          "id": "9tvdbFEgKm",
           "position": 0.7,
           "connectedRight": true,
           "handles": [
@@ -2502,17 +2502,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "lTPTmYufge",
-       "[\"y\"]": "Dv9kbyd6QI"
+       "[\"opacity\"]": "rx0CdthrHD",
+       "[\"y\"]": "tLmN8NzbOT"
       }
      },
      "item3": {
       "trackData": {
-       "c7Un6nSAgJ": {
+       "pu6pCVmnx4": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "nS9nxS7K5e",
+          "id": "n3QimTwj6e",
           "position": 0.35,
           "connectedRight": true,
           "handles": [
@@ -2524,7 +2524,7 @@
           "value": 0
          },
          {
-          "id": "xRCFkTLbAJ",
+          "id": "nCbbABO7Ke",
           "position": 0.8,
           "connectedRight": true,
           "handles": [
@@ -2538,11 +2538,11 @@
         ],
         "__debugName": "opacity"
        },
-       "e8BN4qPDye": {
+       "zDq7jotp8s": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "oIRPqxYD9H",
+          "id": "iB3NsWSYvA",
           "position": 0.35,
           "connectedRight": true,
           "handles": [
@@ -2554,7 +2554,7 @@
           "value": 14
          },
          {
-          "id": "db0aLpZTNC",
+          "id": "KvAGELBhHz",
           "position": 0.8,
           "connectedRight": true,
           "handles": [
@@ -2570,17 +2570,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "c7Un6nSAgJ",
-       "[\"y\"]": "e8BN4qPDye"
+       "[\"opacity\"]": "pu6pCVmnx4",
+       "[\"y\"]": "zDq7jotp8s"
       }
      },
      "item4": {
       "trackData": {
-       "hCH4FR64TX": {
+       "vsV3n5OEKH": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "aAkKv40vVa",
+          "id": "dhPdzXXEnF",
           "position": 0.45000000000000007,
           "connectedRight": true,
           "handles": [
@@ -2592,7 +2592,7 @@
           "value": 0
          },
          {
-          "id": "6sZu2AMIi9",
+          "id": "dMujexotto",
           "position": 0.9000000000000001,
           "connectedRight": true,
           "handles": [
@@ -2606,11 +2606,11 @@
         ],
         "__debugName": "opacity"
        },
-       "45zjusNqHR": {
+       "keEqfO3sIB": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "ZYf76hAx24",
+          "id": "GiHcqMXHWU",
           "position": 0.45000000000000007,
           "connectedRight": true,
           "handles": [
@@ -2622,7 +2622,7 @@
           "value": 14
          },
          {
-          "id": "NVvtYSBcpj",
+          "id": "JAMxhmhr1y",
           "position": 0.9000000000000001,
           "connectedRight": true,
           "handles": [
@@ -2638,8 +2638,8 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "hCH4FR64TX",
-       "[\"y\"]": "45zjusNqHR"
+       "[\"opacity\"]": "vsV3n5OEKH",
+       "[\"y\"]": "keEqfO3sIB"
       }
      }
     }
@@ -2648,6 +2648,6 @@
  },
  "definitionVersion": "0.4.0",
  "revisionHistory": [
-  "38c3cUXvdofFlQtC"
+  "vH0ZqogDP64WBseA"
  ]
 }
