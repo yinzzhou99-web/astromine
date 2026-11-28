@@ -137,12 +137,23 @@
 
  footer{border-top:1px solid var(--line);padding:36px 0 48px;color:var(--faint);font-size:13.5px}
  footer .cols{display:flex;gap:40px;flex-wrap:wrap;justify-content:space-between}
+
+ /* scroll story (Theatre.js) — elements start hidden only when
+    JS is on; the class is removed by scroll-anim.js or a timer */
+ .anim-pre [data-anim]{opacity:0}
+ .viewport img{animation:floaty 7s ease-in-out infinite}
+ @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+ @media (prefers-reduced-motion: reduce){.viewport img{animation:none}}
 </style>
+<script>
+ document.documentElement.classList.add('anim-pre');
+ setTimeout(function(){ if (!window.__animReady) document.documentElement.classList.remove('anim-pre'); }, 3000);
+</script>
 </head>
 <body>
 
 <div class="wrap">
- <nav>
+ <nav data-anim="nav" data-sheet="Hero">
   <a class="mark" href="./">
    <img src="images/astro-logo.png" alt="$ASTRO logo">
    <span>Astromine<small>Mining Corps · BNB Chain</small></span>
@@ -167,18 +178,18 @@
  <div class="wrap">
   <div class="hero">
    <div>
-    <h1 data-i18n="hero_h1">Asteroid-mining robots, working for your agent.</h1>
-    <p class="lede" data-i18n="hero_lede">Astromine is a fleet of 10,000 asteroid-miner NFTs on BNB Chain, exclusively for wallets holding a Binance Agent ID (<b>.ai</b>). Your first Miner is <b>free</b>. Every Miner with a revealed tier mines the <b>$ASTRO</b> token every hour, hands-off.</p>
-    <div class="cta">
+    <h1 data-i18n="hero_h1" data-anim="h1" data-sheet="Hero">Asteroid-mining robots, working for your agent.</h1>
+    <p class="lede" data-i18n="hero_lede" data-anim="lede" data-sheet="Hero">Astromine is a fleet of 10,000 asteroid-miner NFTs on BNB Chain, exclusively for wallets holding a Binance Agent ID (<b>.ai</b>). Your first Miner is <b>free</b>. Every Miner with a revealed tier mines the <b>$ASTRO</b> token every hour, hands-off.</p>
+    <div class="cta" data-anim="cta" data-sheet="Hero">
      <a class="btn primary" href="skill.md" data-i18n="cta_mint">Mint through your agent</a>
      <a class="btn" href="#cara" data-i18n="cta_how">How it works</a>
     </div>
-    <div class="supply">
+    <div class="supply" data-anim="supply" data-sheet="Hero">
      <div class="row"><span data-i18n="supply_label">Minted supply</span><b><span id="mintedCount">…</span> / 10,000</b></div>
      <div class="bar"><i id="mintedBar"></i></div>
     </div>
    </div>
-   <figure class="viewport" style="margin:0">
+   <figure class="viewport" style="margin:0" data-anim="art" data-sheet="Hero">
     <img src="images/hero.png" alt="Three Astromine mining robots among asteroid crystals">
     <figcaption><span data-i18n="hero_caption">Mining units, Cadet to Admiral class</span><b>EST. 2026 · <span data-i18n="hero_belt">The Asteroid Belt</span></b></figcaption>
    </figure>
@@ -188,41 +199,41 @@
 
 <div class="wrap">
  <div class="stats">
-  <div class="stat"><div class="n">10,000</div><div class="l" data-i18n="stat1">Total Miner supply — never to be increased</div></div>
-  <div class="stat"><div class="n" data-i18n="stat2n">5 tiers</div><div class="l" data-i18n="stat2">Fixed quota per tier, drawn from block hashes</div></div>
-  <div class="stat"><div class="n">30</div><div class="l" data-i18n="stat3">Maximum Miners per wallet</div></div>
-  <div class="stat"><div class="n">150</div><div class="l" data-i18n="stat4">$ASTRO per hour at the top tier</div></div>
+  <div class="stat" data-anim="stat1" data-sheet="Stats"><div class="n" data-count="10000">10,000</div><div class="l" data-i18n="stat1">Total Miner supply — never to be increased</div></div>
+  <div class="stat" data-anim="stat2" data-sheet="Stats"><div class="n" data-i18n="stat2n">5 tiers</div><div class="l" data-i18n="stat2">Fixed quota per tier, drawn from block hashes</div></div>
+  <div class="stat" data-anim="stat3" data-sheet="Stats"><div class="n" data-count="30">30</div><div class="l" data-i18n="stat3">Maximum Miners per wallet</div></div>
+  <div class="stat" data-anim="stat4" data-sheet="Stats"><div class="n" data-count="150">150</div><div class="l" data-i18n="stat4">$ASTRO per hour at the top tier</div></div>
  </div>
 
  <section id="tier">
-  <h2 data-i18n="tier_h">Five tiers, quotas set in stone</h2>
-  <p class="sub" data-i18n="tier_sub">A tier stays sealed at mint and opens from the hash of the block three blocks later, drawn against the remaining quota. The final counts land exactly on the quotas below — nobody can rig them, including the project's creator.</p>
+  <h2 data-i18n="tier_h" data-anim="head" data-sheet="Tiers">Five tiers, quotas set in stone</h2>
+  <p class="sub" data-i18n="tier_sub" data-anim="head" data-sheet="Tiers">A tier stays sealed at mint and opens from the hash of the block three blocks later, drawn against the remaining quota. The final counts land exactly on the quotas below — nobody can rig them, including the project's creator.</p>
   <div class="tiers">
-   <div class="tier">
+   <div class="tier" data-anim="tier1" data-sheet="Tiers">
     <img src="images/cadet.png" alt="Cadet tier Miner">
     <h3>Cadet</h3><div class="rate">10 $ASTRO / <span data-i18n="per_hour">hour</span></div>
     <div class="quota"><span data-i18n="quota_word">Quota</span> 4,200 · <span data-i18n="remain_word">remaining</span> <span data-remain="0">…</span></div>
     <div class="qbar"><i data-qbar="0"></i></div>
    </div>
-   <div class="tier">
+   <div class="tier" data-anim="tier2" data-sheet="Tiers">
     <img src="images/engineer.png" alt="Engineer tier Miner">
     <h3>Engineer</h3><div class="rate">20 $ASTRO / <span data-i18n="per_hour">hour</span></div>
     <div class="quota"><span data-i18n="quota_word">Quota</span> 2,820 · <span data-i18n="remain_word">remaining</span> <span data-remain="1">…</span></div>
     <div class="qbar"><i data-qbar="1"></i></div>
    </div>
-   <div class="tier">
+   <div class="tier" data-anim="tier3" data-sheet="Tiers">
     <img src="images/pilot.png" alt="Pilot tier Miner">
     <h3>Pilot</h3><div class="rate">40 $ASTRO / <span data-i18n="per_hour">hour</span></div>
     <div class="quota"><span data-i18n="quota_word">Quota</span> 1,740 · <span data-i18n="remain_word">remaining</span> <span data-remain="2">…</span></div>
     <div class="qbar"><i data-qbar="2"></i></div>
    </div>
-   <div class="tier">
+   <div class="tier" data-anim="tier4" data-sheet="Tiers">
     <img src="images/commander.png" alt="Commander tier Miner">
     <h3>Commander</h3><div class="rate">75 $ASTRO / <span data-i18n="per_hour">hour</span></div>
     <div class="quota"><span data-i18n="quota_word">Quota</span> 900 · <span data-i18n="remain_word">remaining</span> <span data-remain="3">…</span></div>
     <div class="qbar"><i data-qbar="3"></i></div>
    </div>
-   <div class="tier top">
+   <div class="tier top" data-anim="tier5" data-sheet="Tiers">
     <img src="images/admiral.png" alt="Admiral tier Miner">
     <h3>Admiral</h3><div class="rate">150 $ASTRO / <span data-i18n="per_hour">hour</span></div>
     <div class="quota"><span data-i18n="quota_word">Quota</span> 340 · <span data-i18n="remain_word">remaining</span> <span data-remain="4">…</span></div>
@@ -232,19 +243,19 @@
  </section>
 
  <section id="cara">
-  <h2 data-i18n="how_h">How it works</h2>
-  <p class="sub"><span data-i18n="how_sub">Everything runs through your AI agent — this site never touches your wallet or asks for any keys. The full technical guide lives in</span> <a href="skill.md">skill.md</a>.</p>
+  <h2 data-i18n="how_h" data-anim="head" data-sheet="How">How it works</h2>
+  <p class="sub" data-anim="head" data-sheet="How"><span data-i18n="how_sub">Everything runs through your AI agent — this site never touches your wallet or asks for any keys. The full technical guide lives in</span> <a href="skill.md">skill.md</a>.</p>
   <div class="steps">
-   <div class="step"><div class="num">1</div><h3 data-i18n="s1h">Hold an Agent ID</h3><p data-i18n="s1p">Your agent's wallet needs a <b>.ai</b> name from SPACE ID. Without one, the contract refuses the mint.</p></div>
-   <div class="step"><div class="num">2</div><h3 data-i18n="s2h">Mint a Miner</h3><p data-i18n="s2p">Your agent reads the exact price from the contract, shows it to you, then mints. The first one is free.</p></div>
-   <div class="step"><div class="num">3</div><h3 data-i18n="s3h">Reveal the tier</h3><p data-i18n="s3p">The tier is drawn from a block hash by itself. Your agent calls <i>reveal</i> a few seconds after minting and reports your tier.</p></div>
-   <div class="step"><div class="num">4</div><h3 data-i18n="s4h">Mine $ASTRO</h3><p data-i18n="s4p">One <i>start()</i> call switches mining on, then your Miner gathers $ASTRO every hour. Claim whenever you like.</p></div>
+   <div class="step" data-anim="step1" data-sheet="How"><div class="num">1</div><h3 data-i18n="s1h">Hold an Agent ID</h3><p data-i18n="s1p">Your agent's wallet needs a <b>.ai</b> name from SPACE ID. Without one, the contract refuses the mint.</p></div>
+   <div class="step" data-anim="step2" data-sheet="How"><div class="num">2</div><h3 data-i18n="s2h">Mint a Miner</h3><p data-i18n="s2p">Your agent reads the exact price from the contract, shows it to you, then mints. The first one is free.</p></div>
+   <div class="step" data-anim="step3" data-sheet="How"><div class="num">3</div><h3 data-i18n="s3h">Reveal the tier</h3><p data-i18n="s3p">The tier is drawn from a block hash by itself. Your agent calls <i>reveal</i> a few seconds after minting and reports your tier.</p></div>
+   <div class="step" data-anim="step4" data-sheet="How"><div class="num">4</div><h3 data-i18n="s4h">Mine $ASTRO</h3><p data-i18n="s4p">One <i>start()</i> call switches mining on, then your Miner gathers $ASTRO every hour. Claim whenever you like.</p></div>
   </div>
  </section>
 
  <section id="harga">
   <div class="split">
-   <div>
+   <div data-anim="colL" data-sheet="Pricing">
     <h2 data-i18n="price_h">Mint pricing</h2>
     <p class="sub" style="margin-bottom:20px" data-i18n="price_sub">Steps up per wallet, computed by the contract — not a promotional number.</p>
     <table>
@@ -256,7 +267,7 @@
     </table>
     <p class="note" data-i18n="price_note">Every mint payment is forwarded by the contract straight to the project wallet in the same transaction — the NFT contract never holds BNB. Secondary-sale royalty is 5% (ERC-2981).</p>
    </div>
-   <div>
+   <div data-anim="colR" data-sheet="Pricing">
     <h2 data-i18n="mine_h">Mining $ASTRO</h2>
     <p class="sub" style="margin-bottom:20px" data-i18n="mine_sub">Mined tokens pile up until storage fills, then pause until you claim.</p>
     <ul class="facts">
@@ -272,21 +283,21 @@
  </section>
 
  <section id="kontrak">
-  <h2 data-i18n="contracts_h">Official contracts</h2>
-  <p class="sub" data-i18n="contracts_sub">Only these three addresses. An address from a message, a post, or any other site is not Astromine.</p>
-  <div class="contract">
+  <h2 data-i18n="contracts_h" data-anim="head" data-sheet="Contracts">Official contracts</h2>
+  <p class="sub" data-i18n="contracts_sub" data-anim="head" data-sheet="Contracts">Only these three addresses. An address from a message, a post, or any other site is not Astromine.</p>
+  <div class="contract" data-anim="row1" data-sheet="Contracts">
    <div class="who"><b>Astromine Miners</b><span>NFT · ERC-721</span></div>
    <span class="addr" id="minersAddr">…</span>
    <button class="copy" data-copy="minersAddr" type="button" data-i18n="copy">Copy</button>
    <a class="scan" id="minersScan" href="#" target="_blank" rel="noopener">BscScan</a>
   </div>
-  <div class="contract">
+  <div class="contract" data-anim="row2" data-sheet="Contracts">
    <div class="who"><b>$ASTRO</b><span>Token · BEP-20</span></div>
    <span class="addr" id="astroAddr">…</span>
    <button class="copy" data-copy="astroAddr" type="button" data-i18n="copy">Copy</button>
    <a class="scan" id="astroScan" href="#" target="_blank" rel="noopener">BscScan</a>
   </div>
-  <div class="contract">
+  <div class="contract" data-anim="row3" data-sheet="Contracts">
    <div class="who"><b data-i18n="mining_name">Mining</b><span data-i18n="mining_sub">Mining contract</span></div>
    <span class="addr" id="miningAddr">…</span>
    <button class="copy" data-copy="miningAddr" type="button" data-i18n="copy">Copy</button>
@@ -295,20 +306,20 @@
  </section>
 
  <section id="faq">
-  <h2 data-i18n="faq_h">Frequently asked</h2>
-  <details>
+  <h2 data-i18n="faq_h" data-anim="head" data-sheet="Faq">Frequently asked</h2>
+  <details data-anim="item1" data-sheet="Faq">
    <summary data-i18n="q1">Why is my Miner still “Sealed”?</summary>
    <p data-i18n="a1">Tiers are sealed at mint so the draw stays fair. A tier opens through a <i>reveal</i> call a few seconds after minting — your agent normally does this by following the guide. If it hasn't, ask your agent to call reveal for your mint batch; it costs only a little gas from your own wallet.</p>
   </details>
-  <details>
+  <details data-anim="item2" data-sheet="Faq">
    <summary data-i18n="q2">Can I mint without an AI agent?</summary>
    <p data-i18n="a2">Yes — the contract is public. Any wallet holding an Agent ID (.ai) and a little BNB for gas can mint directly. The agent guide is simply the easiest and safest route.</p>
   </details>
-  <details>
+  <details data-anim="item3" data-sheet="Faq">
    <summary data-i18n="q3">When does mining start earning?</summary>
    <p data-i18n="a3">Right after the tier is revealed and your agent switches mining on with one <i>start()</i> call. Earnings accumulate up to 48 hours of your rate, then pause until you claim.</p>
   </details>
-  <details>
+  <details data-anim="item4" data-sheet="Faq">
    <summary data-i18n="q4">Can $ASTRO be sold?</summary>
    <p data-i18n="a4">Not yet. There is no pool or market for $ASTRO today, so the token has no price. Treat Astromine as a collectible and a game, not an investment.</p>
   </details>
@@ -498,5 +509,6 @@
   })();
  })();
 </script>
+<script type="module" src="scroll-anim.js"></script>
 </body>
 </html>
