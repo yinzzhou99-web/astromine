@@ -1,9 +1,12 @@
-/* Astromine scroll story — Theatre.js choreography.
-   Hero sheet plays once on load; every other sheet is
-   scrubbed by the scroll position of its section.
-   If anything here fails, the page stays fully visible:
-   the .anim-pre hiding class is removed by a fallback
-   timer in <head> and again in the catch block below. */
+/* Astromine scroll story — Theatre.js choreography for the
+   page sections, scrubbed by scroll position. The hero intro
+   is pure CSS (see .hin in index.html): Theatre's value
+   propagation rides requestAnimationFrame, which stalls in
+   background-loaded tabs and left the hero invisible — CSS
+   animations cannot stall that way.
+   If anything here fails, the sections stay fully visible:
+   the .anim-pre hiding class is removed by a fallback timer
+   in <head> and again in the catch block below. */
 import { getProject, types } from './vendor/theatre-core.mjs';
 
 const PROPS = {
@@ -48,7 +51,7 @@ function runCounters(force) {
 }
 
 try {
-  const state = await (await fetch('theatre-state.json')).json();
+  const state = await (await fetch('theatre-state.json?v=5')).json();
   const project = getProject('Astromine', { state });
   await project.ready;
 
@@ -64,7 +67,6 @@ try {
     });
   });
 
-  const hero = sheetOf('Hero');
   const scrollSheets = SECTIONS.map(([name, sel]) => ({
     sheet: sheetOf(name),
     el: document.querySelector(sel),
@@ -74,23 +76,9 @@ try {
   document.documentElement.classList.remove('anim-pre');
 
   if (reduced) {
-    hero.sequence.position = hero.sequence.length;
     for (const { sheet } of scrollSheets) sheet.sequence.position = 1;
     runCounters(1);
   } else {
-    hero.sequence.position = 0;
-    hero.sequence.play({ iterationCount: 1 });
-    /* Watchdog: if playback stalls (tab loaded in the
-       background, throttled rAF, in-app browser), snap the
-       intro to its end so nothing stays invisible. */
-    const snapHero = () => {
-      if (hero.sequence.position < hero.sequence.length - 0.01)
-        hero.sequence.position = hero.sequence.length;
-    };
-    setTimeout(snapHero, 5000);
-    document.addEventListener('visibilitychange', () => {
-      if (!document.hidden) setTimeout(snapHero, 800);
-    });
     let ticking = false;
     const update = () => {
       ticking = false;

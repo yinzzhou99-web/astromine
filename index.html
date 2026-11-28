@@ -138,9 +138,13 @@
  footer{border-top:1px solid var(--line);padding:36px 0 48px;color:var(--faint);font-size:13.5px}
  footer .cols{display:flex;gap:40px;flex-wrap:wrap;justify-content:space-between}
 
- /* scroll story (Theatre.js) — elements start hidden only when
-    JS is on; the class is removed by scroll-anim.js or a timer */
+ /* scroll story — sections reveal via Theatre.js on scroll;
+    the hero intro is pure CSS (compositor-driven, cannot
+    stall in a background tab) */
  .anim-pre [data-anim]{opacity:0}
+ .hin{animation:hin .8s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0s)}
+ @keyframes hin{from{opacity:0;transform:translateY(var(--dy,26px)) scale(var(--sc,1))}to{opacity:1;transform:translateY(0) scale(1)}}
+ @media (prefers-reduced-motion: reduce){.hin{animation:none}}
 
  /* hero cards — three tier cards fanned over the starfield */
  .herocards{position:relative;height:480px}
@@ -172,7 +176,7 @@
 <body>
 
 <div class="wrap">
- <nav data-anim="nav" data-sheet="Hero">
+ <nav class="hin" style="--d:0s;--dy:-14px">
   <a class="mark" href="./">
    <img src="images/astro-logo.png" alt="$ASTRO logo">
    <span>Astromine<small>Mining Corps · BNB Chain</small></span>
@@ -197,32 +201,32 @@
  <div class="wrap">
   <div class="hero">
    <div>
-    <h1 data-i18n="hero_h1" data-anim="h1" data-sheet="Hero">Asteroid-mining robots, working for your agent.</h1>
-    <p class="lede" data-i18n="hero_lede" data-anim="lede" data-sheet="Hero">Astromine is a fleet of 10,000 asteroid-miner NFTs on BNB Chain, exclusively for wallets holding a Binance Agent ID (<b>.ai</b>). Your first Miner is <b>free</b>. Every Miner with a revealed tier mines the <b>$ASTRO</b> token every hour, hands-off.</p>
-    <div class="cta" data-anim="cta" data-sheet="Hero">
+    <h1 data-i18n="hero_h1" class="hin" style="--d:.15s;--dy:34px">Asteroid-mining robots, working for your agent.</h1>
+    <p class="lede hin" data-i18n="hero_lede" style="--d:.45s;--dy:26px">Astromine is a fleet of 10,000 asteroid-miner NFTs on BNB Chain, exclusively for wallets holding a Binance Agent ID (<b>.ai</b>). Your first Miner is <b>free</b>. Every Miner with a revealed tier mines the <b>$ASTRO</b> token every hour, hands-off.</p>
+    <div class="cta hin" style="--d:.75s;--dy:20px">
      <a class="btn primary" href="skill.md" data-i18n="cta_mint">Mint through your agent</a>
      <a class="btn" href="#cara" data-i18n="cta_how">How it works</a>
     </div>
-    <div class="supply" data-anim="supply" data-sheet="Hero">
+    <div class="supply hin" style="--d:1s;--dy:16px">
      <div class="row"><span data-i18n="supply_label">Minted supply</span><b><span id="mintedCount">…</span> / 10,000</b></div>
      <div class="bar"><i id="mintedBar"></i></div>
     </div>
    </div>
    <div>
     <div class="herocards">
-     <div class="hcardw c1" data-anim="card1" data-sheet="Hero">
+     <div class="hcardw c1 hin" style="--d:.35s;--dy:34px;--sc:.92">
       <div class="hcard">
        <img src="images/engineer.png" alt="Engineer tier Miner">
        <div class="tag"><b>Engineer</b><span>20 $ASTRO / <span data-i18n="per_hour">hour</span></span></div>
       </div>
      </div>
-     <div class="hcardw c2" data-anim="card2" data-sheet="Hero">
+     <div class="hcardw c2 hin" style="--d:.55s;--dy:34px;--sc:.92">
       <div class="hcard gold">
        <img src="images/admiral.png" alt="Admiral tier Miner">
        <div class="tag"><b>Admiral</b><span>150 $ASTRO / <span data-i18n="per_hour">hour</span></span></div>
       </div>
      </div>
-     <div class="hcardw c3" data-anim="card3" data-sheet="Hero">
+     <div class="hcardw c3 hin" style="--d:.75s;--dy:34px;--sc:.92">
       <div class="hcard">
        <img src="images/pilot.png" alt="Pilot tier Miner">
        <div class="tag"><b>Pilot</b><span>40 $ASTRO / <span data-i18n="per_hour">hour</span></span></div>
@@ -547,6 +551,6 @@
   })();
  })();
 </script>
-<script type="module" src="scroll-anim.js"></script>
+<script type="module" src="scroll-anim.js?v=5"></script>
 </body>
 </html>

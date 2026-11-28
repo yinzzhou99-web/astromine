@@ -1,703 +1,5 @@
 {
  "sheetsById": {
-  "Hero": {
-   "staticOverrides": {
-    "byObject": {
-     "nav": {
-      "opacity": 1,
-      "y": 0,
-      "x": 0,
-      "scale": 1
-     },
-     "h1": {
-      "opacity": 1,
-      "y": 0,
-      "x": 0,
-      "scale": 1
-     },
-     "lede": {
-      "opacity": 1,
-      "y": 0,
-      "x": 0,
-      "scale": 1
-     },
-     "cta": {
-      "opacity": 1,
-      "y": 0,
-      "x": 0,
-      "scale": 1
-     },
-     "supply": {
-      "opacity": 1,
-      "y": 0,
-      "x": 0,
-      "scale": 1
-     },
-     "card1": {
-      "opacity": 1,
-      "y": 0,
-      "x": 0,
-      "scale": 1
-     },
-     "card2": {
-      "opacity": 1,
-      "y": 0,
-      "x": 0,
-      "scale": 1
-     },
-     "card3": {
-      "opacity": 1,
-      "y": 0,
-      "x": 0,
-      "scale": 1
-     }
-    }
-   },
-   "sequence": {
-    "subUnitsPerUnit": 30,
-    "length": 2.6,
-    "type": "PositionalSequence",
-    "tracksByObject": {
-     "nav": {
-      "trackData": {
-       "k3BtzV2XOz": {
-        "type": "BasicKeyframedTrack",
-        "keyframes": [
-         {
-          "id": "Dtljs2Rxnv",
-          "position": 0,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 0
-         },
-         {
-          "id": "SjQofTuukK",
-          "position": 0.5,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 1
-         }
-        ],
-        "__debugName": "opacity"
-       },
-       "Kdb44NlS6f": {
-        "type": "BasicKeyframedTrack",
-        "keyframes": [
-         {
-          "id": "KkSyX8FtYk",
-          "position": 0,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": -14
-         },
-         {
-          "id": "oAhhlHrrib",
-          "position": 0.5,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 0
-         }
-        ],
-        "__debugName": "y"
-       }
-      },
-      "trackIdByPropPath": {
-       "[\"opacity\"]": "k3BtzV2XOz",
-       "[\"y\"]": "Kdb44NlS6f"
-      }
-     },
-     "h1": {
-      "trackData": {
-       "iAYVaGRH3V": {
-        "type": "BasicKeyframedTrack",
-        "keyframes": [
-         {
-          "id": "1Nr5cX6ynQ",
-          "position": 0.15,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 0
-         },
-         {
-          "id": "3vIF1B2uqJ",
-          "position": 0.9500000000000001,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 1
-         }
-        ],
-        "__debugName": "opacity"
-       },
-       "oZjBjPE9CR": {
-        "type": "BasicKeyframedTrack",
-        "keyframes": [
-         {
-          "id": "fFEeqCPD4U",
-          "position": 0.15,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 34
-         },
-         {
-          "id": "lVg1qr7S1k",
-          "position": 0.9500000000000001,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 0
-         }
-        ],
-        "__debugName": "y"
-       }
-      },
-      "trackIdByPropPath": {
-       "[\"opacity\"]": "iAYVaGRH3V",
-       "[\"y\"]": "oZjBjPE9CR"
-      }
-     },
-     "lede": {
-      "trackData": {
-       "uR9UjgLZRe": {
-        "type": "BasicKeyframedTrack",
-        "keyframes": [
-         {
-          "id": "6hu6fzwmCy",
-          "position": 0.45,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 0
-         },
-         {
-          "id": "wStn3PhrMO",
-          "position": 1.2,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 1
-         }
-        ],
-        "__debugName": "opacity"
-       },
-       "FoXKuc3B5p": {
-        "type": "BasicKeyframedTrack",
-        "keyframes": [
-         {
-          "id": "Bn2A2RCrKY",
-          "position": 0.45,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 26
-         },
-         {
-          "id": "IFq1VKD8n8",
-          "position": 1.2,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 0
-         }
-        ],
-        "__debugName": "y"
-       }
-      },
-      "trackIdByPropPath": {
-       "[\"opacity\"]": "uR9UjgLZRe",
-       "[\"y\"]": "FoXKuc3B5p"
-      }
-     },
-     "cta": {
-      "trackData": {
-       "6QwqlJlhm0": {
-        "type": "BasicKeyframedTrack",
-        "keyframes": [
-         {
-          "id": "bZ9TyFrPwX",
-          "position": 0.75,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 0
-         },
-         {
-          "id": "3cfTuZQZau",
-          "position": 1.45,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 1
-         }
-        ],
-        "__debugName": "opacity"
-       },
-       "U9TzUSRiDn": {
-        "type": "BasicKeyframedTrack",
-        "keyframes": [
-         {
-          "id": "FBRNrugBwn",
-          "position": 0.75,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 20
-         },
-         {
-          "id": "2pvMIg5lHG",
-          "position": 1.45,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 0
-         }
-        ],
-        "__debugName": "y"
-       }
-      },
-      "trackIdByPropPath": {
-       "[\"opacity\"]": "6QwqlJlhm0",
-       "[\"y\"]": "U9TzUSRiDn"
-      }
-     },
-     "supply": {
-      "trackData": {
-       "nBeAghOqtv": {
-        "type": "BasicKeyframedTrack",
-        "keyframes": [
-         {
-          "id": "siNdee7lsg",
-          "position": 1.0,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 0
-         },
-         {
-          "id": "t8X4NYxk9X",
-          "position": 1.7,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 1
-         }
-        ],
-        "__debugName": "opacity"
-       },
-       "V9KGHUBt3o": {
-        "type": "BasicKeyframedTrack",
-        "keyframes": [
-         {
-          "id": "N0FgpLxhrU",
-          "position": 1.0,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 16
-         },
-         {
-          "id": "h8nT9Mu492",
-          "position": 1.7,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 0
-         }
-        ],
-        "__debugName": "y"
-       }
-      },
-      "trackIdByPropPath": {
-       "[\"opacity\"]": "nBeAghOqtv",
-       "[\"y\"]": "V9KGHUBt3o"
-      }
-     },
-     "card1": {
-      "trackData": {
-       "iGzuNGAopr": {
-        "type": "BasicKeyframedTrack",
-        "keyframes": [
-         {
-          "id": "c1zYbgKpD8",
-          "position": 0.35,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 0
-         },
-         {
-          "id": "VIHmi4rPMC",
-          "position": 1.15,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 1
-         }
-        ],
-        "__debugName": "opacity"
-       },
-       "iNxwpafztx": {
-        "type": "BasicKeyframedTrack",
-        "keyframes": [
-         {
-          "id": "JYK8d1QvEU",
-          "position": 0.35,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 34
-         },
-         {
-          "id": "rdtEBdt263",
-          "position": 1.15,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 0
-         }
-        ],
-        "__debugName": "y"
-       },
-       "DhSKpR5jNf": {
-        "type": "BasicKeyframedTrack",
-        "keyframes": [
-         {
-          "id": "hwE4Hn7Vgf",
-          "position": 0.35,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 0.92
-         },
-         {
-          "id": "Gz2oYZXoeF",
-          "position": 1.15,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 1
-         }
-        ],
-        "__debugName": "scale"
-       }
-      },
-      "trackIdByPropPath": {
-       "[\"opacity\"]": "iGzuNGAopr",
-       "[\"y\"]": "iNxwpafztx",
-       "[\"scale\"]": "DhSKpR5jNf"
-      }
-     },
-     "card2": {
-      "trackData": {
-       "q0qJdvTNVs": {
-        "type": "BasicKeyframedTrack",
-        "keyframes": [
-         {
-          "id": "CrKLKL0WKW",
-          "position": 0.55,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 0
-         },
-         {
-          "id": "ZtRYGlzOWR",
-          "position": 1.35,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 1
-         }
-        ],
-        "__debugName": "opacity"
-       },
-       "Zxh1LtO61Z": {
-        "type": "BasicKeyframedTrack",
-        "keyframes": [
-         {
-          "id": "PX2Qa2Ogtn",
-          "position": 0.55,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 34
-         },
-         {
-          "id": "zC1yu8SNMY",
-          "position": 1.35,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 0
-         }
-        ],
-        "__debugName": "y"
-       },
-       "vRQR1kxVvf": {
-        "type": "BasicKeyframedTrack",
-        "keyframes": [
-         {
-          "id": "BKmOAe3k2O",
-          "position": 0.55,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 0.92
-         },
-         {
-          "id": "HhX5m6fqYR",
-          "position": 1.35,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 1
-         }
-        ],
-        "__debugName": "scale"
-       }
-      },
-      "trackIdByPropPath": {
-       "[\"opacity\"]": "q0qJdvTNVs",
-       "[\"y\"]": "Zxh1LtO61Z",
-       "[\"scale\"]": "vRQR1kxVvf"
-      }
-     },
-     "card3": {
-      "trackData": {
-       "0NwCxZEa7G": {
-        "type": "BasicKeyframedTrack",
-        "keyframes": [
-         {
-          "id": "0vlvrV000U",
-          "position": 0.75,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 0
-         },
-         {
-          "id": "MUymEh2wqh",
-          "position": 1.55,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 1
-         }
-        ],
-        "__debugName": "opacity"
-       },
-       "RULPLfvvAH": {
-        "type": "BasicKeyframedTrack",
-        "keyframes": [
-         {
-          "id": "MDqRCrc3OR",
-          "position": 0.75,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 34
-         },
-         {
-          "id": "f4EcHgKFWc",
-          "position": 1.55,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 0
-         }
-        ],
-        "__debugName": "y"
-       },
-       "eL1DqYNkAi": {
-        "type": "BasicKeyframedTrack",
-        "keyframes": [
-         {
-          "id": "0J1trAQQCg",
-          "position": 0.75,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 0.92
-         },
-         {
-          "id": "DPRcxazZu2",
-          "position": 1.55,
-          "connectedRight": true,
-          "handles": [
-           0.5,
-           1,
-           0.5,
-           0
-          ],
-          "value": 1
-         }
-        ],
-        "__debugName": "scale"
-       }
-      },
-      "trackIdByPropPath": {
-       "[\"opacity\"]": "0NwCxZEa7G",
-       "[\"y\"]": "RULPLfvvAH",
-       "[\"scale\"]": "eL1DqYNkAi"
-      }
-     }
-    }
-   }
-  },
   "Stats": {
    "staticOverrides": {
     "byObject": {
@@ -734,11 +36,11 @@
     "tracksByObject": {
      "stat1": {
       "trackData": {
-       "pEDY5h8OO3": {
+       "r9Lgsaq8j8": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "fE8wGOHZft",
+          "id": "Fol51TmYef",
           "position": 0.0,
           "connectedRight": true,
           "handles": [
@@ -750,7 +52,7 @@
           "value": 0
          },
          {
-          "id": "GEgbbLllLx",
+          "id": "sOguEtKDkH",
           "position": 0.55,
           "connectedRight": true,
           "handles": [
@@ -764,11 +66,11 @@
         ],
         "__debugName": "opacity"
        },
-       "9SDR838kUS": {
+       "TTsuWsjp8P": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "4lzmWXmEcH",
+          "id": "cKZ6uym3QH",
           "position": 0.0,
           "connectedRight": true,
           "handles": [
@@ -780,7 +82,7 @@
           "value": 22
          },
          {
-          "id": "wbG6mO3ckX",
+          "id": "9QUFQHiAdH",
           "position": 0.55,
           "connectedRight": true,
           "handles": [
@@ -796,17 +98,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "pEDY5h8OO3",
-       "[\"y\"]": "9SDR838kUS"
+       "[\"opacity\"]": "r9Lgsaq8j8",
+       "[\"y\"]": "TTsuWsjp8P"
       }
      },
      "stat2": {
       "trackData": {
-       "j9H9mYvEnP": {
+       "NUEpK6yX4V": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "sIneyzAeRc",
+          "id": "T9mpAIpymd",
           "position": 0.12,
           "connectedRight": true,
           "handles": [
@@ -818,7 +120,7 @@
           "value": 0
          },
          {
-          "id": "wUs1ESTzpN",
+          "id": "MvxmUFdir0",
           "position": 0.67,
           "connectedRight": true,
           "handles": [
@@ -832,11 +134,11 @@
         ],
         "__debugName": "opacity"
        },
-       "nyjMLd9ySu": {
+       "5pgLpkxcSZ": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "ssRfBSfe3I",
+          "id": "tmTyLROC9t",
           "position": 0.12,
           "connectedRight": true,
           "handles": [
@@ -848,7 +150,7 @@
           "value": 22
          },
          {
-          "id": "2oNR4ghbwH",
+          "id": "OzR1WUlsz1",
           "position": 0.67,
           "connectedRight": true,
           "handles": [
@@ -864,17 +166,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "j9H9mYvEnP",
-       "[\"y\"]": "nyjMLd9ySu"
+       "[\"opacity\"]": "NUEpK6yX4V",
+       "[\"y\"]": "5pgLpkxcSZ"
       }
      },
      "stat3": {
       "trackData": {
-       "hQXjbVZ3yE": {
+       "IPx2Izwjv5": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "BR0vH2SJNM",
+          "id": "PtU0hNdI13",
           "position": 0.24,
           "connectedRight": true,
           "handles": [
@@ -886,7 +188,7 @@
           "value": 0
          },
          {
-          "id": "B9f9U6xude",
+          "id": "MlaXBKU6vx",
           "position": 0.79,
           "connectedRight": true,
           "handles": [
@@ -900,11 +202,11 @@
         ],
         "__debugName": "opacity"
        },
-       "NMXPCD1xTT": {
+       "e8QO5D4d2o": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "eJjL833quF",
+          "id": "XWudE4Kx9L",
           "position": 0.24,
           "connectedRight": true,
           "handles": [
@@ -916,7 +218,7 @@
           "value": 22
          },
          {
-          "id": "Ja8zJ6VRky",
+          "id": "UKxyRUigxQ",
           "position": 0.79,
           "connectedRight": true,
           "handles": [
@@ -932,17 +234,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "hQXjbVZ3yE",
-       "[\"y\"]": "NMXPCD1xTT"
+       "[\"opacity\"]": "IPx2Izwjv5",
+       "[\"y\"]": "e8QO5D4d2o"
       }
      },
      "stat4": {
       "trackData": {
-       "EBqka6V1kR": {
+       "ELsZJv3dvX": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "N2Az8MAcn4",
+          "id": "hIWn1tjbqN",
           "position": 0.36,
           "connectedRight": true,
           "handles": [
@@ -954,7 +256,7 @@
           "value": 0
          },
          {
-          "id": "WbBW8vlsS4",
+          "id": "0LqZYDTviZ",
           "position": 0.91,
           "connectedRight": true,
           "handles": [
@@ -968,11 +270,11 @@
         ],
         "__debugName": "opacity"
        },
-       "ELu8tYL0bP": {
+       "79agOm3QSv": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "hfkNU4KFRx",
+          "id": "yFTbvPif0o",
           "position": 0.36,
           "connectedRight": true,
           "handles": [
@@ -984,7 +286,7 @@
           "value": 22
          },
          {
-          "id": "msLWFUiw0M",
+          "id": "7U1xvU7CaT",
           "position": 0.91,
           "connectedRight": true,
           "handles": [
@@ -1000,8 +302,8 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "EBqka6V1kR",
-       "[\"y\"]": "ELu8tYL0bP"
+       "[\"opacity\"]": "ELsZJv3dvX",
+       "[\"y\"]": "79agOm3QSv"
       }
      }
     }
@@ -1055,11 +357,11 @@
     "tracksByObject": {
      "head": {
       "trackData": {
-       "7OpgVgOcdh": {
+       "8SA3noPJVA": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "zEgXQrlQ9p",
+          "id": "A5x1P6P9we",
           "position": 0,
           "connectedRight": true,
           "handles": [
@@ -1071,7 +373,7 @@
           "value": 0
          },
          {
-          "id": "ClsFPaKsf5",
+          "id": "b90LnyaqZd",
           "position": 0.4,
           "connectedRight": true,
           "handles": [
@@ -1085,11 +387,11 @@
         ],
         "__debugName": "opacity"
        },
-       "WPQh2zi1RD": {
+       "EQ5N03GAtk": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "agqVf7wIf7",
+          "id": "8AmNPsmfW0",
           "position": 0,
           "connectedRight": true,
           "handles": [
@@ -1101,7 +403,7 @@
           "value": 24
          },
          {
-          "id": "SUvrgfNgLJ",
+          "id": "9daUcbQVRH",
           "position": 0.4,
           "connectedRight": true,
           "handles": [
@@ -1117,17 +419,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "7OpgVgOcdh",
-       "[\"y\"]": "WPQh2zi1RD"
+       "[\"opacity\"]": "8SA3noPJVA",
+       "[\"y\"]": "EQ5N03GAtk"
       }
      },
      "tier1": {
       "trackData": {
-       "oxfsrZzyRG": {
+       "40JA4qz2ZV": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "9Jfk0ROse5",
+          "id": "ZZMVU9l4RH",
           "position": 0.15,
           "connectedRight": true,
           "handles": [
@@ -1139,7 +441,7 @@
           "value": 0
          },
          {
-          "id": "IJNbFQWzUv",
+          "id": "OXITmN89UG",
           "position": 0.6,
           "connectedRight": true,
           "handles": [
@@ -1153,11 +455,11 @@
         ],
         "__debugName": "opacity"
        },
-       "kyMzV6BvvF": {
+       "jRmBiCZpH0": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "01A0UIxsy3",
+          "id": "8TRxo2ViD8",
           "position": 0.15,
           "connectedRight": true,
           "handles": [
@@ -1169,7 +471,7 @@
           "value": 36
          },
          {
-          "id": "7eJZlTDknw",
+          "id": "RMnTOLf5kW",
           "position": 0.6,
           "connectedRight": true,
           "handles": [
@@ -1183,11 +485,11 @@
         ],
         "__debugName": "y"
        },
-       "7lnKeMdZnG": {
+       "fXl4bLw3g1": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "RnhejawVXL",
+          "id": "HLYiEGQ6eI",
           "position": 0.15,
           "connectedRight": true,
           "handles": [
@@ -1199,7 +501,7 @@
           "value": 0.97
          },
          {
-          "id": "bCCU0E0xI6",
+          "id": "6HedeRKeeP",
           "position": 0.6,
           "connectedRight": true,
           "handles": [
@@ -1215,18 +517,18 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "oxfsrZzyRG",
-       "[\"y\"]": "kyMzV6BvvF",
-       "[\"scale\"]": "7lnKeMdZnG"
+       "[\"opacity\"]": "40JA4qz2ZV",
+       "[\"y\"]": "jRmBiCZpH0",
+       "[\"scale\"]": "fXl4bLw3g1"
       }
      },
      "tier2": {
       "trackData": {
-       "onTySo0RLg": {
+       "lcXlIZFkj3": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "zMDghvQyuE",
+          "id": "aVgzStJvoB",
           "position": 0.24,
           "connectedRight": true,
           "handles": [
@@ -1238,7 +540,7 @@
           "value": 0
          },
          {
-          "id": "LYKpMYxwd2",
+          "id": "n6cGt7MSFz",
           "position": 0.69,
           "connectedRight": true,
           "handles": [
@@ -1252,11 +554,11 @@
         ],
         "__debugName": "opacity"
        },
-       "1YE9j8JkYO": {
+       "KEvBEX4VLB": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "7BclliIFa5",
+          "id": "s3LagMjHjY",
           "position": 0.24,
           "connectedRight": true,
           "handles": [
@@ -1268,7 +570,7 @@
           "value": 36
          },
          {
-          "id": "FkbGw2L8ij",
+          "id": "tv6YV9VINr",
           "position": 0.69,
           "connectedRight": true,
           "handles": [
@@ -1282,11 +584,11 @@
         ],
         "__debugName": "y"
        },
-       "vbHmwKNYkf": {
+       "sv27feKAFI": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "TMrs6vJ4vt",
+          "id": "GRJ7tJjM08",
           "position": 0.24,
           "connectedRight": true,
           "handles": [
@@ -1298,7 +600,7 @@
           "value": 0.97
          },
          {
-          "id": "78hj2Yc2af",
+          "id": "RPfCgXJacF",
           "position": 0.69,
           "connectedRight": true,
           "handles": [
@@ -1314,18 +616,18 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "onTySo0RLg",
-       "[\"y\"]": "1YE9j8JkYO",
-       "[\"scale\"]": "vbHmwKNYkf"
+       "[\"opacity\"]": "lcXlIZFkj3",
+       "[\"y\"]": "KEvBEX4VLB",
+       "[\"scale\"]": "sv27feKAFI"
       }
      },
      "tier3": {
       "trackData": {
-       "iUuGprM20v": {
+       "4mZxbefXHI": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "5zuaQFomLH",
+          "id": "7pDjDvuFuS",
           "position": 0.32999999999999996,
           "connectedRight": true,
           "handles": [
@@ -1337,7 +639,7 @@
           "value": 0
          },
          {
-          "id": "Na60zQtfNI",
+          "id": "TEkwOUxUce",
           "position": 0.78,
           "connectedRight": true,
           "handles": [
@@ -1351,11 +653,11 @@
         ],
         "__debugName": "opacity"
        },
-       "cB1V6zugqR": {
+       "mtYNizqoeF": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "lHHBGOBYK0",
+          "id": "ufRdLcYigU",
           "position": 0.32999999999999996,
           "connectedRight": true,
           "handles": [
@@ -1367,7 +669,7 @@
           "value": 36
          },
          {
-          "id": "Bwu0dQGRwU",
+          "id": "19RHJcxlLQ",
           "position": 0.78,
           "connectedRight": true,
           "handles": [
@@ -1381,11 +683,11 @@
         ],
         "__debugName": "y"
        },
-       "CCw2vpRUqE": {
+       "aOyH5dlMZv": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "0jOhqb6WgT",
+          "id": "nFfQD9CCES",
           "position": 0.32999999999999996,
           "connectedRight": true,
           "handles": [
@@ -1397,7 +699,7 @@
           "value": 0.97
          },
          {
-          "id": "FHoQt4YJl3",
+          "id": "XQZfWXn25t",
           "position": 0.78,
           "connectedRight": true,
           "handles": [
@@ -1413,18 +715,18 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "iUuGprM20v",
-       "[\"y\"]": "cB1V6zugqR",
-       "[\"scale\"]": "CCw2vpRUqE"
+       "[\"opacity\"]": "4mZxbefXHI",
+       "[\"y\"]": "mtYNizqoeF",
+       "[\"scale\"]": "aOyH5dlMZv"
       }
      },
      "tier4": {
       "trackData": {
-       "b6PP7BkTs2": {
+       "en5YJihT2Z": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "TRTx3XxBC2",
+          "id": "E25JnyAIHS",
           "position": 0.42000000000000004,
           "connectedRight": true,
           "handles": [
@@ -1436,7 +738,7 @@
           "value": 0
          },
          {
-          "id": "j6NhjCwGEt",
+          "id": "IwphMVIkjk",
           "position": 0.8700000000000001,
           "connectedRight": true,
           "handles": [
@@ -1450,11 +752,11 @@
         ],
         "__debugName": "opacity"
        },
-       "psTrKbLije": {
+       "RMW1xwjjpZ": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "qvnP7r83uj",
+          "id": "3KEwRunEHJ",
           "position": 0.42000000000000004,
           "connectedRight": true,
           "handles": [
@@ -1466,7 +768,7 @@
           "value": 36
          },
          {
-          "id": "LhE5rJ7PFf",
+          "id": "JtuLnUadm7",
           "position": 0.8700000000000001,
           "connectedRight": true,
           "handles": [
@@ -1480,11 +782,11 @@
         ],
         "__debugName": "y"
        },
-       "SKJSrldVEY": {
+       "2AQe9KFh4g": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "C9rML60iOK",
+          "id": "qxBFSyhOvA",
           "position": 0.42000000000000004,
           "connectedRight": true,
           "handles": [
@@ -1496,7 +798,7 @@
           "value": 0.97
          },
          {
-          "id": "h7z3ts1avy",
+          "id": "hTLaitAvEE",
           "position": 0.87,
           "connectedRight": true,
           "handles": [
@@ -1512,18 +814,18 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "b6PP7BkTs2",
-       "[\"y\"]": "psTrKbLije",
-       "[\"scale\"]": "SKJSrldVEY"
+       "[\"opacity\"]": "en5YJihT2Z",
+       "[\"y\"]": "RMW1xwjjpZ",
+       "[\"scale\"]": "2AQe9KFh4g"
       }
      },
      "tier5": {
       "trackData": {
-       "R4qlWh92Hc": {
+       "r4h1Y2aFWz": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "fn7JNw3ALc",
+          "id": "w22ein8XYl",
           "position": 0.51,
           "connectedRight": true,
           "handles": [
@@ -1535,7 +837,7 @@
           "value": 0
          },
          {
-          "id": "rLoszo2TIS",
+          "id": "hTFm6apiFG",
           "position": 0.96,
           "connectedRight": true,
           "handles": [
@@ -1549,11 +851,11 @@
         ],
         "__debugName": "opacity"
        },
-       "rv0HTys38b": {
+       "IdhFtWGaUP": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "Y3CHtMPhNw",
+          "id": "8MjqXVlqEa",
           "position": 0.51,
           "connectedRight": true,
           "handles": [
@@ -1565,7 +867,7 @@
           "value": 36
          },
          {
-          "id": "sADBoUU9Gd",
+          "id": "kHzRXJnPJf",
           "position": 0.96,
           "connectedRight": true,
           "handles": [
@@ -1579,11 +881,11 @@
         ],
         "__debugName": "y"
        },
-       "7NuHJUHCna": {
+       "62QwzSA5I0": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "uHAPtDyjED",
+          "id": "zkr46dpJUq",
           "position": 0.51,
           "connectedRight": true,
           "handles": [
@@ -1595,7 +897,7 @@
           "value": 0.97
          },
          {
-          "id": "VDNtc6fsWf",
+          "id": "rihhjr66sS",
           "position": 0.96,
           "connectedRight": true,
           "handles": [
@@ -1611,9 +913,9 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "R4qlWh92Hc",
-       "[\"y\"]": "rv0HTys38b",
-       "[\"scale\"]": "7NuHJUHCna"
+       "[\"opacity\"]": "r4h1Y2aFWz",
+       "[\"y\"]": "IdhFtWGaUP",
+       "[\"scale\"]": "62QwzSA5I0"
       }
      }
     }
@@ -1661,11 +963,11 @@
     "tracksByObject": {
      "head": {
       "trackData": {
-       "N4ZbgwoHnm": {
+       "QClXBI5Zx1": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "6PTV9ACi9D",
+          "id": "2w6qb61uKl",
           "position": 0,
           "connectedRight": true,
           "handles": [
@@ -1677,7 +979,7 @@
           "value": 0
          },
          {
-          "id": "ewKFlYT2ag",
+          "id": "z7vbiUpmHL",
           "position": 0.4,
           "connectedRight": true,
           "handles": [
@@ -1691,11 +993,11 @@
         ],
         "__debugName": "opacity"
        },
-       "i1j4OTN30g": {
+       "79BNIIC55S": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "5KKhTNRXJd",
+          "id": "CBPzaAkwjx",
           "position": 0,
           "connectedRight": true,
           "handles": [
@@ -1707,7 +1009,7 @@
           "value": 24
          },
          {
-          "id": "uFl1OER7Bz",
+          "id": "uMd8rfgW97",
           "position": 0.4,
           "connectedRight": true,
           "handles": [
@@ -1723,17 +1025,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "N4ZbgwoHnm",
-       "[\"y\"]": "i1j4OTN30g"
+       "[\"opacity\"]": "QClXBI5Zx1",
+       "[\"y\"]": "79BNIIC55S"
       }
      },
      "step1": {
       "trackData": {
-       "fUZb5yNmur": {
+       "AqJJHV2qYF": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "kgBkRWPoBE",
+          "id": "oeGLXx8y9B",
           "position": 0.15,
           "connectedRight": true,
           "handles": [
@@ -1745,7 +1047,7 @@
           "value": 0
          },
          {
-          "id": "WraB9PofUN",
+          "id": "XP40T1Gngl",
           "position": 0.6,
           "connectedRight": true,
           "handles": [
@@ -1759,11 +1061,11 @@
         ],
         "__debugName": "opacity"
        },
-       "WiNMQm3aeb": {
+       "3zBYpgPEgL": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "bsCXrlIrHq",
+          "id": "tbVs7nzB7O",
           "position": 0.15,
           "connectedRight": true,
           "handles": [
@@ -1775,7 +1077,7 @@
           "value": 30
          },
          {
-          "id": "QXTOBp1rx5",
+          "id": "FSacA4Dw3c",
           "position": 0.6,
           "connectedRight": true,
           "handles": [
@@ -1791,17 +1093,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "fUZb5yNmur",
-       "[\"y\"]": "WiNMQm3aeb"
+       "[\"opacity\"]": "AqJJHV2qYF",
+       "[\"y\"]": "3zBYpgPEgL"
       }
      },
      "step2": {
       "trackData": {
-       "9Ctu5yPmhY": {
+       "8PgMGrO3xU": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "dcsqBtkHy0",
+          "id": "d58KEWtoF7",
           "position": 0.26,
           "connectedRight": true,
           "handles": [
@@ -1813,7 +1115,7 @@
           "value": 0
          },
          {
-          "id": "tyI4b1C2WV",
+          "id": "UGwScpEZsm",
           "position": 0.71,
           "connectedRight": true,
           "handles": [
@@ -1827,11 +1129,11 @@
         ],
         "__debugName": "opacity"
        },
-       "jVgW5sbyI4": {
+       "cuMOSWgrhH": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "7sPLfyEra6",
+          "id": "lHsQDEHBQm",
           "position": 0.26,
           "connectedRight": true,
           "handles": [
@@ -1843,7 +1145,7 @@
           "value": 30
          },
          {
-          "id": "nF2op2Urop",
+          "id": "D6GrxqFhJl",
           "position": 0.71,
           "connectedRight": true,
           "handles": [
@@ -1859,17 +1161,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "9Ctu5yPmhY",
-       "[\"y\"]": "jVgW5sbyI4"
+       "[\"opacity\"]": "8PgMGrO3xU",
+       "[\"y\"]": "cuMOSWgrhH"
       }
      },
      "step3": {
       "trackData": {
-       "sXBOzznkum": {
+       "Q6FAwRk7WL": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "un1pf4cgDN",
+          "id": "VXw1nRmXfe",
           "position": 0.37,
           "connectedRight": true,
           "handles": [
@@ -1881,7 +1183,7 @@
           "value": 0
          },
          {
-          "id": "k6TrDoibqJ",
+          "id": "yfrKpHkeLM",
           "position": 0.8200000000000001,
           "connectedRight": true,
           "handles": [
@@ -1895,11 +1197,11 @@
         ],
         "__debugName": "opacity"
        },
-       "SAOrBLd4xF": {
+       "fw2UgpyGk0": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "hrdXpTlL2U",
+          "id": "MBKmZJfz7n",
           "position": 0.37,
           "connectedRight": true,
           "handles": [
@@ -1911,7 +1213,7 @@
           "value": 30
          },
          {
-          "id": "Ph6SXStgZ9",
+          "id": "qZ3ffutvg1",
           "position": 0.8200000000000001,
           "connectedRight": true,
           "handles": [
@@ -1927,17 +1229,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "sXBOzznkum",
-       "[\"y\"]": "SAOrBLd4xF"
+       "[\"opacity\"]": "Q6FAwRk7WL",
+       "[\"y\"]": "fw2UgpyGk0"
       }
      },
      "step4": {
       "trackData": {
-       "5v2DKfcylj": {
+       "4selqFQu9D": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "NsAOTtqkzk",
+          "id": "IHt3sItHWT",
           "position": 0.48,
           "connectedRight": true,
           "handles": [
@@ -1949,7 +1251,7 @@
           "value": 0
          },
          {
-          "id": "LZOhUdcgBR",
+          "id": "I1q1O386hy",
           "position": 0.9299999999999999,
           "connectedRight": true,
           "handles": [
@@ -1963,11 +1265,11 @@
         ],
         "__debugName": "opacity"
        },
-       "kVp0HpCUqs": {
+       "jb495vJWXM": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "oxO9xfEgLd",
+          "id": "i1DrDrl2KJ",
           "position": 0.48,
           "connectedRight": true,
           "handles": [
@@ -1979,7 +1281,7 @@
           "value": 30
          },
          {
-          "id": "89FfxaYS7A",
+          "id": "XNgabWTiBg",
           "position": 0.9299999999999999,
           "connectedRight": true,
           "handles": [
@@ -1995,8 +1297,8 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "5v2DKfcylj",
-       "[\"y\"]": "kVp0HpCUqs"
+       "[\"opacity\"]": "4selqFQu9D",
+       "[\"y\"]": "jb495vJWXM"
       }
      }
     }
@@ -2026,11 +1328,11 @@
     "tracksByObject": {
      "colL": {
       "trackData": {
-       "jb05QTvAdt": {
+       "PEYGg9m7Eu": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "hvL4e0mwZQ",
+          "id": "aAuvfKFvTK",
           "position": 0,
           "connectedRight": true,
           "handles": [
@@ -2042,7 +1344,7 @@
           "value": 0
          },
          {
-          "id": "5YwrpUXMfh",
+          "id": "Zq5MnYT17N",
           "position": 0.6,
           "connectedRight": true,
           "handles": [
@@ -2056,11 +1358,11 @@
         ],
         "__debugName": "opacity"
        },
-       "QAAoPf7WTR": {
+       "0PfeWgPFQQ": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "8GhyOVVBEm",
+          "id": "afkbA0rXUV",
           "position": 0,
           "connectedRight": true,
           "handles": [
@@ -2072,7 +1374,7 @@
           "value": -36
          },
          {
-          "id": "WEPojO2UN0",
+          "id": "8r25d1C12C",
           "position": 0.6,
           "connectedRight": true,
           "handles": [
@@ -2088,17 +1390,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "jb05QTvAdt",
-       "[\"x\"]": "QAAoPf7WTR"
+       "[\"opacity\"]": "PEYGg9m7Eu",
+       "[\"x\"]": "0PfeWgPFQQ"
       }
      },
      "colR": {
       "trackData": {
-       "mcBW5jk4Cj": {
+       "IHH3GJvgFU": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "tMUmuiLHfm",
+          "id": "HKCKh9fud8",
           "position": 0.1,
           "connectedRight": true,
           "handles": [
@@ -2110,7 +1412,7 @@
           "value": 0
          },
          {
-          "id": "9FUyGnz022",
+          "id": "n6kaz7jzLs",
           "position": 0.7,
           "connectedRight": true,
           "handles": [
@@ -2124,11 +1426,11 @@
         ],
         "__debugName": "opacity"
        },
-       "bH1d8JduhR": {
+       "0DEdxMDZI2": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "RoCCgrTz3A",
+          "id": "oYVErfLwbE",
           "position": 0.1,
           "connectedRight": true,
           "handles": [
@@ -2140,7 +1442,7 @@
           "value": 36
          },
          {
-          "id": "ScHoRRlnjF",
+          "id": "jvjAazjzwt",
           "position": 0.7,
           "connectedRight": true,
           "handles": [
@@ -2156,8 +1458,8 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "mcBW5jk4Cj",
-       "[\"x\"]": "bH1d8JduhR"
+       "[\"opacity\"]": "IHH3GJvgFU",
+       "[\"x\"]": "0DEdxMDZI2"
       }
      }
     }
@@ -2199,11 +1501,11 @@
     "tracksByObject": {
      "head": {
       "trackData": {
-       "mHq06GLnuX": {
+       "QUBZRDiTfo": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "th6fONlB23",
+          "id": "YBh6A8l21C",
           "position": 0,
           "connectedRight": true,
           "handles": [
@@ -2215,7 +1517,7 @@
           "value": 0
          },
          {
-          "id": "EdHjhBMT4B",
+          "id": "J0GgNtLgYn",
           "position": 0.4,
           "connectedRight": true,
           "handles": [
@@ -2229,11 +1531,11 @@
         ],
         "__debugName": "opacity"
        },
-       "oJNwYI8UzA": {
+       "DQ2INyJ3Zr": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "3V8IXtLzAC",
+          "id": "VCxK3oSQb0",
           "position": 0,
           "connectedRight": true,
           "handles": [
@@ -2245,7 +1547,7 @@
           "value": 24
          },
          {
-          "id": "9otok1295G",
+          "id": "HXCNXjuid3",
           "position": 0.4,
           "connectedRight": true,
           "handles": [
@@ -2261,17 +1563,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "mHq06GLnuX",
-       "[\"y\"]": "oJNwYI8UzA"
+       "[\"opacity\"]": "QUBZRDiTfo",
+       "[\"y\"]": "DQ2INyJ3Zr"
       }
      },
      "row1": {
       "trackData": {
-       "CHX8DZdG5n": {
+       "NkFYHiRycY": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "frOGh8NdKC",
+          "id": "7TSUwtWn5j",
           "position": 0.15,
           "connectedRight": true,
           "handles": [
@@ -2283,7 +1585,7 @@
           "value": 0
          },
          {
-          "id": "b9Kz8gchO0",
+          "id": "HkHgI5lCl6",
           "position": 0.65,
           "connectedRight": true,
           "handles": [
@@ -2297,11 +1599,11 @@
         ],
         "__debugName": "opacity"
        },
-       "pPxIhifUZW": {
+       "mD6VQ5EbY8": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "4eIkdrcO6w",
+          "id": "buT2XzuBR6",
           "position": 0.15,
           "connectedRight": true,
           "handles": [
@@ -2313,7 +1615,7 @@
           "value": 18
          },
          {
-          "id": "oZnHJKZizj",
+          "id": "sunsvnqAY1",
           "position": 0.65,
           "connectedRight": true,
           "handles": [
@@ -2329,17 +1631,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "CHX8DZdG5n",
-       "[\"y\"]": "pPxIhifUZW"
+       "[\"opacity\"]": "NkFYHiRycY",
+       "[\"y\"]": "mD6VQ5EbY8"
       }
      },
      "row2": {
       "trackData": {
-       "tj8LngWYDX": {
+       "vNp3nojmAt": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "Yz5QiSL03r",
+          "id": "jifVErOdkn",
           "position": 0.28,
           "connectedRight": true,
           "handles": [
@@ -2351,7 +1653,7 @@
           "value": 0
          },
          {
-          "id": "5LU7WnAoeo",
+          "id": "uoEeaf2UM3",
           "position": 0.78,
           "connectedRight": true,
           "handles": [
@@ -2365,11 +1667,11 @@
         ],
         "__debugName": "opacity"
        },
-       "hDNPt836So": {
+       "YmD6iZfMah": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "Fg7RuWHzSm",
+          "id": "uZiEYKAsyS",
           "position": 0.28,
           "connectedRight": true,
           "handles": [
@@ -2381,7 +1683,7 @@
           "value": 18
          },
          {
-          "id": "0aSOPQ5jEo",
+          "id": "Wb4d0uu04s",
           "position": 0.78,
           "connectedRight": true,
           "handles": [
@@ -2397,17 +1699,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "tj8LngWYDX",
-       "[\"y\"]": "hDNPt836So"
+       "[\"opacity\"]": "vNp3nojmAt",
+       "[\"y\"]": "YmD6iZfMah"
       }
      },
      "row3": {
       "trackData": {
-       "wPNYK245kN": {
+       "Pk5Vceya4m": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "68Zyj8tM6a",
+          "id": "B4iZZp5BuK",
           "position": 0.41000000000000003,
           "connectedRight": true,
           "handles": [
@@ -2419,7 +1721,7 @@
           "value": 0
          },
          {
-          "id": "4jcC7vXogo",
+          "id": "adEva3R5uL",
           "position": 0.91,
           "connectedRight": true,
           "handles": [
@@ -2433,11 +1735,11 @@
         ],
         "__debugName": "opacity"
        },
-       "RC9JjD6AVG": {
+       "0T4GptcwOx": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "ua8vRjTMee",
+          "id": "R0tWgKxuz5",
           "position": 0.41000000000000003,
           "connectedRight": true,
           "handles": [
@@ -2449,7 +1751,7 @@
           "value": 18
          },
          {
-          "id": "gbK0CHEKXp",
+          "id": "ltDfozKGGo",
           "position": 0.91,
           "connectedRight": true,
           "handles": [
@@ -2465,8 +1767,8 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "wPNYK245kN",
-       "[\"y\"]": "RC9JjD6AVG"
+       "[\"opacity\"]": "Pk5Vceya4m",
+       "[\"y\"]": "0T4GptcwOx"
       }
      }
     }
@@ -2514,11 +1816,11 @@
     "tracksByObject": {
      "head": {
       "trackData": {
-       "nwJT1QMURz": {
+       "Ut7y4oKqIb": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "ZdmIoohepL",
+          "id": "Dxn1Vqw2MP",
           "position": 0,
           "connectedRight": true,
           "handles": [
@@ -2530,7 +1832,7 @@
           "value": 0
          },
          {
-          "id": "bxGiOKPdDA",
+          "id": "JQuMY5YU3y",
           "position": 0.4,
           "connectedRight": true,
           "handles": [
@@ -2544,11 +1846,11 @@
         ],
         "__debugName": "opacity"
        },
-       "bWrrEKWKyx": {
+       "OhDAI5e8eo": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "WjlJVL2L2U",
+          "id": "cDcet61Loi",
           "position": 0,
           "connectedRight": true,
           "handles": [
@@ -2560,7 +1862,7 @@
           "value": 24
          },
          {
-          "id": "7bUEWeeyCS",
+          "id": "2OFxq2RsX4",
           "position": 0.4,
           "connectedRight": true,
           "handles": [
@@ -2576,17 +1878,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "nwJT1QMURz",
-       "[\"y\"]": "bWrrEKWKyx"
+       "[\"opacity\"]": "Ut7y4oKqIb",
+       "[\"y\"]": "OhDAI5e8eo"
       }
      },
      "item1": {
       "trackData": {
-       "02nR2xmdmS": {
+       "saFM8yFN8X": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "rvGeGc4jEx",
+          "id": "zp70VrwPTv",
           "position": 0.15,
           "connectedRight": true,
           "handles": [
@@ -2598,7 +1900,7 @@
           "value": 0
          },
          {
-          "id": "EUIKZWt3Ry",
+          "id": "GBMkRmhRZn",
           "position": 0.6,
           "connectedRight": true,
           "handles": [
@@ -2612,11 +1914,11 @@
         ],
         "__debugName": "opacity"
        },
-       "f5F8LQWUZS": {
+       "DFIp5lU2GO": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "w2q5Bivlaz",
+          "id": "Eh59tGEWt3",
           "position": 0.15,
           "connectedRight": true,
           "handles": [
@@ -2628,7 +1930,7 @@
           "value": 14
          },
          {
-          "id": "Vo5YnrEfgP",
+          "id": "koSmeWHkWC",
           "position": 0.6,
           "connectedRight": true,
           "handles": [
@@ -2644,17 +1946,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "02nR2xmdmS",
-       "[\"y\"]": "f5F8LQWUZS"
+       "[\"opacity\"]": "saFM8yFN8X",
+       "[\"y\"]": "DFIp5lU2GO"
       }
      },
      "item2": {
       "trackData": {
-       "zcooGnFxR4": {
+       "vB1NGLDVpz": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "hUnr72FdZj",
+          "id": "ago2S4ETV3",
           "position": 0.25,
           "connectedRight": true,
           "handles": [
@@ -2666,7 +1968,7 @@
           "value": 0
          },
          {
-          "id": "fUIeRx1zBs",
+          "id": "A4n5IzdTpl",
           "position": 0.7,
           "connectedRight": true,
           "handles": [
@@ -2680,11 +1982,11 @@
         ],
         "__debugName": "opacity"
        },
-       "2vrobjloTj": {
+       "AohnPv0NSz": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "9rLGzMm5lT",
+          "id": "FWwzFbS1Qp",
           "position": 0.25,
           "connectedRight": true,
           "handles": [
@@ -2696,7 +1998,7 @@
           "value": 14
          },
          {
-          "id": "MclVz0lWXj",
+          "id": "xQRF6rH25j",
           "position": 0.7,
           "connectedRight": true,
           "handles": [
@@ -2712,17 +2014,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "zcooGnFxR4",
-       "[\"y\"]": "2vrobjloTj"
+       "[\"opacity\"]": "vB1NGLDVpz",
+       "[\"y\"]": "AohnPv0NSz"
       }
      },
      "item3": {
       "trackData": {
-       "NUzkDtT39k": {
+       "L6f621RRFG": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "RctgyePQMn",
+          "id": "8I2WVgQEov",
           "position": 0.35,
           "connectedRight": true,
           "handles": [
@@ -2734,7 +2036,7 @@
           "value": 0
          },
          {
-          "id": "jbq1tKQUR9",
+          "id": "gBJZYX4JIQ",
           "position": 0.8,
           "connectedRight": true,
           "handles": [
@@ -2748,11 +2050,11 @@
         ],
         "__debugName": "opacity"
        },
-       "qLYB1iHMmw": {
+       "En9y6QbS7F": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "uGBZQ57MPe",
+          "id": "NYk2vJkSgD",
           "position": 0.35,
           "connectedRight": true,
           "handles": [
@@ -2764,7 +2066,7 @@
           "value": 14
          },
          {
-          "id": "KZufqAEiC8",
+          "id": "7lvZETirbS",
           "position": 0.8,
           "connectedRight": true,
           "handles": [
@@ -2780,17 +2082,17 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "NUzkDtT39k",
-       "[\"y\"]": "qLYB1iHMmw"
+       "[\"opacity\"]": "L6f621RRFG",
+       "[\"y\"]": "En9y6QbS7F"
       }
      },
      "item4": {
       "trackData": {
-       "74nttvI8m0": {
+       "J8cyuruEV2": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "XZbhaIoisH",
+          "id": "qJToN8ld5w",
           "position": 0.45000000000000007,
           "connectedRight": true,
           "handles": [
@@ -2802,7 +2104,7 @@
           "value": 0
          },
          {
-          "id": "v6VOLLv6OB",
+          "id": "SkpZCbOwde",
           "position": 0.9000000000000001,
           "connectedRight": true,
           "handles": [
@@ -2816,11 +2118,11 @@
         ],
         "__debugName": "opacity"
        },
-       "IkeT5e0Y6t": {
+       "QV7YegGJF1": {
         "type": "BasicKeyframedTrack",
         "keyframes": [
          {
-          "id": "KAqfTCkqBe",
+          "id": "nAnfvHYHgf",
           "position": 0.45000000000000007,
           "connectedRight": true,
           "handles": [
@@ -2832,7 +2134,7 @@
           "value": 14
          },
          {
-          "id": "HSZ0LIhECL",
+          "id": "d4RJF4u5eJ",
           "position": 0.9000000000000001,
           "connectedRight": true,
           "handles": [
@@ -2848,8 +2150,8 @@
        }
       },
       "trackIdByPropPath": {
-       "[\"opacity\"]": "74nttvI8m0",
-       "[\"y\"]": "IkeT5e0Y6t"
+       "[\"opacity\"]": "J8cyuruEV2",
+       "[\"y\"]": "QV7YegGJF1"
       }
      }
     }
@@ -2858,6 +2160,6 @@
  },
  "definitionVersion": "0.4.0",
  "revisionHistory": [
-  "7gvaLODXQrZBIFjT"
+  "3MGFsoLxWJbD7Bzz"
  ]
 }
